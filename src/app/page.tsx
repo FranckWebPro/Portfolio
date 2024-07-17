@@ -31,6 +31,17 @@ const projects: Array<Project> = [
     published: true,
     status: "finished",
   },
+  {
+    id: 3,
+    title: "finished",
+    description: "finished",
+    client_name: "finished",
+    preview_picture_url: "finished",
+    link: "finished",
+    github_repo: "finished",
+    published: true,
+    status: "finished",
+  },
 ];
 
 export default function Home() {

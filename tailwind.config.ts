@@ -7,11 +7,31 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      bricolageGrotesque: ['"Bricolage Grotesque", sans-serif'],
+    },
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        hero: "url('/bg1.webp')",
+        glassmorphism: "url('/bg2.webp')",
+      },
+      colors: {
+        primaryColor: "#f464e3",
+        primaryLight: "#f464e3cc",
+        primaryExtraLight: "#f464e399",
+        secondaryColor: "#10ddf7",
+        secondaryLight: "rgba(16, 221, 247, 0.7)",
+        darkColor: "#0e0e0e",
+        lightColor: "#e7e7e7",
+      },
+      keyframes: {
+        blur: {
+          "0%": { backdropFilter: "blur(0px)" },
+          "100%": { backdropFilter: "blur(10px)" },
+        },
+      },
+      animation: {
+        blur: "blur 0.5s ease-in-out forwards",
       },
     },
   },

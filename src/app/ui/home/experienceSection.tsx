@@ -4,9 +4,9 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl items-center justify-center py-32 md:min-h-[calc(100vh-5rem)]"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center bg-glassmorphism bg-center bg-no-repeat py-32 md:min-h-[calc(100vh-5rem)]"
     >
-      <div className="py-8 sm:py-12 lg:py-16">
+      <div className="max-w-screen-2xl p-4 py-8 sm:py-12 md:p-8 lg:p-12 lg:py-16">
         <div className="max-w-xl">
           <h2 className="text-3xl font-bold sm:text-4xl">Mon expérience</h2>
 
@@ -18,7 +18,7 @@ export default function ExperienceSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border-secondaryColor bg-glassmorphism bg-center px-4 py-6">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"
@@ -49,7 +49,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"
@@ -80,7 +80,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"
@@ -111,7 +111,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"
@@ -142,7 +142,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"
@@ -173,7 +173,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"

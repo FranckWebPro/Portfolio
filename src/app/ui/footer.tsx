@@ -115,7 +115,7 @@ export default function Footer() {
             <li>
               <a
                 className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                href="#"
+                href="/blog"
               >
                 Blog
               </a>

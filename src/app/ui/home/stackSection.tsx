@@ -4,9 +4,9 @@ export default function StackSection() {
   return (
     <section
       id="technos"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl items-center justify-center py-32 md:min-h-[calc(100vh-5rem)]"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center bg-glassmorphism bg-no-repeat py-32 md:min-h-[calc(100vh-5rem)]"
     >
-      <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
+      <div className="grid max-w-screen-2xl grid-cols-1 gap-y-8 p-4 md:p-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:p-12">
         <div className="mx-auto text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
             Les technos du futur que je maîtrise

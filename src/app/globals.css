@@ -36,10 +36,6 @@ nav {
   padding: 0 1rem;
 }
 
-section {
-  padding: 0 1rem;
-}
-
 footer {
   padding: 0 1rem;
 }
@@ -58,10 +54,6 @@ footer {
     padding: 0 2rem;
   }
 
-  section {
-    padding: 0 2rem;
-  }
-
   footer {
     padding: 0 2rem;
   }
@@ -69,10 +61,6 @@ footer {
 
 @media screen and (min-width: 1024px) {
   nav {
-    padding: 0 3rem;
-  }
-
-  section {
     padding: 0 3rem;
   }
 

@@ -6,21 +6,25 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="fixed z-50 mx-auto h-16 w-full animate-blur md:h-20">
-      <nav className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between">
+    <header className="fixed z-50 mx-auto flex h-16 w-full animate-blur items-center justify-center md:h-20 lg:h-24">
+      <nav className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between">
         <Link className="block text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
-            src="/logo2.svg"
+            src="/logoLight.png"
             alt="logo FranckWebPro"
-            className="h-16 w-16"
+            className="~h-16/20 ~w-16/20"
+            objectFit="contain"
+            width={80}
+            height={80}
+            sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
           />
         </Link>
 
-        <ul className="hidden items-center gap-6 text-sm md:flex 2xl:text-base">
+        <ul className="relative left-8 hidden text-sm md:flex md:items-center md:gap-8 lg:gap-10 2xl:text-base">
           <li>
             <Link
-              className="text-lightColor transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#experience"
             >
               Expérience
@@ -29,7 +33,7 @@ export default function Header() {
 
           <li>
             <Link
-              className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#technos"
             >
               Technos
@@ -38,7 +42,7 @@ export default function Header() {
 
           <li>
             <Link
-              className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#projects"
             >
               Projets
@@ -46,7 +50,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="/blog"
             >
               Blog

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import logo from "./images/logoLight.png";
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
         <Link className="block text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
-            src="/logoLight.png"
+            src={logo}
             alt="logo FranckWebPro"
             className="~h-16/20 ~w-16/20"
             objectFit="contain"

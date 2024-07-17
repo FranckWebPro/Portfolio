@@ -18,7 +18,7 @@ export default function ExperienceSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-          <div className="border-secondaryColor bg-glassmorphism flex min-h-40 items-center justify-center gap-4 rounded-lg bg-center px-4 py-6">
+          <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border-secondaryColor bg-glassmorphism bg-center px-4 py-6">
             <span className="shrink-0 rounded-lg bg-gray-800 p-4">
               <svg
                 className="h-5 w-5"

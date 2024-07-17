@@ -17,14 +17,14 @@
 }
 
 @layer utilities {
-    .text-balance {
-      text-wrap: balance;
-    }
+  .text-balance {
+    text-wrap: balance;
   }
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   box-sizing: border-box;
@@ -33,52 +33,50 @@
 }
 
 nav {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 section {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 footer {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .header-blur {
-    backdrop-filter: blur(10px);
-    transition: backdrop-filter 0.5s ease-in-out;
-  }
-  
-  .header-no-blur {
-    backdrop-filter: blur(0px);
-  }
+  backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.header-no-blur {
+  backdrop-filter: blur(0px);
+}
 
 @media screen and (min-width: 768px) {
+  nav {
+    padding: 0 2rem;
+  }
 
-    nav {
-        padding: 0 2rem;
-    }
-    
-    section {
-        padding: 0 2rem;
-    }
-    
-    footer {
-        padding: 0 2rem;
-    } 
+  section {
+    padding: 0 2rem;
+  }
+
+  footer {
+    padding: 0 2rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  nav {
+    padding: 0 3rem;
+  }
 
-    nav {
-        padding: 0 3rem;
-    }
-    
-    section {
-        padding: 0 3rem;
-    }
-    
-    footer {
-        padding: 0 3rem;
-    }
+  section {
+    padding: 0 3rem;
+  }
+
+  footer {
+    padding: 0 3rem;
+  }
 }

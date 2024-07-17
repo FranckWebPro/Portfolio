@@ -8,7 +8,7 @@ export default function ProjectFormSection() {
     >
       <form
         action="#"
-        className="bg-glassmorphism w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
+        className="w-full space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
         <div>
           <label className="sr-only" htmlFor="name">
@@ -73,7 +73,7 @@ export default function ProjectFormSection() {
           <legend className="mb-3">Souhaitez vous publier ce projet ?</legend>
           <label
             htmlFor="published"
-            className="has-[:checked]:text-lightColor hover:border-secondaryColor has-[:checked]:border-secondaryColor block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 has-[:checked]:bg-black"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-lightColor"
             tabIndex={0}
           >
             <input
@@ -88,7 +88,7 @@ export default function ProjectFormSection() {
           </label>
           <label
             htmlFor="draft"
-            className="hover:border-secondaryColor has-[:checked]:border-secondaryColor block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 has-[:checked]:bg-black has-[:checked]:text-white"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-white"
             tabIndex={0}
           >
             <input
@@ -131,7 +131,7 @@ export default function ProjectFormSection() {
         <div className="mt-4">
           <button
             type="submit"
-            className="bg-secondaryColor text-darkColor hover:text-lightColor hover:bg-secondaryLight inline-block w-full rounded-lg px-6 py-3 font-medium duration-300 sm:w-auto"
+            className="inline-block w-full rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
           >
             Enregistrer ce projet
           </button>

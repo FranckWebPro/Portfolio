@@ -12,14 +12,14 @@ export default function StackSection() {
             Les technos du futur que je maîtrise
           </h2>
 
-          <p className="text-lightColor my-4">
+          <p className="my-4 text-lightColor">
             L'ensemble des librairies et framework que j'ai utilisé et que je
             maîtrise.
           </p>
 
           <a
             href="#"
-            className="bg-secondaryColor text-darkColor hover:text-lightColor hover:bg-secondaryLight mt-8 inline-block rounded-lg px-12 py-3 text-sm font-medium transition focus:outline-none focus:ring focus:ring-yellow-400"
+            className="mt-8 inline-block rounded-lg bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor transition hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring focus:ring-yellow-400"
           >
             Démarrez votre projet maintenant
           </a>
@@ -27,10 +27,10 @@ export default function StackSection() {
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           <a
-            className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+            className="block rounded-xl border border-gray-100 bg-glassmorphism bg-center p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
             href="#"
           >
-            <span className="bg-darkColor inline-block rounded-lg p-3">
+            <span className="inline-block rounded-lg bg-darkColor p-3">
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -51,7 +51,7 @@ export default function StackSection() {
 
             <h2 className="mt-2 font-bold">Accountant</h2>
 
-            <p className="sm:text-lightColor hidden sm:mt-1 sm:block sm:text-sm">
+            <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-lightColor">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </a>
@@ -81,7 +81,7 @@ export default function StackSection() {
 
             <h2 className="mt-2 font-bold">Accountant</h2>
 
-            <p className="sm:text-lightColor hidden sm:mt-1 sm:block sm:text-sm">
+            <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-lightColor">
               Lorem ipsum dolor sit amet consectetur.
             </p>
           </a>

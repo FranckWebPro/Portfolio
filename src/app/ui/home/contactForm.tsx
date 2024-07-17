@@ -18,7 +18,7 @@ export default function ContactForm() {
 
         <a
           href="mailto:contact@franckwebpro.com"
-          className="text-primaryColor text-2xl font-bold"
+          className="text-2xl font-bold text-primaryColor"
         >
           contact@franckwebpro.com
         </a>
@@ -28,7 +28,7 @@ export default function ContactForm() {
 
       <form
         action="#"
-        className="bg-glassmorphism space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
+        className="space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
         <div>
           <label className="sr-only" htmlFor="name">
@@ -73,7 +73,7 @@ export default function ContactForm() {
           <legend className="mb-3">Quel service vous intéresse ?</legend>
           <label
             htmlFor="Option1"
-            className="hover:border-primaryLight has-[:checked]:border-primaryLight block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 has-[:checked]:bg-black has-[:checked]:text-white"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-white"
             tabIndex={0}
           >
             <input
@@ -88,7 +88,7 @@ export default function ContactForm() {
           </label>
           <label
             htmlFor="Option2"
-            className="has-[:checked]:text-lightColor hover:border-primaryLight has-[:checked]:border-primaryLight block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 has-[:checked]:bg-black"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-lightColor"
             tabIndex={0}
           >
             <input
@@ -103,7 +103,7 @@ export default function ContactForm() {
           </label>
           <label
             htmlFor="Option3"
-            className="hover:border-primaryLight has-[:checked]:border-primaryLight block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 has-[:checked]:bg-black has-[:checked]:text-white"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-white"
             tabIndex={0}
           >
             <input
@@ -135,7 +135,7 @@ export default function ContactForm() {
         <div className="mt-4">
           <button
             type="submit"
-            className="bg-primaryColor text-darkColor hover:bg-primaryLight inline-block w-full rounded-lg px-5 py-3 font-medium duration-300 sm:w-auto"
+            className="inline-block w-full rounded-lg bg-primaryColor px-5 py-3 font-medium text-darkColor duration-300 hover:bg-primaryLight sm:w-auto"
           >
             Envoyez moi vos mots doux
           </button>

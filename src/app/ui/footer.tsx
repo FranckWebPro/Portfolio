@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
-            className="hover:bg-secondaryLight bg-secondaryColor text-darkColor hover:text-lightColor inline-block rounded-full p-2 shadow transition sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
+            className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition hover:bg-secondaryLight hover:text-lightColor sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
             href="#hero"
           >
             <span className="sr-only">Back to top</span>
@@ -28,7 +28,7 @@ export default function Footer() {
 
         <div className="lg:flex lg:items-end lg:justify-between">
           <div>
-            <div className="text-primaryColor flex justify-center lg:justify-start dark:text-teal-300">
+            <div className="flex justify-center text-primaryColor lg:justify-start dark:text-teal-300">
               <svg
                 className="h-8"
                 viewBox="0 0 118 24"

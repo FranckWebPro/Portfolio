@@ -4,7 +4,7 @@ import React from "react";
 
 export default function HeaderDashboard() {
   return (
-    <header className="animate-blur fixed z-50 mx-auto h-16 w-full md:h-20">
+    <header className="fixed z-50 mx-auto h-16 w-full animate-blur md:h-20">
       <nav className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between">
         <div className="md:flex md:items-center md:gap-12">
           <Link className="block text-teal-600 dark:text-teal-600" href="/">
@@ -32,7 +32,7 @@ export default function HeaderDashboard() {
 
         <div className="flex items-center gap-4 sm:flex">
           <a
-            className="bg-secondaryColor hover:bg-secondaryLight hover:text-lightColor text-darkColor rounded-lg px-6 py-3 text-sm font-semibold shadow duration-300 2xl:text-base"
+            className="rounded-lg bg-secondaryColor px-6 py-3 text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:text-lightColor 2xl:text-base"
             href="/"
           >
             Déconnexion

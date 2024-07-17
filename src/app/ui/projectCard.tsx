@@ -4,7 +4,7 @@ import { Project } from "@/app/lib/definitions";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <a href="#" className="group relative block h-full min-h-80 w-full">
-      <div className="border-primaryColor bg-darkColor relative flex h-full transform items-end border-2 transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+      <div className="relative flex h-full transform items-end border-2 border-primaryColor bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
         <div className="p-4 pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
           <p className="mt-4 text-sm sm:text-base">{project.description}</p>
 
-          <p className="text-secondaryLight mt-8 font-bold">
+          <p className="mt-8 font-bold text-secondaryLight">
             Cliquez pour voir le projet
           </p>
         </div>

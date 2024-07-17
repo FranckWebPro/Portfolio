@@ -2,146 +2,161 @@
 // https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
   {
-    id: '410544b2-4001-4271-9855-fec4b6a6442a',
-    name: 'User',
-    email: 'user@nextmail.com',
-    password: '123456',
+    firstname: "Franck",
+    lastname: "GALLIOD",
+    email: "contact@franckwebpro.com",
+    age: 27,
+    short_description:
+      "Ancien militaire reconverti comme développeur web et Webflow, entrepreneur dans la tech, voyageur...",
+    long_description: "à venir",
+    picture_url: "url",
+    github_link: "https://github.com/FranckWebPro",
+    linkedin_link: "https://www.linkedin.com/in/franck-galliod/",
+    password: "scamlife",
   },
 ];
 
-const customers = [
+const stacks = [
   {
-    id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
-    name: 'Evil Rabbit',
-    email: 'evil@rabbit.com',
-    image_url: '/customers/evil-rabbit.png',
+    name: "Next.js",
+    logo: "url",
   },
   {
-    id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
-    name: 'Delba de Oliveira',
-    email: 'delba@oliveira.com',
-    image_url: '/customers/delba-de-oliveira.png',
+    name: "React",
+    logo: "url",
   },
   {
-    id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
-    name: 'Lee Robinson',
-    email: 'lee@robinson.com',
-    image_url: '/customers/lee-robinson.png',
+    name: "Node.js",
+    logo: "url",
   },
   {
-    id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
-    name: 'Michael Novotny',
-    email: 'michael@novotny.com',
-    image_url: '/customers/michael-novotny.png',
+    name: "Express",
+    logo: "url",
   },
   {
-    id: 'CC27C14A-0ACF-4F4A-A6C9-D45682C144B9',
-    name: 'Amy Burns',
-    email: 'amy@burns.com',
-    image_url: '/customers/amy-burns.png',
+    name: "Javascript",
+    logo: "url",
   },
   {
-    id: '13D07535-C59E-4157-A011-F8D2EF4E0CBB',
-    name: 'Balazs Orban',
-    email: 'balazs@orban.com',
-    image_url: '/customers/balazs-orban.png',
-  },
-];
-
-const invoices = [
-  {
-    customer_id: customers[0].id,
-    amount: 15795,
-    status: 'pending',
-    date: '2022-12-06',
+    name: "Tailwind",
+    logo: "url",
   },
   {
-    customer_id: customers[1].id,
-    amount: 20348,
-    status: 'pending',
-    date: '2022-11-14',
+    name: "CSS",
+    logo: "url",
   },
   {
-    customer_id: customers[4].id,
-    amount: 3040,
-    status: 'paid',
-    date: '2022-10-29',
+    name: "HTML",
+    logo: "url",
   },
   {
-    customer_id: customers[3].id,
-    amount: 44800,
-    status: 'paid',
-    date: '2023-09-10',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 34577,
-    status: 'pending',
-    date: '2023-08-05',
-  },
-  {
-    customer_id: customers[2].id,
-    amount: 54246,
-    status: 'pending',
-    date: '2023-07-16',
-  },
-  {
-    customer_id: customers[0].id,
-    amount: 666,
-    status: 'pending',
-    date: '2023-06-27',
-  },
-  {
-    customer_id: customers[3].id,
-    amount: 32545,
-    status: 'paid',
-    date: '2023-06-09',
-  },
-  {
-    customer_id: customers[4].id,
-    amount: 1250,
-    status: 'paid',
-    date: '2023-06-17',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 8546,
-    status: 'paid',
-    date: '2023-06-07',
-  },
-  {
-    customer_id: customers[1].id,
-    amount: 500,
-    status: 'paid',
-    date: '2023-08-19',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 8945,
-    status: 'paid',
-    date: '2023-06-03',
-  },
-  {
-    customer_id: customers[2].id,
-    amount: 1000,
-    status: 'paid',
-    date: '2022-06-05',
+    name: "Webflow",
+    logo: "url",
   },
 ];
 
-const revenue = [
-  { month: 'Jan', revenue: 2000 },
-  { month: 'Feb', revenue: 1800 },
-  { month: 'Mar', revenue: 2200 },
-  { month: 'Apr', revenue: 2500 },
-  { month: 'May', revenue: 2300 },
-  { month: 'Jun', revenue: 3200 },
-  { month: 'Jul', revenue: 3500 },
-  { month: 'Aug', revenue: 3700 },
-  { month: 'Sep', revenue: 2500 },
-  { month: 'Oct', revenue: 2800 },
-  { month: 'Nov', revenue: 3000 },
-  { month: 'Dec', revenue: 4800 },
+const projects = [
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
+  {
+    title: "Wildcards",
+    description:
+      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://franckwebpro.github.io/wildcards.github.io/",
+    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    published: true,
+    status: "Terminé",
+  },
 ];
 
-export { users, customers, invoices, revenue };
+const projectsStacks = [
+  {
+    stack_id: 1,
+    project_id: 1,
+  },
+  {
+    stack_id: 2,
+    project_id: 2,
+  },
+  {
+    stack_id: 1,
+    project_id: 2,
+  },
+  {
+    stack_id: 2,
+    project_id: 1,
+  },
+  {
+    stack_id: 3,
+    project_id: 3,
+  },
+  {
+    stack_id: 3,
+    project_id: 5,
+  },
+  {
+    stack_id: 4,
+    project_id: 4,
+  },
+  {
+    stack_id: 5,
+    project_id: 5,
+  },
+];
+
+export { users, projects, stacks, projectsStacks };

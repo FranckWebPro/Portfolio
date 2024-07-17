@@ -20,7 +20,6 @@ export type Project = {
   preview_picture_url: string;
   link: string | undefined;
   github_repo: string | undefined;
-  date_created: Date;
   published: boolean;
   status: "finished" | "working on it";
 };
@@ -28,7 +27,12 @@ export type Project = {
 export type Stack = {
   id: number;
   name: string;
-  logo: number;
+  logo: string;
+};
+
+export type Project_Stack = {
+  stack_id: number;
+  project_id: number;
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function

@@ -1,6 +1,11 @@
+import { Stack } from "@/app/lib/definitions";
 import React from "react";
 
-export default function ProjectFormSection() {
+export default function ProjectFormSection({
+  stacks,
+}: {
+  stacks: Array<Stack>;
+}) {
   return (
     <section
       id="contact"
@@ -116,17 +121,21 @@ export default function ProjectFormSection() {
             required
           ></textarea>
         </div>
-        <div>
-          <label className="sr-only" htmlFor="phone">
-            Repo Github
-          </label>
-          <input
+        <label htmlFor="stacks" className="flex flex-col gap-2 text-center">
+          Technos du projet
+          <select
+            name="stacks"
+            id="stacks"
+            multiple
             className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
-            placeholder="Repo Github"
-            type="text"
-            id="github_repo"
-          />
-        </div>
+          >
+            {stacks.map((stack) => (
+              <option key={stack.id} value={stack.name}>
+                {stack.name}
+              </option>
+            ))}
+          </select>
+        </label>
 
         <div className="mt-4">
           <button

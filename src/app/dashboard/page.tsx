@@ -1,8 +1,21 @@
 import React from "react";
 import HeaderDashboard from "../ui/dashboard/headerDashboard";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
-import { Project } from "../lib/definitions";
+import { Project, Stack } from "../lib/definitions";
 import ProjectSection from "../ui/projectSection";
+
+const stacks: Array<Stack> = [
+  {
+    id: 1,
+    name: "Next.js",
+    logo: "url",
+  },
+  {
+    id: 2,
+    name: "javascript",
+    logo: "url",
+  },
+];
 
 const projects: Array<Project> = [
   {
@@ -60,7 +73,7 @@ export default function page() {
     <>
       <HeaderDashboard />
       <main className="w-full">
-        <ProjectFormSection />
+        <ProjectFormSection stacks={stacks} />
         <ProjectSection projects={projects} />
       </main>
     </>

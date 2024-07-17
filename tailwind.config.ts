@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import fluid from "fluid-tailwind";
 
 const config: Config = {
   content: [
@@ -35,6 +36,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [fluid],
 };
 export default config;

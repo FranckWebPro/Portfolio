@@ -20,6 +20,7 @@ export type Project = {
   preview_picture_url: string;
   link: string | undefined;
   github_repo: string | undefined;
+  date_created: Date;
   published: boolean;
   status: "finished" | "working on it";
 };

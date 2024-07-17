@@ -49,7 +49,7 @@ async function seedStacks() {
       async (stack) => client.sql`
         INSERT INTO stacks (name, logo)
         VALUES (${stack.name}, ${stack.logo})
-        ON CONFLICT (id) DO NOTHING;
+        ON CONFLICT (name) DO NOTHING;
       `
     )
   );
@@ -77,7 +77,7 @@ async function seedProjects() {
       async (project) => client.sql`
       INSERT INTO projects (title, description, client_name, preview_picture_url, link, github_repo, published, status)
       VALUES (${project.title}, ${project.description}, ${project.client_name}, ${project.preview_picture_url}, ${project.link}, ${project.github_repo}, ${project.published}, ${project.status})
-      ON CONFLICT (id) DO NOTHING;
+      ON CONFLICT (title) DO NOTHING;
     `
     )
   );
@@ -110,16 +110,16 @@ async function seedProjectsStacks() {
 }
 
 export async function GET() {
-  //   try {
-  //     await client.sql`BEGIN`;
-  //     await seedUsers();
-  //     await seedStacks();
-  //     await seedProjects();
-  //     await seedProjectsStacks();
-  //     await client.sql`COMMIT`;
-  //     return Response.json({ message: "Database seeded successfully" });
-  //   } catch (error) {
-  //     await client.sql`ROLLBACK`;
-  //     return Response.json({ error }, { status: 500 });
-  //   }
+  try {
+    await client.sql`BEGIN`;
+    await seedUsers();
+    await seedStacks();
+    await seedProjects();
+    await seedProjectsStacks();
+    await client.sql`COMMIT`;
+    return Response.json({ message: "Database seeded successfully" });
+  } catch (error) {
+    await client.sql`ROLLBACK`;
+    return Response.json({ error }, { status: 500 });
+  }
 }

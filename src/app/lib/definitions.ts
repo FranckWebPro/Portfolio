@@ -21,6 +21,7 @@ export type Project = {
   link: string | undefined;
   github_repo: string | undefined;
   date_created: Date;
+  published: boolean;
   status: "finished" | "working on it";
 };
 

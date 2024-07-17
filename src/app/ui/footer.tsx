@@ -3,11 +3,11 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+      <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
-            className="hover:bg-secondaryLight bg-secondaryColor text-lightColor inline-block rounded-full p-2 shadow transition sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
-            href="#MainContent"
+            className="hover:bg-secondaryLight bg-secondaryColor text-darkColor hover:text-lightColor inline-block rounded-full p-2 shadow transition sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
+            href="#hero"
           >
             <span className="sr-only">Back to top</span>
 
@@ -88,27 +88,27 @@ export default function Footer() {
             <li>
               <a
                 className="transition hover:text-gray-700/75 dark:hover:text-white/75"
-                href="#"
+                href="#experience"
               >
-                About
+                Expérience
               </a>
             </li>
 
             <li>
               <a
                 className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                href="#"
+                href="#technos"
               >
-                Services
+                Technos
               </a>
             </li>
 
             <li>
               <a
                 className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                href="#"
+                href="#projects"
               >
-                Projects
+                Projets
               </a>
             </li>
 
@@ -118,6 +118,14 @@ export default function Footer() {
                 href="#"
               >
                 Blog
+              </a>
+            </li>
+            <li>
+              <a
+                className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                href="/dashboard"
+              >
+                Me connecter
               </a>
             </li>
           </ul>

@@ -1,8 +1,8 @@
 "use client";
-
 import Link from "next/link";
+import React from "react";
 
-export default function Header() {
+export default function HeaderDashboard() {
   return (
     <header className="animate-blur fixed z-50 mx-auto h-16 w-full md:h-20">
       <nav className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between">
@@ -23,51 +23,19 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="hidden md:block">
-          <ul className="flex items-center gap-6 text-sm 2xl:text-base">
-            <li>
-              <Link
-                className="text-lightColor transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#experience"
-              >
-                Expérience
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#technos"
-              >
-                Technos
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#projects"
-              >
-                Projets
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="/blog"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <Link
+          className="text-lightColor transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+          href="/"
+        >
+          Retour à l'accueil
+        </Link>
 
         <div className="flex items-center gap-4 sm:flex">
           <a
             className="bg-secondaryColor hover:bg-secondaryLight hover:text-lightColor text-darkColor rounded-lg px-6 py-3 text-sm font-semibold shadow duration-300 2xl:text-base"
-            href="#contact"
+            href="/"
           >
-            Contactez moi
+            Déconnexion
           </a>
 
           <div className="block md:hidden">

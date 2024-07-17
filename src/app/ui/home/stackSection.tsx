@@ -2,7 +2,10 @@ import React from "react";
 
 export default function StackSection() {
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl items-center justify-center py-32 md:min-h-[calc(100vh-5rem)]">
+    <section
+      id="technos"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-screen-2xl items-center justify-center py-32 md:min-h-[calc(100vh-5rem)]"
+    >
       <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
         <div className="mx-auto text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
@@ -16,7 +19,7 @@ export default function StackSection() {
 
           <a
             href="#"
-            className="bg-primaryColor text-darkColor hover:bg-primaryLight mt-8 inline-block rounded-lg px-12 py-3 text-sm font-medium transition focus:outline-none focus:ring focus:ring-yellow-400"
+            className="bg-secondaryColor text-darkColor hover:text-lightColor hover:bg-secondaryLight mt-8 inline-block rounded-lg px-12 py-3 text-sm font-medium transition focus:outline-none focus:ring focus:ring-yellow-400"
           >
             Démarrez votre projet maintenant
           </a>

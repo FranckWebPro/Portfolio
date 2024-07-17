@@ -2,8 +2,11 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <section className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl grid-cols-1 items-center gap-x-12 gap-y-8 py-16 lg:grid-cols-5">
-      <div className="h-autp flex flex-col gap-3 lg:col-span-2 lg:py-12">
+    <section
+      id="contact"
+      className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl grid-cols-1 items-center gap-x-12 gap-y-8 py-16 lg:grid-cols-5"
+    >
+      <div className="flex flex-col gap-3 lg:col-span-2 lg:py-12">
         <h2 className="mb-6 max-w-80 text-3xl font-bold sm:text-4xl">
           Un projet de fou ? Discutons-en :
         </h2>

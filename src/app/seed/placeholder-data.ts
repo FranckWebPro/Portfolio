@@ -16,7 +16,7 @@ const users = [
   },
 ];
 
-export const stacks = [
+const stacks = [
   {
     name: "Next.js",
     logo: "https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png",

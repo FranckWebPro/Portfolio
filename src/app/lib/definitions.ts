@@ -11,6 +11,11 @@ export type User = {
   linkedin_link: string | undefined;
 };
 
+export type UserCredentials = {
+  email: string;
+  password: string;
+};
+
 export type Project = {
   id: number;
   title: string;

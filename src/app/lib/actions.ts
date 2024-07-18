@@ -3,6 +3,8 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { CreateProject } from "./validate";
+import { signIn } from "../../../auth";
+import { AuthError } from "next-auth";
 
 export async function addProject(formData: FormData) {
   const projectData = Object.fromEntries(formData.entries());
@@ -52,6 +54,7 @@ export async function addProject(formData: FormData) {
 
 export async function deleteProject(id: number) {
   try {
+    await sql`DELETE FROM projects_stacks WHERE project_id = ${id}`;
     await sql`DELETE FROM projects WHERE id = ${id}`;
     revalidatePath("/dashboard");
     revalidatePath("/");
@@ -69,5 +72,24 @@ export async function togglePublication(id: number, published: boolean) {
     return console.log("deleted project");
   } catch (error) {
     return { message: "Database Error: Failed to Delete project." };
+  }
+}
+
+export async function authenticate(
+  prevState: string | undefined,
+  formData: FormData
+) {
+  try {
+    await signIn("credentials", formData);
+  } catch (error) {
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case "CredentialsSignin":
+          return "Invalid credentials.";
+        default:
+          return "Something went wrong.";
+      }
+    }
+    throw error;
   }
 }

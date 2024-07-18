@@ -30,7 +30,7 @@ export default function Footer() {
 
         <div className="lg:flex lg:items-end lg:justify-between">
           <div>
-            <div className="flex justify-center text-primaryColor lg:justify-start dark:text-teal-300">
+            <div className="flex justify-center lg:justify-start">
               <Image
                 src={logo}
                 alt="logo FranckWebPro"
@@ -50,7 +50,7 @@ export default function Footer() {
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:hover:text-white/75"
+                className="transition duration-300 hover:text-secondaryColor dark:hover:text-lightColor/75"
                 href="#experience"
               >
                 Expérience
@@ -59,7 +59,7 @@ export default function Footer() {
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
+                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-white/75"
                 href="#technos"
               >
                 Technos
@@ -68,7 +68,7 @@ export default function Footer() {
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
+                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
                 href="#projects"
               >
                 Projets
@@ -77,7 +77,7 @@ export default function Footer() {
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
+                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
                 href="/blog"
               >
                 Blog
@@ -85,8 +85,8 @@ export default function Footer() {
             </li>
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
-                href="/dashboard"
+                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
+                href="/login"
               >
                 Me connecter
               </a>

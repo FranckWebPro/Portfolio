@@ -20,7 +20,7 @@ export type Project = {
   link: string | undefined;
   github_repo: string | undefined;
   published: boolean;
-  status: "finished" | "working on it";
+  status: "Terminé" | "En cours de développement";
 };
 
 export type Stack = {
@@ -29,6 +29,8 @@ export type Stack = {
   logo: string;
   stack_link: string;
 };
+
+export type StackForProject = Omit<Stack, "stack_link">;
 
 export interface ProjectWithStacks extends Project {
   project_stacks: Array<Stack>;

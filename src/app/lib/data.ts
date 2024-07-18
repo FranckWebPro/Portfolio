@@ -1,5 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { User, Stack, ProjectWithStacks } from "./definitions";
+
 // import { formatCurrency } from "./utils";
 
 export async function fetchUser() {
@@ -68,28 +69,5 @@ export async function fetchProjectsWithStacks() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch Project with stacks.");
-  }
-}
-
-export async function addProject({ newProject }) {
-  try {
-    const insertId = await sql`
-    INSERT INTO projects (title, description, client_name, preview_picture_url, link, github_repo, published, status) 
-    VALUES (${newProject.title}, ${newProject.description}, ${newProject.client_name}, ${newProject.preview_picture_url}, ${newProject.link}, ${newProject.github_repo}, ${newProject.published}, ${newProject.status})
-    `;
-
-    console.log(insertId);
-
-    for (let i = 0; i < newProject.stack_id; i++) {
-      await sql`
-        INSERT INTO projects_stacks (project_id, stack_id)
-        VALUES(${insertId}, ${newProject.stacks_id[i]})
-        `;
-    }
-
-    return insertId;
-  } catch (err) {
-    console.error("Database Error:", err);
-    throw new Error("Failed to send new project.");
   }
 }

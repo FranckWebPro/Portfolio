@@ -13,13 +13,13 @@ export async function POST(request: NextRequest) {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  const date = new Date(Date.now());
+  const date = new Date(Date.now()).toISOString().substring(0, 15);
   const newFileName = `${date}-${file.name}`;
 
-  const path = join(process.cwd(), "public", "assets", newFileName);
+  let path = join(process.cwd(), "public", "assets", newFileName);
   await writeFile(path, buffer, (error) => {
     if (error) throw error;
   });
-
-  return NextResponse.json({ success: true });
+  path = join("/", "assets", newFileName);
+  return NextResponse.json({ success: true, path: path });
 }

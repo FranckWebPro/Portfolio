@@ -1,11 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "www.drupal.org",
-      "upload.wikimedia.org",
-      "logowik.com",
-      "dailybrand.co.zw",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.drupal.org",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "logowik.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "dailybrand.co.zw",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

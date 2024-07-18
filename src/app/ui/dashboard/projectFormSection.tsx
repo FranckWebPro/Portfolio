@@ -1,53 +1,77 @@
 "use client";
 
+import { addProject } from "@/app/lib/actions";
 import { Stack } from "@/app/lib/definitions";
-import React, { useState } from "react";
+import React from "react";
 
 export default function ProjectFormSection({
   stacks,
 }: {
   stacks: Array<Stack>;
 }) {
-  const [file, setFile] = useState<File>();
+  //   const [file, setFile] = useState<File>();
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!file) return;
+  //   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //     event.preventDefault();
 
-    try {
-      const data = new FormData();
-      data.set("file", file);
+  //     const formData = new FormData(event.currentTarget);
 
-      const res = await fetch("/api/upload", { method: "POST", body: data });
+  //     console.log(Object.fromEntries(formData));
+
+  //     if (!file) return;
+  //     getImageUrlAndAddProject(formData, file);
+  //     try {
+  //     } catch (error: unknown) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const file = formData.get("preview_picture_url") as File | null;
+    if (file) {
+      const uploadData = new FormData();
+      uploadData.append("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: uploadData,
+      });
 
       if (!res.ok) {
         throw new Error(await res.text());
       }
-    } catch (error: unknown) {
-      console.error(error);
+
+      const imgPath = await res.json();
+      formData.set("preview_picture_url", imgPath.path);
     }
+    console.log(Object.fromEntries(formData));
+
+    await addProject(formData);
   };
 
   return (
     <section
       id="contact"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl items-center justify-center bg-[center_top_4rem] bg-no-repeat pt-20 *:mx-auto"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto md:gap-6"
     >
+      <h1 className="text-3xl md:text-4xl">Gestion des projets et technos</h1>
       <form
-        onSubmit={onSubmit}
-        className="w-full space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
+        onSubmit={handleSubmit}
+        className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
-        <div>
-          <label className="sr-only" htmlFor="name">
-            Titre *
-          </label>
-          <input
-            className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
-            placeholder="Titre *"
-            type="text"
-            id="titre"
-          />
-        </div>
+        <label className="sr-only" htmlFor="name">
+          Titre *
+        </label>
+        <input
+          className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+          placeholder="Titre *"
+          type="text"
+          id="title"
+          name="title"
+        />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -59,6 +83,7 @@ export default function ProjectFormSection({
               placeholder="Nom du client"
               type="text"
               id="client_name"
+              name="client_name"
             />
           </div>
           <div>
@@ -71,7 +96,8 @@ export default function ProjectFormSection({
               type="file"
               accept="image/*"
               id="preview_picture_url"
-              onChange={(e) => setFile(e.target.files?.[0])}
+              name="preview_picture_url"
+              required
             />
           </div>
           <div>
@@ -82,6 +108,7 @@ export default function ProjectFormSection({
               className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
               placeholder="Lien du projet"
               type="text"
+              name="link"
               id="link"
             />
           </div>
@@ -93,42 +120,45 @@ export default function ProjectFormSection({
               className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
               placeholder="Repo Github"
               type="text"
+              name="github_repo"
               id="github_repo"
             />
           </div>
         </div>
 
         <fieldset className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
-          <legend className="mb-3">Souhaitez vous publier ce projet ?</legend>
+          <legend className="mb-3">Status du projet</legend>
           <label
-            htmlFor="published"
-            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-lightColor"
+            htmlFor="finished"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-lightColor"
             tabIndex={0}
           >
             <input
               className="sr-only"
-              id="published"
+              id="finished"
               type="radio"
               tabIndex={-1}
-              name="published"
+              name="status"
+              value="Terminé"
             />
 
-            <span className="text-sm"> Publié </span>
+            <span className="text-sm"> Terminé </span>
           </label>
           <label
-            htmlFor="draft"
-            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-white"
+            htmlFor="working"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-white"
             tabIndex={0}
           >
             <input
               className="sr-only"
-              id="draft"
+              id="working"
               type="radio"
               tabIndex={-1}
-              name="published"
+              name="status"
+              value="En cours de développement"
             />
 
-            <span className="text-sm"> Brouillon </span>
+            <span className="text-sm"> En cours de développement </span>
           </label>
         </fieldset>
 
@@ -142,14 +172,15 @@ export default function ProjectFormSection({
             placeholder="Description *"
             rows={8}
             id="description"
+            name="description"
             required
           ></textarea>
         </div>
-        <label htmlFor="stacks" className="flex flex-col gap-2 text-center">
+        <label htmlFor="stacks_id" className="flex flex-col gap-2 text-center">
           Technos du projet
           <select
             name="stacks_id"
-            id="stacks"
+            id="stacks_id"
             multiple
             className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
           >
@@ -160,11 +191,18 @@ export default function ProjectFormSection({
             ))}
           </select>
         </label>
+        <label
+          htmlFor="published"
+          className="mt-4 flex w-full cursor-pointer flex-col gap-2 rounded-lg border border-gray-200 bg-transparent p-3 text-center text-base font-medium"
+        >
+          Publier le projet ?
+          <input type="checkbox" id="published" name="published" />
+        </label>
 
-        <div className="mt-4">
+        <div className="mt-4 flex w-full items-center justify-center">
           <button
             type="submit"
-            className="inline-block w-full rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
+            className="rounded-lg bg-secondaryColor px-10 py-4 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
           >
             Enregistrer ce projet
           </button>

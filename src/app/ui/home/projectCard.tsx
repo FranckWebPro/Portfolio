@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectWithStacks } from "@/app/lib/definitions";
+import { ProjectWithStacks, Stack } from "@/app/lib/definitions";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,8 +10,8 @@ export default function ProjectCard({
 }) {
   return (
     <div className="group relative block h-full min-h-80 w-full">
-      <div className="relative flex h-full transform items-end border border-secondaryColor bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-        <div className="p-4 pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+      <div className="relative flex h-full transform items-end bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+        <div className="p-4 pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="size-10 sm:size-12"
@@ -32,13 +32,13 @@ export default function ProjectCard({
           </h3>
         </div>
 
-        <div className="absolute flex flex-col gap-2 p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+        <div className="absolute flex flex-col gap-2 p-4 opacity-0 transition-opacity duration-300 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
           <p className="mt-4 text-sm sm:text-base">{project.description}</p>
           <ul className="flex items-center justify-evenly gap-2">
-            {project.project_stacks.map((stack) => (
+            {project.project_stacks.map((stack: Stack) => (
               <li key={stack.id}>
                 <Image
-                  src={stack.logo !== "url" ? stack.logo : ""}
+                  src={stack.logo}
                   width={60}
                   height={60}
                   alt={stack.name}
@@ -52,6 +52,7 @@ export default function ProjectCard({
               <li>
                 <Link
                   href={project.github_repo ? project.github_repo : ""}
+                  target="_blank"
                   className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
                 >
                   Voir le repo Github
@@ -62,6 +63,7 @@ export default function ProjectCard({
               <li>
                 <Link
                   href={project.link ? project.link : ""}
+                  target="_blank"
                   className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
                 >
                   Voir le projet

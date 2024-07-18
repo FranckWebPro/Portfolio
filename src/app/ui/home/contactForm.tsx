@@ -4,7 +4,7 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl"
+      className="mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl py-12"
     >
       <div className="grid max-w-screen-2xl grid-cols-1 items-center gap-x-12 gap-y-8 p-4 py-16 md:p-8 lg:grid-cols-5 lg:p-12">
         <div className="flex flex-col gap-3 lg:col-span-2 lg:py-12">
@@ -30,9 +30,15 @@ export default function ContactForm() {
         </div>
 
         <form
-          action="#"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           className="space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
         >
+          <input
+            type="hidden"
+            name="access_key"
+            value="280330b4-d8a3-4a40-b1bb-05c086f6cf92"
+          ></input>
           <div>
             <label className="sr-only" htmlFor="name">
               Name
@@ -42,6 +48,7 @@ export default function ContactForm() {
               placeholder="Nom *"
               type="text"
               id="name"
+              name="name"
             />
           </div>
 
@@ -55,6 +62,7 @@ export default function ContactForm() {
                 placeholder="Adresse email *"
                 type="email"
                 id="email"
+                name="email"
                 required
               />
             </div>
@@ -68,6 +76,7 @@ export default function ContactForm() {
                 placeholder="Numéro de téléphone"
                 type="tel"
                 id="phone"
+                name="phone"
               />
             </div>
           </div>
@@ -75,49 +84,49 @@ export default function ContactForm() {
           <fieldset className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
             <legend className="mb-3">Quel service vous intéresse ?</legend>
             <label
-              htmlFor="Option1"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
+              htmlFor="conseil"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
               tabIndex={0}
             >
               <input
                 className="sr-only"
-                id="Option1"
+                id="conseil"
                 type="radio"
                 tabIndex={-1}
                 name="option"
               />
 
-              <span className="text-sm"> Option 1 </span>
+              <span className="text-sm"> Conseil </span>
             </label>
             <label
-              htmlFor="Option2"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-lightColor"
+              htmlFor="dev"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-lightColor"
               tabIndex={0}
             >
               <input
                 className="sr-only"
-                id="Option2"
+                id="dev"
                 type="radio"
                 tabIndex={-1}
                 name="option"
               />
 
-              <span className="text-sm"> Option 2 </span>
+              <span className="text-sm"> Développement à partir de zéro </span>
             </label>
             <label
-              htmlFor="Option3"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
+              htmlFor="reprise"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
               tabIndex={0}
             >
               <input
                 className="sr-only"
-                id="Option3"
+                id="reprise"
                 type="radio"
                 tabIndex={-1}
                 name="option"
               />
 
-              <span className="text-sm"> Option 3 </span>
+              <span className="text-sm"> Maintenance </span>
             </label>
           </fieldset>
 
@@ -131,10 +140,11 @@ export default function ContactForm() {
               placeholder="Message *"
               rows={8}
               id="message"
+              name="message"
               required
             ></textarea>
           </div>
-
+          <input type="checkbox" name="botcheck" className="hidden" />
           <div className="mt-4">
             <button
               type="submit"

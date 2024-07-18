@@ -4,6 +4,18 @@ import { users, projects, stacks, projectsStacks } from "./placeholder-data";
 
 const client = await db.connect();
 
+async function dropTables() {
+  try {
+    await client.sql`DROP TABLE IF EXISTS projects_stacks CASCADE`;
+    await client.sql`DROP TABLE IF EXISTS projects CASCADE`;
+    await client.sql`DROP TABLE IF EXISTS stacks CASCADE`;
+    await client.sql`DROP TABLE IF EXISTS users CASCADE`;
+    console.log("Tables dropped successfully.");
+  } catch (error) {
+    console.error("Error dropping tables:", error);
+  }
+}
+
 async function seedUsers() {
   await client.sql`
     CREATE TABLE IF NOT EXISTS users (
@@ -20,6 +32,7 @@ async function seedUsers() {
       password TEXT NOT NULL
     );
   `;
+  console.log("Users table created.");
 
   const insertedUsers = await Promise.all(
     users.map(async (user) => {
@@ -39,29 +52,36 @@ async function seedStacks() {
   await client.sql`
     CREATE TABLE IF NOT EXISTS stacks (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        logo VARCHAR(255) NOT NULL
+        name VARCHAR(255) NOT NULL UNIQUE,
+        logo VARCHAR(255) NOT NULL,
+        stack_link VARCHAR(255) NOT NULL
     );
   `;
+  console.log("stack table created.");
 
   const insertedStacks = await Promise.all(
-    stacks.map(
-      async (stack) => client.sql`
-        INSERT INTO stacks (name, logo)
-        VALUES (${stack.name}, ${stack.logo})
-        ON CONFLICT (name) DO NOTHING;
-      `
-    )
+    stacks.map(async (stack) => {
+      const result = await client.sql`
+          INSERT INTO stacks (name, logo, stack_link)
+          VALUES (${stack.name}, ${stack.logo}, ${stack.stack_link})
+          ON CONFLICT (name) DO NOTHING;
+        `;
+      console.log(`Inserted stack: ${stack.name}`);
+      return result;
+    })
   );
+  console.log("Stacks inserted:", insertedStacks);
 
   return insertedStacks;
 }
 
 async function seedProjects() {
+  console.log("Creating projects table...");
+
   await client.sql`
   CREATE TABLE IF NOT EXISTS projects (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL UNIQUE,
     description TEXT NULL,
     client_name VARCHAR(255) NULL,
     preview_picture_url VARCHAR(255) NULL,
@@ -71,7 +91,7 @@ async function seedProjects() {
     status VARCHAR(255) NOT NULL
 );
   `;
-
+  console.log("project table created.");
   const insertedProjects = await Promise.all(
     projects.map(
       async (project) => client.sql`
@@ -95,7 +115,7 @@ async function seedProjectsStacks() {
         FOREIGN KEY (project_id) REFERENCES projects(id)
       );
     `;
-
+  console.log("projectStack table created.");
   const insertedProjectsStacks = await Promise.all(
     projectsStacks.map(
       async (projectStack) => client.sql`
@@ -112,6 +132,7 @@ async function seedProjectsStacks() {
 export async function GET() {
   try {
     await client.sql`BEGIN`;
+    await dropTables();
     await seedUsers();
     await seedStacks();
     await seedProjects();

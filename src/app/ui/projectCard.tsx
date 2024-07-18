@@ -1,10 +1,16 @@
 import React from "react";
-import { Project } from "@/app/lib/definitions";
+import { ProjectWithStacks } from "@/app/lib/definitions";
+import Link from "next/link";
+import Image from "next/image";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+}: {
+  project: ProjectWithStacks;
+}) {
   return (
-    <a href="#" className="group relative block h-full min-h-80 w-full">
-      <div className="relative flex h-full transform items-end border-2 border-primaryColor bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+    <div className="group relative block h-full min-h-80 w-full">
+      <div className="relative flex h-full transform items-end border border-secondaryColor bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
         <div className="p-4 pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +32,40 @@ export default function ProjectCard({ project }: { project: Project }) {
           </h3>
         </div>
 
-        <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+        <div className="absolute flex flex-col gap-2 p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
           <p className="mt-4 text-sm sm:text-base">{project.description}</p>
+          <ul className="flex items-center justify-evenly gap-2">
+            {project.project_stacks.map((stack) => (
+              <li key={stack.id}>
+                <Image src={stack.logo} alt={stack.name} />
+              </li>
+            ))}
+          </ul>
 
-          <p className="mt-8 font-bold text-secondaryLight">
-            Cliquez pour voir le projet
-          </p>
+          <ul className="flex items-center justify-evenly gap-4">
+            {project.github_repo && (
+              <li>
+                <Link
+                  href={project.github_repo ? project.github_repo : ""}
+                  className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
+                >
+                  Voir le repo Github
+                </Link>
+              </li>
+            )}
+            {project.link && (
+              <li>
+                <Link
+                  href={project.link ? project.link : ""}
+                  className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
+                >
+                  Voir le projet
+                </Link>
+              </li>
+            )}
+          </ul>
         </div>
       </div>
-    </a>
+    </div>
   );
 }

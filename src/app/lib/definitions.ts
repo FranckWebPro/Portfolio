@@ -8,8 +8,7 @@ export type User = {
   long_description: string | undefined;
   picture_url: string | undefined;
   github_link: string;
-  linkedin_url: string | undefined;
-  password: string;
+  linkedin_link: string | undefined;
 };
 
 export type Project = {
@@ -28,14 +27,14 @@ export type Stack = {
   id: number;
   name: string;
   logo: string;
+  stack_link: string;
 };
+
+export interface ProjectWithStacks extends Project {
+  project_stacks: Array<Stack>;
+}
 
 export type Project_Stack = {
   stack_id: number;
   project_id: number;
-};
-
-// The database returns a number for amount, but we later format it to a string with the formatCurrency function
-export type ProjectRaw = Omit<Project, "amount"> & {
-  amount: number;
 };

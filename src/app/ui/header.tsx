@@ -15,7 +15,6 @@ export default function Header() {
             src={logo}
             alt="logo FranckWebPro"
             className="~h-16/20 ~w-16/20"
-            objectFit="contain"
             width={80}
             height={80}
             sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"

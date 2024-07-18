@@ -16,42 +16,52 @@ const users = [
   },
 ];
 
-const stacks = [
+export const stacks = [
   {
     name: "Next.js",
-    logo: "url",
+    logo: "https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png",
+    stack_link: "https://nextjs.org/",
   },
   {
     name: "React",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    stack_link: "https://fr.react.dev/",
   },
   {
     name: "Node.js",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/langfr-120px-Node.js_logo.svg.png",
+    stack_link: "https://nodejs.org/fr",
   },
   {
+    id: 1,
     name: "Express",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+    stack_link: "https://expressjs.com/fr/",
   },
   {
     name: "Javascript",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png",
+    stack_link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
   },
   {
     name: "Tailwind",
-    logo: "url",
+    logo: "https://logowik.com/content/uploads/images/tailwind-css3232.logowik.com.webp",
+    stack_link: "https://tailwindcss.com/",
   },
   {
     name: "CSS",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/langfr-130px-CSS3_logo_and_wordmark.svg.png",
+    stack_link: "https://developer.mozilla.org/fr/docs/Web/CSS",
   },
   {
     name: "HTML",
-    logo: "url",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/langfr-130px-HTML5_logo_and_wordmark.svg.png",
+    stack_link: "https://developer.mozilla.org/fr/docs/Web/HTML",
   },
   {
     name: "Webflow",
-    logo: "url",
+    logo: "https://dailybrand.co.zw/wp-content/uploads/2023/10/webflow-2.png",
+    stack_link: "https://webflow.com/",
   },
 ];
 
@@ -68,59 +78,93 @@ const projects = [
     status: "Terminé",
   },
   {
-    title: "Wildcards",
+    title: "ToDo-List JS",
     description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+      "Entrainement lors de ma formation JS natif avec un to-do list classique",
     client_name: null,
     preview_picture_url: "url",
-    link: "https://franckwebpro.github.io/wildcards.github.io/",
-    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    link: "",
+    github_repo: "https://github.com/FranckWebPro/ToDoList-JS",
     published: true,
     status: "Terminé",
   },
   {
-    title: "Wildcards",
+    title: "Todo-List React",
     description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+      "Entrainement lors de ma formation a React avec un to-do list, reprise du style de la première to-do list",
     client_name: null,
     preview_picture_url: "url",
-    link: "https://franckwebpro.github.io/wildcards.github.io/",
-    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    link: "",
+    github_repo: "https://github.com/FranckWebPro/ToDoList-React",
     published: true,
     status: "Terminé",
   },
   {
-    title: "Wildcards",
+    title: "Cocktail Club",
     description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+      "Second projet de formation à la Wild Code School, développer avec React, HTML, CSS et appel d'API externe",
     client_name: null,
     preview_picture_url: "url",
-    link: "https://franckwebpro.github.io/wildcards.github.io/",
-    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    link: "https://js-bdx-0224-p2-cocktail-club-client-7ljk.vercel.app/",
+    github_repo:
+      "https://github.com/WildCodeSchool-2024-02/JS-bdx-0224-P2-cocktail_club",
     published: true,
     status: "Terminé",
   },
   {
-    title: "Wildcards",
+    title: "Senior Sanctuary",
     description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+      "Projet 'Hackaton' interne à la Wild Code School de deux jours, une application de dévouverte des pays adapté pour la retraite, réalisé avec des élèves Data Analyst",
     client_name: null,
     preview_picture_url: "url",
-    link: "https://franckwebpro.github.io/wildcards.github.io/",
-    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    link: "https://senior-sanctuary.webflow.io/",
+    github_repo: "https://github.com/FranckWebPro/senior-sanctuary",
     published: true,
     status: "Terminé",
   },
   {
-    title: "Wildcards",
+    title: "Le guide du Roulard",
     description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+      "Deuxième hackaton de la Wild Code School, avec pour sujet l'inclusivité sur le web, nous avons réalisé ce guide de voyage avec une note d'acessibilité, réalisé avec une designer et des data analyst ",
     client_name: null,
     preview_picture_url: "url",
-    link: "https://franckwebpro.github.io/wildcards.github.io/",
-    github_repo: "https://github.com/FranckWebPro/wildcards.github.io",
+    link: "",
+    github_repo: "https://github.com/Phil-BENISSAN/0224-hackathon-team1",
     published: true,
     status: "Terminé",
+  },
+  {
+    title: "Ce Portfolio",
+    description:
+      "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://portfolio-rho-flax-60.vercel.app/",
+    github_repo: "https://github.com/FranckWebPro/Portfolio",
+    published: true,
+    status: "En amélioration constante",
+  },
+  {
+    title: "Agence No Code",
+    description:
+      "Site d'Agence Webflow que j'ai développé afin de trouver des clients en tant que freelance pour du no code et SEO, avec Webflow principalement",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "https://www.agencenocode.com/",
+    github_repo: "",
+    published: true,
+    status: "En cours de développement",
+  },
+  {
+    title: "LinkerFlow",
+    description:
+      "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
+    client_name: null,
+    preview_picture_url: "url",
+    link: "",
+    github_repo: "",
+    published: false,
+    status: "En cours de développement",
   },
 ];
 

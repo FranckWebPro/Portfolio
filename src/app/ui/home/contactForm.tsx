@@ -19,7 +19,7 @@ export default function ContactForm() {
 
           <a
             href="mailto:contact@franckwebpro.com"
-            className="text-2xl font-bold text-secondaryColor"
+            className="text-2xl font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
           >
             contact@franckwebpro.com
           </a>
@@ -76,7 +76,7 @@ export default function ContactForm() {
             <legend className="mb-3">Quel service vous intéresse ?</legend>
             <label
               htmlFor="Option1"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-primaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
               tabIndex={0}
             >
               <input
@@ -138,7 +138,7 @@ export default function ContactForm() {
           <div className="mt-4">
             <button
               type="submit"
-              className="inline-block w-full rounded-lg bg-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 hover:bg-secondaryLight sm:w-auto"
+              className="inline-block w-full rounded-lg bg-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
             >
               Envoyez moi vos mots doux
             </button>

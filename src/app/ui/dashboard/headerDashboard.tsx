@@ -15,7 +15,6 @@ export default function HeaderDashboard() {
               src={logo}
               alt="logo FranckWebPro"
               className="~h-16/20 ~w-16/20"
-              objectFit="contain"
               width={80}
               height={80}
               sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
@@ -24,7 +23,7 @@ export default function HeaderDashboard() {
         </div>
 
         <Link
-          className="text-lightColor transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+          className="text-lightColor transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
           href="/"
         >
           Retour à l'accueil

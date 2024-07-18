@@ -71,11 +71,21 @@ export async function fetchProjectsWithStacks() {
   }
 }
 
-export async function addProject() {
+export async function addProject({ newProject }) {
   try {
     const insertId = await sql`
-      INSERT INTO project (name)
+    INSERT INTO projects (title, description, client_name, preview_picture_url, link, github_repo, published, status) 
+    VALUES (${newProject.title}, ${newProject.description}, ${newProject.client_name}, ${newProject.preview_picture_url}, ${newProject.link}, ${newProject.github_repo}, ${newProject.published}, ${newProject.status})
     `;
+
+    console.log(insertId);
+
+    for (let i = 0; i < newProject.stack_id; i++) {
+      await sql`
+        INSERT INTO projects_stacks (project_id, stack_id)
+        VALUES(${insertId}, ${newProject.stacks_id[i]})
+        `;
+    }
 
     return insertId;
   } catch (err) {

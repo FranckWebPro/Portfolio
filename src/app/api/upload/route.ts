@@ -13,12 +13,13 @@ export async function POST(request: NextRequest) {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  const path = join("/", "tmp", file.name);
+  const date = new Date(Date.now());
+  const newFileName = `${date}-${file.name}`;
+
+  const path = join(process.cwd(), "public", "assets", newFileName);
   await writeFile(path, buffer, (error) => {
     if (error) throw error;
-    console.log("The file has been saved!");
   });
-  console.log(`open ${path} to see the uploadedd file`);
 
   return NextResponse.json({ success: true });
 }

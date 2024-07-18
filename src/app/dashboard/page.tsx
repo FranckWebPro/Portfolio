@@ -3,22 +3,22 @@ import HeaderDashboard from "../ui/dashboard/headerDashboard";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
 import { ProjectWithStacks, Stack } from "../lib/definitions";
 import ProjectSection from "../ui/projectSection";
-import { fetchProjectsWithStacks } from "../lib/data";
+import { fetchProjectsWithStacks, fetchStacks } from "../lib/data";
 
-const stacksArray: Array<Stack> = [
-  {
-    id: 1,
-    name: "Next.js",
-    logo: "url",
-    stack_link: "url",
-  },
-  {
-    id: 2,
-    name: "javascript",
-    logo: "url",
-    stack_link: "url",
-  },
-];
+// const stacksArray: Array<Stack> = [
+//   {
+//     id: 1,
+//     name: "Next.js",
+//     logo: "url",
+//     stack_link: "url",
+//   },
+//   {
+//     id: 2,
+//     name: "javascript",
+//     logo: "url",
+//     stack_link: "url",
+//   },
+// ];
 
 // const projects: Array<Project> = [
 //   {
@@ -68,8 +68,8 @@ const stacksArray: Array<Stack> = [
 // ];
 
 export default async function page() {
-  //   const users = await fetchUser();
   const projects: Array<ProjectWithStacks> = await fetchProjectsWithStacks();
+  const stacksArray: Array<Stack> = await fetchStacks();
 
   return (
     <>

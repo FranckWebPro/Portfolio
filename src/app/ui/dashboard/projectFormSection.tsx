@@ -148,13 +148,13 @@ export default function ProjectFormSection({
         <label htmlFor="stacks" className="flex flex-col gap-2 text-center">
           Technos du projet
           <select
-            name="stacks"
+            name="stacks_id"
             id="stacks"
             multiple
             className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
           >
             {stacks.map((stack) => (
-              <option key={stack.id} value={stack.name}>
+              <option key={stack.id} value={stack.id}>
                 {stack.name}
               </option>
             ))}

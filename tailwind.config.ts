@@ -36,6 +36,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [fluid],
+  plugins: [fluid({ checkSC144: false })],
 };
 export default config;

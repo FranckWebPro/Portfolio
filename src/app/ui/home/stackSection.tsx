@@ -20,7 +20,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
           </p>
 
           <a
-            href="#"
+            href="#contact"
             className="mt-8 inline-block rounded-lg bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor transition duration-300 hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring focus:ring-yellow-400"
           >
             Démarrez votre projet maintenant
@@ -31,13 +31,18 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
           {stacks.map((stack) => (
             <a
               className="block rounded-xl border border-gray-100 bg-glassmorphism bg-center p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-              href={stack.logo !== "url" ? stack.logo : ""}
+              href={stack.stack_link !== "url" ? stack.stack_link : ""}
               target="_blank"
               rel="noreferrer"
               key={stack.id}
             >
               <span className="inline-block rounded-lg bg-darkColor p-3">
-                <Image src={stack.stack_link} alt={`${stack.name} logo`} />
+                <Image
+                  src={stack.logo !== "url" ? stack.logo : ""}
+                  width={60}
+                  height={60}
+                  alt={`${stack.name} logo`}
+                />
               </span>
 
               <h2 className="mt-2 font-bold">{stack.name}</h2>

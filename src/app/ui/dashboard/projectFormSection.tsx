@@ -1,18 +1,40 @@
+"use client";
+
 import { Stack } from "@/app/lib/definitions";
-import React from "react";
+import React, { useState } from "react";
 
 export default function ProjectFormSection({
   stacks,
 }: {
   stacks: Array<Stack>;
 }) {
+  const [file, setFile] = useState<File>();
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!file) return;
+
+    try {
+      const data = new FormData();
+      data.set("file", file);
+
+      const res = await fetch("/api/upload", { method: "POST", body: data });
+
+      if (!res.ok) {
+        throw new Error(await res.text());
+      }
+    } catch (error: unknown) {
+      console.error(error);
+    }
+  };
+
   return (
     <section
       id="contact"
       className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl items-center justify-center bg-[center_top_4rem] bg-no-repeat pt-20 *:mx-auto"
     >
       <form
-        action="#"
+        onSubmit={onSubmit}
         className="w-full space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
         <div>
@@ -47,7 +69,9 @@ export default function ProjectFormSection({
               className="w-full cursor-pointer rounded-lg border border-gray-200 bg-transparent p-3 text-sm file:mr-2 file:border-none"
               placeholder="Image du projet *"
               type="file"
+              accept="image/*"
               id="preview_picture_url"
+              onChange={(e) => setFile(e.target.files?.[0])}
             />
           </div>
           <div>

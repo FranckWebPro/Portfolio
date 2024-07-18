@@ -3,7 +3,7 @@ import HeaderDashboard from "../ui/dashboard/headerDashboard";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
 import { ProjectWithStacks, Stack } from "../lib/definitions";
 import ProjectSection from "../ui/projectSection";
-import { fetchProjectsWithStacks, fetchUser } from "../lib/data";
+import { fetchProjectsWithStacks } from "../lib/data";
 
 const stacks: Array<Stack> = [
   {
@@ -68,7 +68,7 @@ const stacks: Array<Stack> = [
 // ];
 
 export default async function page() {
-  const users = await fetchUser();
+  //   const users = await fetchUser();
   const projects: Array<ProjectWithStacks> = await fetchProjectsWithStacks();
 
   return (
@@ -76,7 +76,7 @@ export default async function page() {
       <HeaderDashboard />
       <main className="w-full">
         <ProjectFormSection stacks={stacks} />
-        <ProjectSection projects={projects} users={users} />
+        <ProjectSection projects={projects} />
       </main>
     </>
   );

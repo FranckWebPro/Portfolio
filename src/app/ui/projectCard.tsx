@@ -37,7 +37,12 @@ export default function ProjectCard({
           <ul className="flex items-center justify-evenly gap-2">
             {project.project_stacks.map((stack) => (
               <li key={stack.id}>
-                <Image src={stack.logo} alt={stack.name} />
+                <Image
+                  src={stack.logo !== "url" ? stack.logo : ""}
+                  width={60}
+                  height={60}
+                  alt={stack.name}
+                />
               </li>
             ))}
           </ul>

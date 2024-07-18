@@ -24,10 +24,10 @@ export async function fetchUser() {
   }
 }
 
-export async function fetchStacks() {
+export async function fetchStacks(): Promise<Stack[]> {
   try {
     const data = await sql<Stack[]>`SELECT * FROM stacks`;
-    return data.rows;
+    return data.rows as unknown as Stack[];
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch the latest stacks.");
@@ -39,7 +39,7 @@ export async function fetchProjectsWithStacks() {
   //   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
   try {
-    const invoices = await sql<ProjectWithStacks>`
+    const projectWithStacks = await sql<ProjectWithStacks>`
       SELECT
         projects.id,
         projects.title,
@@ -64,7 +64,7 @@ export async function fetchProjectsWithStacks() {
      ORDER BY projects.id ASC
     `;
 
-    return invoices.rows;
+    return projectWithStacks.rows;
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch Project with stacks.");
@@ -73,16 +73,11 @@ export async function fetchProjectsWithStacks() {
 
 export async function addProject() {
   try {
-    const data = await sql`
-      SELECT
-        id,
-        name
-      FROM customers
-      ORDER BY name ASC
+    const insertId = await sql`
+      INSERT INTO project (name)
     `;
 
-    const customers = data.rows;
-    return customers;
+    return insertId;
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to send new project.");

@@ -63,7 +63,7 @@ export default function Header() {
             className="rounded-lg bg-secondaryColor px-6 py-3 text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:text-lightColor 2xl:text-base"
             href="#contact"
           >
-            Contactez moi
+            Contactez-moi
           </a>
 
           <button className="block h-full rounded p-2 text-secondaryColor transition hover:text-gray-600/75 md:hidden dark:bg-gray-800 dark:text-white dark:hover:text-white/75">

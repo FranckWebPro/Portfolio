@@ -33,7 +33,6 @@ export const stacks = [
     stack_link: "https://nodejs.org/fr",
   },
   {
-    id: 1,
     name: "Express",
     logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
     stack_link: "https://expressjs.com/fr/",

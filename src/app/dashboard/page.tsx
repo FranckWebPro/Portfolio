@@ -5,7 +5,7 @@ import { ProjectWithStacks, Stack } from "../lib/definitions";
 import ProjectSection from "../ui/projectSection";
 import { fetchProjectsWithStacks } from "../lib/data";
 
-const stacks: Array<Stack> = [
+const stacksArray: Array<Stack> = [
   {
     id: 1,
     name: "Next.js",
@@ -75,7 +75,7 @@ export default async function page() {
     <>
       <HeaderDashboard />
       <main className="w-full">
-        <ProjectFormSection stacks={stacks} />
+        <ProjectFormSection stacks={stacksArray} />
         <ProjectSection projects={projects} />
       </main>
     </>

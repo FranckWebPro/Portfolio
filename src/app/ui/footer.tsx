@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
-            className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition hover:bg-secondaryLight hover:text-lightColor sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
+            className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition duration-300 hover:bg-secondaryLight hover:text-lightColor sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300 dark:hover:bg-gray-600"
             href="#hero"
           >
             <span className="sr-only">Back to top</span>
@@ -42,8 +42,7 @@ export default function Footer() {
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed lg:text-left dark:text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-              consequuntur amet culpa cum itaque neque.
+              Le développement web au service de votre business
             </p>
           </div>
 

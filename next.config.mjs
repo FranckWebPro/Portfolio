@@ -26,6 +26,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "uploads-ssl.webflow.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

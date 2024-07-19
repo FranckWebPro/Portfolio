@@ -7,19 +7,22 @@ export default function ExperienceSection() {
       className="mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center bg-glassmorphism bg-center bg-no-repeat py-32 md:min-h-[calc(100vh-5rem)]"
     >
       <div className="max-w-screen-2xl p-4 py-8 sm:py-12 md:p-8 lg:p-12 lg:py-16">
-        <div className="max-w-xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">Mon expérience</h2>
+        <div className="mx-auto max-w-xl">
+          <h2 className="text-center text-3xl font-bold md:text-4xl">
+            Mon expérience
+          </h2>
 
-          <p className="mt-4 text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            dolores iure fugit totam iste obcaecati. Consequatur ipsa quod ipsum
-            sequi culpa delectus, cumque id tenetur quibusdam, quos fuga minima.
+          <p className="mt-4 text-center text-gray-300">
+            Ancien fusilier parachutiste passionné par le monde du web et
+            l'entrepreneuriat, je me suis reconverti comme développeur web
+            freelance. Je développe aussi mes propres logiciels notamment
+            LinkerFlow, mon projet actuel.
           </p>
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
           <div className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56">
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
+            <span className="shrink-0 rounded-lg p-4">
               <svg
                 className="h-5 w-5"
                 fill="none"
@@ -39,7 +42,9 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                LinkerFlow, SaaS outil Webflow
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
@@ -70,7 +75,9 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                Formation développeur web, Wild Code School
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
@@ -101,7 +108,9 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                Agence No Code, mon agence Webflow
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
@@ -132,7 +141,9 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                Spylead, Site de listing produit tech
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
@@ -163,12 +174,14 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                Développeur Webflow freelance
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                cumque tempore est ab possimus quisquam reiciendis tempora
-                animi! Quaerat, saepe?
+                Lors de la fin de mon contrat je souhaite me reconvertir dans le
+                web, je me forme en autodidacte sur Webflow et propose mes
+                services en tant que freelance.
               </p>
             </div>
           </div>
@@ -194,12 +207,16 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+              <h2 className="text-lg font-bold">
+                Fusilier parachutiste, Armée de l'Air
+              </h2>
 
               <p className="mt-1 text-sm text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                cumque tempore est ab possimus quisquam reiciendis tempora
-                animi! Quaerat, saepe?
+                Après plus d'un an de réserve je m'engage en tant qu'élève
+                pilote dans l'Armée de l'Air... Souhaitant plus d'action et de
+                travail physique je change de spécialité pour rentré chez les
+                fusilier parachutiste et effectu de nombreux stages de
+                formations.
               </p>
             </div>
           </div>

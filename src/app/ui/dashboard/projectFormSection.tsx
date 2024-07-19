@@ -9,23 +9,6 @@ export default function ProjectFormSection({
 }: {
   stacks: Array<Stack>;
 }) {
-  //   const [file, setFile] = useState<File>();
-
-  //   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault();
-
-  //     const formData = new FormData(event.currentTarget);
-
-  //     console.log(Object.fromEntries(formData));
-
-  //     if (!file) return;
-  //     getImageUrlAndAddProject(formData, file);
-  //     try {
-  //     } catch (error: unknown) {
-  //       console.error(error);
-  //     }
-  //   };
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 

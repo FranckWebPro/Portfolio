@@ -8,7 +8,7 @@ export default function ContactForm() {
     >
       <div className="grid max-w-screen-2xl grid-cols-1 items-center gap-x-12 gap-y-8 p-4 py-16 md:p-8 lg:grid-cols-5 lg:p-12">
         <div className="flex flex-col gap-3 lg:col-span-2 lg:py-12">
-          <h2 className="mb-6 max-w-80 text-3xl font-bold sm:text-4xl">
+          <h2 className="mb-6 max-w-80 text-3xl font-bold md:text-4xl">
             Un projet de fou ? Discutons-en :
           </h2>
           <p className="mb-4 max-w-xl text-lg">
@@ -111,7 +111,7 @@ export default function ContactForm() {
                 name="option"
               />
 
-              <span className="text-sm"> Développement à partir de zéro </span>
+              <span className="text-sm"> Développement web </span>
             </label>
             <label
               htmlFor="reprise"

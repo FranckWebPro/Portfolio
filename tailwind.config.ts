@@ -18,9 +18,9 @@ const config: Config = {
         glassmorphism2: "url('/bg3.webp')",
       },
       colors: {
-        primaryColor: "#f464e3",
-        primaryLight: "#f464e3cc",
-        primaryExtraLight: "#f464e399",
+        primaryColor: "#9037ea",
+        primaryLight: "#9037eacc",
+        primaryExtraLight: "#9037ea99",
         secondaryColor: "#10ddf7",
         secondaryLight: "rgba(16, 221, 247, 0.7)",
         darkColor: "#0e0e0e",

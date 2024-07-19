@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "./images/logoLight.png";
+import logo from "./ui/images/logoLight.png";
 
 export default function Header() {
   return (
@@ -60,13 +60,13 @@ export default function Header() {
 
         <div className="flex items-center gap-4 sm:flex">
           <a
-            className="rounded-lg bg-secondaryColor px-6 py-3 text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:text-lightColor 2xl:text-base"
+            className="rounded-lg bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6 py-3 text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:bg-gradient-to-r hover:text-lightColor 2xl:text-base"
             href="#contact"
           >
             Contactez-moi
           </a>
 
-          <button className="block h-full rounded p-2 text-secondaryColor transition hover:text-gray-600/75 md:hidden dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
+          <button className="block h-full rounded p-2 text-secondaryColor transition hover:text-gray-600/75 md:hidden dark:bg-secondaryColor dark:text-white dark:hover:text-white/75">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-10 w-10"

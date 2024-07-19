@@ -27,7 +27,7 @@ export default function ProjectCard({
           </h3>
         </div>
 
-        <div className="shadow-[inset_10px_5px_10px_-15px_rgba(16, 221, 247, 0.8)] absolute top-0 flex h-full w-full flex-col items-center justify-center gap-2 border-2 border-secondaryLight bg-black/[.4] p-4 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+        <div className="shadow-[inset_10px_5px_10px_-15px_rgba(16, 221, 247, 0.8)] absolute top-0 flex h-full w-full flex-col items-center justify-center gap-2 border-2 border-primaryLight bg-black/[.4] p-4 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
           <p className="mt-4 text-sm sm:text-base">{project.description}</p>
           <ul className="flex items-center justify-evenly gap-2">
             {project.project_stacks.map((stack: Stack) => (
@@ -48,7 +48,7 @@ export default function ProjectCard({
                 <Link
                   href={project.github_repo ? project.github_repo : ""}
                   target="_blank"
-                  className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
+                  className="mt-8 font-bold text-primaryLight drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
                 >
                   Voir le repo Github
                 </Link>
@@ -59,7 +59,7 @@ export default function ProjectCard({
                 <Link
                   href={project.link ? project.link : ""}
                   target="_blank"
-                  className="mt-8 font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
+                  className="mt-8 font-bold text-primaryLight drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
                 >
                   Voir le projet
                 </Link>

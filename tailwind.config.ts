@@ -19,7 +19,7 @@ const config: Config = {
       },
       colors: {
         primaryColor: "#9037ea",
-        primaryLight: "#9037eacc",
+        primaryLight: "#cb98ffcc",
         primaryExtraLight: "#9037ea99",
         secondaryColor: "#10ddf7",
         secondaryLight: "rgba(16, 221, 247, 0.7)",

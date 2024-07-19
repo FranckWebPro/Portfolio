@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "./images/logoLight.png";
 import Image from "next/image";
+import { User } from "../lib/definitions";
+import logoLinkedin from "./images/linkedin.png";
+import logoGithub from "./images/logo-github.png";
 
-export default function Footer() {
+export default function Footer({ user }: { user: User }) {
   return (
     <footer className="w-full">
       <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
@@ -40,13 +43,32 @@ export default function Footer() {
                 sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
               />
             </div>
-
-            <p className="mx-auto mt-6 max-w-md text-center leading-relaxed lg:text-left dark:text-gray-400">
-              Le développement web au service de votre business
-            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-start gap-4">
+              <a href={user.linkedin_link} target="_blank" rel="noreferrer">
+                <Image
+                  src={logoLinkedin}
+                  width={45}
+                  height={45}
+                  alt="logo Linkedin"
+                  className="duration-300 hover:opacity-60"
+                />{" "}
+              </a>
+              <a href={user.github_link} target="_blank" rel="noreferrer">
+                <Image
+                  src={logoGithub}
+                  width={45}
+                  height={45}
+                  alt="logo github"
+                  className="rounded-lg bg-lightColor p-2 duration-300 hover:opacity-60"
+                />{" "}
+              </a>
+              <p className="mx-auto mr-6 w-full text-center leading-relaxed lg:text-left dark:text-gray-400">
+                Le développement web au service de votre business
+              </p>
+            </div>
           </div>
 
-          <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+          <ul className="mt-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
               <a
                 className="transition duration-300 hover:text-secondaryColor dark:hover:text-lightColor/75"
@@ -80,14 +102,6 @@ export default function Footer() {
                 href="/blog"
               >
                 Blog
-              </a>
-            </li>
-            <li>
-              <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
-                href="/login"
-              >
-                Me connecter
               </a>
             </li>
           </ul>

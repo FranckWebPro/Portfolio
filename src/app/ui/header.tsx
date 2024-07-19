@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "./ui/images/logoLight.png";
+import logo from "./images/logoLight.png";
 
 export default function Header() {
   return (

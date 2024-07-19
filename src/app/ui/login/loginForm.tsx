@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
 
-import {
-  AtSymbolIcon,
-  KeyIcon,
-} from "@heroicons/react/24/outline";
+import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/outline";
 
 export default function LoginForm() {
   return (

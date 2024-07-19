@@ -8,11 +8,11 @@ export default function ProjectSection({
   projects: Array<ProjectWithStacks>;
 }) {
   return (
-    <section id="projects" className="py-24">
-      <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
+    <section id="projects" className="pt-32">
+      <h2 className="my-4 text-center text-3xl font-bold md:text-4xl">
         Des projets de diiinnngue
       </h2>
-      <p className="text-center">
+      <p className="mb-8 text-center">
         Les projet que j'ai réalisé en formation, pour moi même et en tant que
         freelance
       </p>

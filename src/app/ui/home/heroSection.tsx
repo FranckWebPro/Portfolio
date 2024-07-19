@@ -1,8 +1,10 @@
+"use server";
+
 import Image from "next/image";
 import React from "react";
 import profilPicture from "../images/prprofil.png";
 
-export default function HeroSection() {
+export default async function HeroSection() {
   return (
     <section
       id="hero"
@@ -20,7 +22,7 @@ export default function HeroSection() {
           src={profilPicture}
           width={200}
           height={200}
-          alt="ma photo de profil"
+          alt="Photo de profil de Franck"
           className="absolute bottom-[20%] right-[15%] rounded-[1000px]"
         />
         <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
@@ -29,12 +31,14 @@ export default function HeroSection() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
+            href="/CVFG.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block w-full rounded-lg border-2 border-transparent bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor duration-300 hover:border-2 hover:border-secondaryColor hover:bg-transparent hover:text-lightColor focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-            href="#"
+            download
           >
             Télécharger mon CV
           </a>
-
           <a
             className="block w-full rounded-lg border border-secondaryColor px-12 py-3 text-sm font-medium text-lightColor duration-300 hover:bg-secondaryColor hover:text-darkColor focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
             href="#projects"

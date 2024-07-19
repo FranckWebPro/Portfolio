@@ -57,7 +57,9 @@ export default function ProjectFormSection({
       id="contact"
       className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto md:gap-6"
     >
-      <h1 className="text-3xl md:text-4xl">Gestion des projets et technos</h1>
+      <h1 className="mt-8 text-3xl md:text-4xl">
+        Gestion des projets et technos
+      </h1>
       <form
         onSubmit={handleSubmit}
         className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"

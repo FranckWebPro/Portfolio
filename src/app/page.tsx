@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="bg-darkColor text-lightColor">
+      <main className="w-full bg-darkColor text-lightColor">
         <HeroSection />
         <ExperienceSection />
         <StackSection stacks={stacks} />

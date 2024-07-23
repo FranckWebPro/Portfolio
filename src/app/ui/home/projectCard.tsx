@@ -16,7 +16,7 @@ export default function ProjectCard({
   };
 
   return (
-    <div className="group relative block h-full min-h-80 w-full">
+    <article className="group relative block h-full min-h-80 w-full">
       <div
         style={backgroundImg}
         className="relative flex h-full transform items-end bg-darkColor transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
@@ -48,7 +48,7 @@ export default function ProjectCard({
                 <Link
                   href={project.github_repo ? project.github_repo : ""}
                   target="_blank"
-                  className="mt-8 font-bold text-primaryLight drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
+                  className="mt-8 font-bold text-secondaryColor drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
                 >
                   Voir le repo Github
                 </Link>
@@ -59,7 +59,7 @@ export default function ProjectCard({
                 <Link
                   href={project.link ? project.link : ""}
                   target="_blank"
-                  className="mt-8 font-bold text-primaryLight drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
+                  className="mt-8 font-bold text-secondaryColor drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-300 hover:text-secondaryLight"
                 >
                   Voir le projet
                 </Link>
@@ -68,6 +68,6 @@ export default function ProjectCard({
           </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

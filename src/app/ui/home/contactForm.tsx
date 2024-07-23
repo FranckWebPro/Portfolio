@@ -12,19 +12,18 @@ export default function ContactForm() {
             Un projet de fou ? Discutons-en :
           </h2>
           <p className="mb-4 max-w-xl text-lg">
-            At the same time, the fact that we are wholly owned and totally
-            independent from manufacturer and other group control gives you
-            confidence that we will only recommend what is right for you.
+            Entreprise, start-up, indépendent... Je travail pour tout types de clients. 
+            Vous pouvez me contacter par mail ou bien par le formulaire, je vous répondrais au plus vite !
           </p>
 
           <a
             href="mailto:contact@franckwebpro.com"
-            className="text-2xl font-bold text-secondaryColor duration-300 hover:text-secondaryLight"
+            className="text-lg font-bold text-secondaryColor duration-300 hover:text-secondaryLight lg:text-2xl"
           >
             contact@franckwebpro.com
           </a>
 
-          <address className="mt-2 not-italic">
+          <address className="mt-2">
             Adresse: Le monde entier
           </address>
         </div>
@@ -36,15 +35,16 @@ export default function ContactForm() {
         >
           <input
             type="hidden"
+            aria-hidden
             name="access_key"
             value="280330b4-d8a3-4a40-b1bb-05c086f6cf92"
           ></input>
           <div>
             <label className="sr-only" htmlFor="name">
-              Name
+              Nom
             </label>
             <input
-              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
               placeholder="Nom *"
               type="text"
               id="name"
@@ -58,7 +58,7 @@ export default function ContactForm() {
                 Email
               </label>
               <input
-                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
                 placeholder="Adresse email *"
                 type="email"
                 id="email"
@@ -72,7 +72,7 @@ export default function ContactForm() {
                 Phone
               </label>
               <input
-                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
                 placeholder="Numéro de téléphone"
                 type="tel"
                 id="phone"
@@ -85,7 +85,7 @@ export default function ContactForm() {
             <legend className="mb-3">Quel service vous intéresse ?</legend>
             <label
               htmlFor="conseil"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-white"
               tabIndex={0}
             >
               <input
@@ -100,7 +100,7 @@ export default function ContactForm() {
             </label>
             <label
               htmlFor="dev"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-lightColor"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-lightColor"
               tabIndex={0}
             >
               <input
@@ -115,7 +115,7 @@ export default function ContactForm() {
             </label>
             <label
               htmlFor="reprise"
-              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryLight has-[:checked]:border-secondaryLight has-[:checked]:bg-black has-[:checked]:text-white"
+              className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-primaryLight has-[:checked]:border-primaryLight has-[:checked]:bg-black has-[:checked]:text-white"
               tabIndex={0}
             >
               <input
@@ -136,7 +136,7 @@ export default function ContactForm() {
             </label>
 
             <textarea
-              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
               placeholder="Message *"
               rows={8}
               id="message"
@@ -144,11 +144,11 @@ export default function ContactForm() {
               required
             ></textarea>
           </div>
-          <input type="checkbox" name="botcheck" className="hidden" />
+          <input aria-hidden type="checkbox" name="botcheck" className="hidden" />
           <div className="mt-4">
             <button
               type="submit"
-              className="inline-block w-full rounded-lg bg-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
+              className="inline-block w-full rounded-lg bg-secondaryColor border-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 border hover:bg-transparent hover:border-primaryLight hover:text-lightColor sm:w-auto"
             >
               Envoyez moi vos mots doux
             </button>

@@ -43,7 +43,7 @@ export default function Footer({ user }: { user: User }) {
                 sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
               />
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-start gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <a href={user.linkedin_link} target="_blank" rel="noreferrer">
                 <Image
                   src={logoLinkedin}

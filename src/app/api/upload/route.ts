@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  const date = new Date(Date.now()).toISOString().substring(0, 15);
+  const date = Date.now();
   const newFileName = `${date}-${file.name}`;
 
   let path = join(process.cwd(), "public", "assets", newFileName);

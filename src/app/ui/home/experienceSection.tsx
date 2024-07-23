@@ -116,7 +116,7 @@ export default function ExperienceSection() {
                 De fin 2023 à 2024 à 2024, j'ai travailler dur afin de trouver des clients en tant que freelance développeur Webflow, 
                 j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong> <abbr title="Search Engine Optimization"> (SEO) </abbr>
                 afin de faire monter mon propre site d'Agence Webflow 
-                ( <a href="https://www.agencenocode.com/" target="_blank" className="text-primaryColor hover:text-primaryLight duration-300">Agence No Code</a> ) , 
+                ( <a href="https://www.agencenocode.com/" target="_blank" rel="noreferrer" className="text-primaryColor hover:text-primaryLight duration-300">Agence No Code</a> ) , 
                 sur lequel je travaille aujourd'hui avec des partenaires en tant que freelance.
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function ExperienceSection() {
 
               <p className="mt-1 text-sm text-gray-300 leading-6">
                 Nous avons développé sur Webflow avec un associé, 
-                <a href="https://www.spylead.com/" target="_blank" className="text-primaryColor hover:text-primaryLight duration-300"> Spylead </a>, 
+                <a href="https://www.spylead.com/" target="_blank" rel="noreferrer" className="text-primaryColor hover:text-primaryLight duration-300"> Spylead </a>, 
                 un site de listing de produit tech, tel que les scraper google maps, les fournisseurs d'adresses IP...
               </p>
             </div>

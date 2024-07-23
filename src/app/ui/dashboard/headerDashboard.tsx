@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import logo from "../images/logoLight.png";
 
-export default function HeaderDashboard({login} : {login: boolean}) {
+export default function HeaderDashboard({login} : {login?: boolean}) {
   return (
     <header className="fixed z-50 mx-auto h-16 w-full animate-blur md:h-20">
       <nav className="mx-auto grid w-full grid-cols-[0.25fr,2fr,0.25fr] h-16 max-w-screen-2xl items-center justify-between">

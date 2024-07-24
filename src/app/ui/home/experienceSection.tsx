@@ -7,7 +7,7 @@ export default function ExperienceSection() {
       className="mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center bg-glassmorphism bg-center bg-no-repeat py-32 md:min-h-[calc(100vh-5rem)]"
     >
       <div className="w-full max-w-screen-2xl p-4 py-8 sm:py-12 md:p-8 lg:p-12 lg:py-16">
-        <hgroup className="mx-auto max-w-xl">
+        <hgroup className="mx-auto max-w-xl mb-8">
           <h2 className="text-center text-3xl font-bold md:text-4xl">
             Mon expérience
           </h2>
@@ -113,10 +113,11 @@ export default function ExperienceSection() {
               </h2>
 
               <p className="mt-1 text-sm text-gray-300 leading-6">
-                De fin 2023 à 2024 à 2024, j'ai travailler dur afin de trouver des clients en tant que freelance développeur Webflow, 
+                De fin 2023 à 2024, j'ai travaillé dur afin de trouver des clients en tant que freelance développeur Webflow, 
                 j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong> <abbr title="Search Engine Optimization"> (SEO) </abbr>
                 afin de faire monter mon propre site d'Agence Webflow 
-                ( <a href="https://www.agencenocode.com/" target="_blank" rel="noreferrer" className="text-primaryColor hover:text-primaryLight duration-300">Agence No Code</a> ) , 
+                ( <a href="https://www.agencenocode.com/" target="_blank" rel="noreferrer" className="text-primaryColor 
+                hover:text-primaryLight duration-300">Agence No Code</a> ) , 
                 sur lequel je travaille aujourd'hui avec des partenaires en tant que freelance.
               </p>
             </div>
@@ -182,8 +183,8 @@ export default function ExperienceSection() {
 
               <p className="mt-1 text-sm text-gray-300 leading-6">
                 Lors de la fin de mon contrat j'ai souhaité me reconvertir dans le
-                web, pour cela je me suis formé en autodidacte sur Webflow et j'ai pu proposé mes
-                services en tant que dévelopeur <strong>Webflow</strong> freelance.
+                web, pour cela je me suis formé en autodidacte sur Webflow et j'ai pu proposer mes
+                services en tant que développeur <strong>Webflow</strong> freelance.
               </p>
             </div>
           </div>
@@ -217,7 +218,7 @@ export default function ExperienceSection() {
                 Après plus d'un an de réserve je m'engage en tant qu'élève
                 pilote dans l'Armée de l'Air en 2017... Souhaitant plus d'action et de
                 travail physique je change de spécialité pour rentré chez les
-                fusilier parachutiste et effectu de nombreux stages de
+                fusiliers parachutistes et effectué de nombreux stages de
                 formations au cours de plus de 6 ans de services.
               </p>
             </div>

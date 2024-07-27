@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../images/logoLight.png";
+import AuthButton from "../login/authButton.server";
 
 export default function HeaderDashboard({login} : {login?: boolean}) {
   return (
@@ -29,12 +30,7 @@ export default function HeaderDashboard({login} : {login?: boolean}) {
           Retour à l'accueil
         </Link>
 
-          {!login && <a
-            className="rounded-lg bg-secondaryColor px-6 py-3 text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:text-lightColor 2xl:text-base"
-            href="/"
-          >
-            Déconnexion
-          </a>}
+          {!login && <AuthButton/>}
       </nav>
     </header>
   );

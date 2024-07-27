@@ -3,12 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../images/logoLight.png";
-import AuthButton from "../login/authButton.server";
 
-export default function HeaderDashboard({login} : {login?: boolean}) {
+export default function HeaderDashboard({ login }: { login?: boolean }) {
   return (
     <header className="fixed z-50 mx-auto h-16 w-full animate-blur md:h-20">
-      <nav className="mx-auto grid w-full grid-cols-[0.25fr,2fr,0.25fr] h-16 max-w-screen-2xl items-center justify-between">
+      <nav className="mx-auto grid h-16 w-full max-w-screen-2xl grid-cols-[0.25fr,2fr,0.25fr] items-center justify-between">
         <div className="md:flex md:items-center md:gap-12">
           <Link className="block text-teal-600 dark:text-teal-600" href="/">
             <span className="sr-only">Home</span>
@@ -24,13 +23,11 @@ export default function HeaderDashboard({login} : {login?: boolean}) {
         </div>
 
         <Link
-          className="text-lightColor transition duration-300 text-center hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
+          className="text-center text-lightColor transition duration-300 hover:text-secondaryColor dark:text-white dark:hover:text-white/75"
           href="/"
         >
           Retour à l'accueil
         </Link>
-
-          {!login && <AuthButton/>}
       </nav>
     </header>
   );

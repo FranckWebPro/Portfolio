@@ -1,5 +1,3 @@
-//robots.txt
-
 # Block all crawlers for /dashboard, /login, and /blog
 User-agent: *
 Disallow: /dashboard

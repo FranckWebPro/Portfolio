@@ -28,8 +28,14 @@ const config: Config = {
       },
       keyframes: {
         blur: {
-          "0%": { backdropFilter: "blur(0px)" },
-          "100%": { backdropFilter: "blur(10px)" },
+          "0%": {
+            backdropFilter: "blur(0px) contrast(100%)",
+            WebkitBackdropFilter: "blur(0px) contrast(100%)",
+          },
+          "100%": {
+            backdropFilter: "blur(10px) contrast(100%)",
+            WebkitBackdropFilter: "blur(10px) contrast(60%)",
+          },
         },
       },
       animation: {

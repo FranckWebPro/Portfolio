@@ -12,8 +12,9 @@ export default function ContactForm() {
             Un projet de fou ? Discutons-en :
           </h2>
           <p className="mb-4 max-w-xl text-lg">
-            Entreprise, start-up, indépendent... Je travaille pour tous types de clients. 
-            Vous pouvez me contacter par mail ou bien par le formulaire, je vous répondrais au plus vite !
+            Entreprise, start-up, indépendent... Je travaille pour tous types de
+            clients. Vous pouvez me contacter par mail ou bien par le
+            formulaire, je vous répondrais au plus vite !
           </p>
 
           <a
@@ -23,9 +24,7 @@ export default function ContactForm() {
             contact@franckwebpro.com
           </a>
 
-          <address className="mt-2">
-            Adresse: Le monde entier
-          </address>
+          <address className="mt-2">Adresse: Le monde entier</address>
         </div>
 
         <form
@@ -44,7 +43,7 @@ export default function ContactForm() {
               Nom
             </label>
             <input
-              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
+              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm duration-300 hover:border-primaryLight focus:outline-primaryColor"
               placeholder="Nom *"
               type="text"
               id="name"
@@ -58,7 +57,7 @@ export default function ContactForm() {
                 Email
               </label>
               <input
-                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
+                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm duration-300 hover:border-primaryLight focus:outline-primaryColor"
                 placeholder="Adresse email *"
                 type="email"
                 id="email"
@@ -72,7 +71,7 @@ export default function ContactForm() {
                 Phone
               </label>
               <input
-                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
+                className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm duration-300 hover:border-primaryLight focus:outline-primaryColor"
                 placeholder="Numéro de téléphone"
                 type="tel"
                 id="phone"
@@ -136,7 +135,7 @@ export default function ContactForm() {
             </label>
 
             <textarea
-              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm hover:border-primaryLight duration-300 focus:outline-primaryColor"
+              className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm duration-300 hover:border-primaryLight focus:outline-primaryColor"
               placeholder="Message *"
               rows={8}
               id="message"
@@ -144,11 +143,19 @@ export default function ContactForm() {
               required
             ></textarea>
           </div>
-          <input aria-hidden type="checkbox" name="botcheck" className="hidden" />
+          <label aria-hidden className="hidden" htmlFor="botckeck">
+            <input
+              aria-hidden
+              title="botcheck"
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+            />
+          </label>
           <div className="mt-4">
             <button
               type="submit"
-              className="inline-block w-full rounded-lg bg-secondaryColor border-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 border hover:bg-transparent hover:border-primaryLight hover:text-lightColor sm:w-auto"
+              className="inline-block w-full rounded-lg border border-secondaryColor bg-secondaryColor px-5 py-3 font-medium text-darkColor duration-300 hover:border-primaryLight hover:bg-transparent hover:text-lightColor sm:w-auto"
             >
               Envoyez moi vos mots doux
             </button>

@@ -9,9 +9,11 @@ export default async function page() {
   const projects: Array<ProjectWithStacks> = await fetchProjectsWithStacks();
   const stacksArray: Array<Stack> = await fetchStacks();
 
+
+
   return (
     <>
-      <HeaderDashboard />
+      <HeaderDashboard login />
       <main className="w-full bg-glassmorphism2 bg-cover bg-fixed bg-center">
         <ProjectFormSection stacks={stacksArray} />
         <ProjectSection projects={projects} published />

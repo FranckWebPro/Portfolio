@@ -12,9 +12,11 @@ export type User = {
 };
 
 export type UserCredentials = {
-  email: string;
-  password: string;
-};
+    email: string;
+    password: string;
+}
+
+export type SecuredUserCredentials = Omit<UserCredentials, "password">;
 
 export type Project = {
   id: number;

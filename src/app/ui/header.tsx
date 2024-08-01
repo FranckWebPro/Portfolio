@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed z-50 mx-auto flex h-16 w-full animate-blur items-center justify-center md:h-20 lg:h-24">
       <nav className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between">
-        <Link className="text-teal-600 dark:text-teal-600 z-20" href="/">
+        <Link className="z-20 text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
             src={logo}
@@ -31,16 +31,12 @@ export default function Header() {
             sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
           />
         </Link>
-
         <ul
-          className={`absolute inset-0 w-full z-10 list-none before:backdrop-blur-lg flex flex-col h-screen justify-evenly bg-darkColor/90
-          items-center transition-transform duration-300 ease-in-out lg:static lg:w-auto lg:flex-row lg:h-full lg:gap-8 lg:opacity-100
-          lg:transform-none lg:justify-center lg:bg-[var(--secondaryColor)] 2xl:text-base ${navIsOpen ? " py-16 translate-x-0" : "translate-x-full"}`}
+          className={`absolute inset-0 z-10 flex h-screen w-full list-none flex-col items-center justify-evenly bg-darkColor/90 transition-transform duration-300 ease-in-out before:backdrop-blur-lg lg:static lg:h-full lg:w-auto lg:transform-none lg:flex-row lg:justify-center lg:gap-8 lg:bg-[var(--secondaryColor)] lg:opacity-100 2xl:text-base ${navIsOpen ? "translate-x-0 py-16" : "translate-x-full"}`}
         >
-          <li >
+          <li>
             <Link
-              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white 
-              dark:hover:text-white/75 px-2"
+              className="px-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#experience"
               onClick={handleMobileMenu}
             >
@@ -50,8 +46,7 @@ export default function Header() {
 
           <li>
             <Link
-              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white 
-              dark:hover:text-white/75 px-2"
+              className="px-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#technos"
               onClick={handleMobileMenu}
             >
@@ -61,8 +56,7 @@ export default function Header() {
 
           <li>
             <Link
-              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white 
-              dark:hover:text-white/75 px-2"
+              className="px-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="#projects"
               onClick={handleMobileMenu}
             >
@@ -71,8 +65,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              className="text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white 
-              dark:hover:text-white/75 px-2"
+              className="px-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight dark:text-white dark:hover:text-white/75"
               href="/blog"
               onClick={handleMobileMenu}
             >
@@ -81,31 +74,29 @@ export default function Header() {
           </li>
         </ul>
 
-          <a
-            className="rounded-lg h-auto bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6 py-3 text-sm font-semibold
-             text-darkColor shadow min-w-[13ch] text-center duration-300 hover:bg-secondaryLight hover:bg-gradient-to-r hover:text-lightColor
-              2xl:text-base z-20"
-            href="#contact"
-            onClick={() => navIsOpen && handleMobileMenu()}
-          >
-            Contactez-moi
-          </a>
+        <a
+          className="z-20 h-auto min-w-[13ch] rounded-lg bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6 py-3 text-center text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight hover:bg-gradient-to-r hover:text-lightColor 2xl:text-base"
+          href="#contact"
+          onClick={() => navIsOpen && handleMobileMenu()}
+        >
+          Contactez-moi
+        </a>
 
-          <button
-            onClick={handleMobileMenu}
-            aria-label="menu de navigation"
-            className="block h-full rounded p-2 text-secondaryColor transition hover:text-primaryLight lg:hidden z-20"
+        <button
+          onClick={handleMobileMenu}
+          aria-label="menu de navigation"
+          className="z-20 block h-full rounded p-2 text-secondaryColor transition hover:text-primaryLight lg:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </nav>
     </header>
   );

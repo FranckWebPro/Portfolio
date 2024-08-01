@@ -1,7 +1,29 @@
 import { sql } from "@vercel/postgres";
-import { User, Stack, ProjectWithStacks } from "./definitions";
+import { User, Stack, ProjectWithStacks, UserCredentials, SecuredUserCredentials } from "./definitions";
+import bcrypt from 'bcrypt';
 
-// import { formatCurrency } from "./utils";
+export async function getUserCredentials(email: string, password: string): Promise<SecuredUserCredentials | null> {
+    try {
+      const data = await sql<UserCredentials>`
+        SELECT email, password
+        FROM users
+        WHERE email = ${email}
+      `;
+      
+      const user: UserCredentials = data.rows[0];
+      
+      if (user && bcrypt.compareSync(password, user.password)) {
+        // Return user data without the password
+        const {...userWithoutPassword } = user;
+        return userWithoutPassword;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error("Database Error:", error);
+      throw new Error("Failed to fetch user credentials.");
+    }
+  }
 
 export async function fetchUser() {
   try {

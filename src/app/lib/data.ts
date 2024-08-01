@@ -1,29 +1,41 @@
-import { sql } from "@vercel/postgres";
-import { User, Stack, ProjectWithStacks, UserCredentials, SecuredUserCredentials } from "./definitions";
-import bcrypt from 'bcrypt';
+"use server";
 
-export async function getUserCredentials(email: string, password: string): Promise<SecuredUserCredentials | null> {
-    try {
-      const data = await sql<UserCredentials>`
+import { sql } from "@vercel/postgres";
+import {
+  User,
+  Stack,
+  ProjectWithStacks,
+  UserCredentials,
+  SecuredUserCredentials,
+} from "./definitions";
+const bcrypt = require("bcryptjs");
+
+export async function getUserCredentials(
+  email: string,
+  password: string
+): Promise<SecuredUserCredentials | null> {
+  try {
+    const data = await sql<UserCredentials>`
         SELECT email, password
         FROM users
         WHERE email = ${email}
       `;
-      
-      const user: UserCredentials = data.rows[0];
-      
-      if (user && bcrypt.compareSync(password, user.password)) {
-        // Return user data without the password
-        const {...userWithoutPassword } = user;
-        return userWithoutPassword;
-      } else {
-        return null;
-      }
-    } catch (error) {
-      console.error("Database Error:", error);
-      throw new Error("Failed to fetch user credentials.");
+
+    const user: UserCredentials = data.rows[0];
+
+    if (user && (await bcrypt.compareSync(password, user.password))) {
+      const { password, ...userWithoutPassword } = user;
+      return userWithoutPassword as SecuredUserCredentials;
+    } else if (user && !bcrypt.compareSync(password, user.password)) {
+      return null;
+    } else {
+      return null;
     }
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch user credentials.");
   }
+}
 
 export async function fetchUser() {
   try {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../images/logoLight.png";
-import AuthButton from "../login/authButton.server";
+import { SignOutButton } from "../login/signOutButton";
 
 export default function HeaderDashboard({ login }: { login?: boolean }) {
   return (
@@ -30,7 +30,7 @@ export default function HeaderDashboard({ login }: { login?: boolean }) {
         >
           Retour à l'accueil
         </Link>
-        {login && <AuthButton />}
+        {login && <SignOutButton />}
       </nav>
     </header>
   );

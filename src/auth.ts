@@ -1,7 +1,7 @@
 import NextAuth, { User } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { getUserCredentials } from "./app/lib/data";
-import { signInSchema } from "./app/lib/validate";
+import { getUserCredentials } from "./lib/data";
+import { signInSchema } from "./lib/validate";
 import { ZodError } from "zod";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({

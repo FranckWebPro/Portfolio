@@ -1,7 +1,7 @@
 import React from "react";
-import { ProjectWithStacks, Stack } from "@/app/lib/definitions";
+import { ProjectWithStacks, Stack } from "@/lib/definitions";
 import Image from "next/image";
-import { DeleteProject, UpdateProject } from "../buttons";
+import { DeleteProject, TogglePublication, UpdateProject } from "./buttons";
 
 export default function ProjectCard({
   project,
@@ -44,8 +44,9 @@ export default function ProjectCard({
             ))}
           </ul>
           <div className="flex items-center gap-2 justify-evenly">
-            <UpdateProject id={project.id} published={project.published} />
+            <TogglePublication id={project.id} published={project.published} />
             <DeleteProject id={project.id} />
+            <UpdateProject id={project.id} />
           </div>
         </div>
       </div>

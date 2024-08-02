@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectWithStacks, Stack } from "@/app/lib/definitions";
+import { ProjectWithStacks, Stack } from "@/lib/definitions";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -3,6 +3,7 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { CreateProject } from "./validate";
+import { ProjectWithStacks } from "./definitions";
 
 export async function addProject(formData: FormData) {
   const projectData = Object.fromEntries(formData.entries());
@@ -67,8 +68,39 @@ export async function togglePublication(id: number, published: boolean) {
     await sql`UPDATE projects SET published = ${!published} WHERE id = ${id}`;
     revalidatePath("/dashboard");
     revalidatePath("/");
-    return console.log("deleted project");
+    return console.log("Project updated");
   } catch (error) {
     return { message: "Database Error: Failed to Delete project." };
+  }
+}
+
+export async function readProjectWithStacks(id: number): Promise<ProjectWithStacks | null> {
+  try {
+    const data = await sql<ProjectWithStacks[]>` 
+    SELECT 
+    projects.*,
+    jsonb_agg(
+        jsonb_build_object(
+            'id', stacks.id,
+            'name', stacks.name,
+            'logo', stacks.logo
+        )
+    ) AS project_stacks 
+    FROM projects
+    INNER JOIN projects_stacks ON projects_stacks.project_id = projects.id
+    INNER JOIN stacks ON projects_stacks.stack_id = stacks.id
+    WHERE projects.id = ${id}
+    GROUP BY projects.id
+    ORDER BY projects.id ASC`;
+
+    revalidatePath("/dashboard");
+
+    const project = data.rows[0];
+    console.log(project);
+
+    return project;
+  } catch (error) {
+    console.error("Database Error: Failed to get project.", error);
+    return null;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./images/logoLight.png";
 import Image from "next/image";
-import { User } from "../lib/definitions";
+import { User } from "../../lib/definitions";
 import logoLinkedin from "./images/linkedin.png";
 import logoGithub from "./images/logo-github.png";
 

@@ -1,14 +1,13 @@
 "use client";
 
-import { addProject } from "@/app/lib/actions";
-import { Stack } from "@/app/lib/definitions";
-import React from "react";
+import { addProject } from "@/lib/actions";
+import { Stack } from "@/lib/definitions";
+import React, { useContext } from "react";
+import { ProjectContext } from "./projectContext";
 
-export default function ProjectFormSection({
-  stacks,
-}: {
-  stacks: Array<Stack>;
-}) {
+export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
+  const { projectToModify } = useContext(ProjectContext);
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -38,11 +37,11 @@ export default function ProjectFormSection({
   return (
     <section
       id="contact"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto md:gap-6"
+      className={`${projectToModify ? "flex" : "hidden"} mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl
+        flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto
+        md:gap-6`}
     >
-      <h1 className="mt-8 text-3xl md:text-4xl">
-        Gestion des projets et technos
-      </h1>
+      <h2 className="text-xl md:text-2xl lg:text-3xl">Modifier le projet</h2>
       <form
         onSubmit={handleSubmit}
         className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
@@ -76,7 +75,8 @@ export default function ProjectFormSection({
               Image projet *
             </label>
             <input
-              className="w-full cursor-pointer rounded-lg border border-gray-200 bg-transparent p-3 text-sm file:mr-2 file:border-none"
+              className="w-full cursor-pointer rounded-lg border border-gray-200 bg-transparent p-3 text-sm file:mr-2
+                file:border-none"
               placeholder="Image du projet *"
               type="file"
               accept="image/*"
@@ -115,7 +115,9 @@ export default function ProjectFormSection({
           <legend className="mb-3">Status du projet</legend>
           <label
             htmlFor="finished"
-            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-lightColor"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300
+              hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black
+              has-[:checked]:text-lightColor"
             tabIndex={0}
           >
             <input
@@ -131,7 +133,9 @@ export default function ProjectFormSection({
           </label>
           <label
             htmlFor="working"
-            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300 hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black has-[:checked]:text-white"
+            className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300
+              hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black
+              has-[:checked]:text-white"
             tabIndex={0}
           >
             <input
@@ -178,7 +182,8 @@ export default function ProjectFormSection({
         </label>
         <label
           htmlFor="published"
-          className="mt-4 flex w-full cursor-pointer flex-col gap-2 rounded-lg border border-gray-200 bg-transparent p-3 text-center text-base font-medium"
+          className="mt-4 flex w-full cursor-pointer flex-col gap-2 rounded-lg border border-gray-200 bg-transparent p-3
+            text-center text-base font-medium"
         >
           Publier le projet ?
           <input type="checkbox" id="published" name="published" />
@@ -187,7 +192,8 @@ export default function ProjectFormSection({
         <div className="mt-4 flex w-full items-center justify-center">
           <button
             type="submit"
-            className="rounded-lg bg-secondaryColor px-10 py-4 font-medium text-darkColor duration-300 hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
+            className="rounded-lg bg-secondaryColor px-10 py-4 font-medium text-darkColor duration-300
+              hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
           >
             Enregistrer ce projet
           </button>

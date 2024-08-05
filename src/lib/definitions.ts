@@ -41,9 +41,13 @@ export type Stack = {
 
 export type StackForProject = Omit<Stack, "stack_link">;
 
-export interface ProjectWithStacks extends Project {
-  project_stacks: Array<Stack>;
+export interface ProjectToUpdate extends Project {
+  project_stacks: Array<number> ;
 }
+
+export interface ProjectWithStacks extends Project {
+    project_stacks: Array<Stack>;
+  }
 
 export type Project_Stack = {
   stack_id: number;

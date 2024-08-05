@@ -8,6 +8,7 @@ import {
   UserCredentials,
   SecuredUserCredentials,
 } from "./definitions";
+import { revalidatePath } from "next/cache";
 const bcrypt = require("bcryptjs");
 
 export async function getUserCredentials(
@@ -105,3 +106,37 @@ export async function fetchProjectsWithStacks() {
     throw new Error("Failed to fetch Project with stacks.");
   }
 }
+
+export async function readProjectWithStacks(id: number): Promise<ProjectWithStacks | null> {
+    try {
+      const data = await sql<ProjectWithStacks[]>` 
+      SELECT 
+      projects.*,
+      jsonb_agg(
+         stacks.id
+      ) AS project_stacks 
+      FROM projects
+      INNER JOIN projects_stacks ON projects_stacks.project_id = projects.id
+      INNER JOIN stacks ON projects_stacks.stack_id = stacks.id
+      WHERE projects.id = ${id}
+      GROUP BY projects.id
+      ORDER BY projects.id ASC`;
+  
+      revalidatePath("/dashboard");
+  
+      if (data.rows.length === 0) {
+          return null;
+        }
+  
+      const project = data.rows[0] as unknown as ProjectWithStacks;
+  
+      return project;
+  
+    } catch (error) {
+      console.error("Database Error: Failed to get project.", error);
+      
+      return null;
+    }
+  }
+  
+  

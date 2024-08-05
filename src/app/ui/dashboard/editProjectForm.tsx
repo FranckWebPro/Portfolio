@@ -2,15 +2,19 @@
 
 import { addProject } from "@/lib/actions";
 import { Stack } from "@/lib/definitions";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
 
 export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
   const { projectToModify } = useContext(ProjectContext);
+  const [status, setStatus] = useState(projectToModify?.status);
+  const [currentPreviewImg, setCurrentPreviewImg] = useState(projectToModify?.preview_picture_url);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleEditProject = async (event: React.FormEvent<HTMLFormElement>) => {
+    console.log("submit");
+    
     event.preventDefault();
-
+    
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File | null;
     if (file) {
@@ -28,22 +32,34 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
 
       const imgPath = await res.json();
       formData.set("preview_picture_url", imgPath.path);
+      
     }
     console.log(Object.fromEntries(formData));
 
     await addProject(formData);
   };
 
+const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setCurrentPreviewImg(URL.createObjectURL(file));
+    }
+  };
+
+  const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStatus(event.target.value as "Terminé" | "En cours de développement");
+  };
+
+  useEffect(() => {
+    setStatus(projectToModify?.status)
+    setCurrentPreviewImg(projectToModify?.preview_picture_url)
+}, [projectToModify])
+
+
   return (
-    <section
-      id="contact"
-      className={`${projectToModify ? "flex" : "hidden"} mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl
-        flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto
-        md:gap-6`}
-    >
-      <h2 className="text-xl md:text-2xl lg:text-3xl">Modifier le projet</h2>
       <form
-        onSubmit={handleSubmit}
+      id="editForm"
+        onSubmit={handleEditProject}
         className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
         <label className="sr-only" htmlFor="name">
@@ -55,6 +71,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
           type="text"
           id="title"
           name="title"
+          defaultValue={projectToModify?.title}
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -68,6 +85,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
               type="text"
               id="client_name"
               name="client_name"
+              defaultValue={projectToModify?.client_name}
             />
           </div>
           <div>
@@ -76,14 +94,16 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             </label>
             <input
               className="w-full cursor-pointer rounded-lg border border-gray-200 bg-transparent p-3 text-sm file:mr-2
-                file:border-none"
+                file:border-none mb-4"
               placeholder="Image du projet *"
               type="file"
               accept="image/*"
               id="preview_picture_url"
               name="preview_picture_url"
+              onChange={handleFileChange}
               required
             />
+            <img src={currentPreviewImg} alt="" className="max-w-96 mx-auto"/>
           </div>
           <div>
             <label className="sr-only" htmlFor="phone">
@@ -95,6 +115,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
               type="text"
               name="link"
               id="link"
+              defaultValue={projectToModify?.link}
             />
           </div>
           <div>
@@ -107,6 +128,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
               type="text"
               name="github_repo"
               id="github_repo"
+              defaultValue={projectToModify?.github_repo}
             />
           </div>
         </div>
@@ -127,8 +149,9 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
               tabIndex={-1}
               name="status"
               value="Terminé"
+              checked={status === "Terminé"}
+              onChange={handleStatusChange}
             />
-
             <span className="text-sm"> Terminé </span>
           </label>
           <label
@@ -145,8 +168,9 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
               tabIndex={-1}
               name="status"
               value="En cours de développement"
+              checked={status === "En cours de développement"}
+              onChange={handleStatusChange}
             />
-
             <span className="text-sm"> En cours de développement </span>
           </label>
         </fieldset>
@@ -162,6 +186,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             rows={8}
             id="description"
             name="description"
+            defaultValue={projectToModify?.description}
             required
           ></textarea>
         </div>
@@ -172,6 +197,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             id="stacks_id"
             multiple
             className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+            defaultValue={projectToModify?.project_stacks?.map(String) || []}
           >
             {stacks.map((stack) => (
               <option key={stack.id} value={stack.id}>
@@ -186,7 +212,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             text-center text-base font-medium"
         >
           Publier le projet ?
-          <input type="checkbox" id="published" name="published" />
+          <input type="checkbox" id="published" name="published" defaultChecked={projectToModify?.published}/>
         </label>
 
         <div className="mt-4 flex w-full items-center justify-center">
@@ -195,10 +221,13 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             className="rounded-lg bg-secondaryColor px-10 py-4 font-medium text-darkColor duration-300
               hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
           >
-            Enregistrer ce projet
+            Mettre à jour ce projet
           </button>
         </div>
+        <button 
+        type="button" 
+        onClick={() => console.log("test")}
+        >test</button>
       </form>
-    </section>
   );
 }

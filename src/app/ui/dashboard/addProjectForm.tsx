@@ -2,14 +2,14 @@
 
 import { addProject } from "@/lib/actions";
 import { Stack } from "@/lib/definitions";
-import React, { useContext } from "react";
-import { ProjectContext } from "./projectContext";
+import React from "react";
 
 export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
-  const { projectToModify } = useContext(ProjectContext);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const form = event.currentTarget;
 
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File | null;
@@ -27,23 +27,19 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
       }
 
       const imgPath = await res.json();
+      
       formData.set("preview_picture_url", imgPath.path);
     }
     console.log(Object.fromEntries(formData));
 
     await addProject(formData);
+    // form.reset();
   };
 
   return (
-    <section
-      id="contact"
-      className={`${projectToModify ? "hidden" : "flex"} mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl
-        flex-col items-center justify-center gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto
-        md:gap-6`}
-    >
-      <h2 className="text-xl md:text-2xl lg:text-3xl">Ajouter un projet</h2>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleAddProject}
+        id="addForm"
         className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
       >
         <label className="sr-only" htmlFor="name">
@@ -199,6 +195,5 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
           </button>
         </div>
       </form>
-    </section>
   );
 }

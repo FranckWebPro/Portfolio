@@ -42,12 +42,12 @@ export type Stack = {
 export type StackForProject = Omit<Stack, "stack_link">;
 
 export interface ProjectToUpdate extends Project {
-  project_stacks: Array<number> ;
+  project_stacks: Array<number>;
 }
 
 export interface ProjectWithStacks extends Project {
-    project_stacks: Array<Stack>;
-  }
+  project_stacks: Array<Stack>;
+}
 
 export type Project_Stack = {
   stack_id: number;
@@ -55,6 +55,6 @@ export type Project_Stack = {
 };
 
 export type ProjectContextType = {
-  projectToModify: ProjectWithStacks | null; // You can replace `any` with the correct type
+  projectToModify: ProjectWithStacks | null;
   setProjectToModify: Dispatch<SetStateAction<ProjectWithStacks | null>>;
 };

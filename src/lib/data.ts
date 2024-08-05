@@ -108,8 +108,8 @@ export async function fetchProjectsWithStacks() {
 }
 
 export async function readProjectWithStacks(id: number): Promise<ProjectWithStacks | null> {
-    try {
-      const data = await sql<ProjectWithStacks[]>` 
+  try {
+    const data = await sql<ProjectWithStacks[]>` 
       SELECT 
       projects.*,
       jsonb_agg(
@@ -121,22 +121,19 @@ export async function readProjectWithStacks(id: number): Promise<ProjectWithStac
       WHERE projects.id = ${id}
       GROUP BY projects.id
       ORDER BY projects.id ASC`;
-  
-      revalidatePath("/dashboard");
-  
-      if (data.rows.length === 0) {
-          return null;
-        }
-  
-      const project = data.rows[0] as unknown as ProjectWithStacks;
-  
-      return project;
-  
-    } catch (error) {
-      console.error("Database Error: Failed to get project.", error);
-      
+
+    revalidatePath("/dashboard");
+
+    if (data.rows.length === 0) {
       return null;
     }
+
+    const project = data.rows[0] as unknown as ProjectWithStacks;
+
+    return project;
+  } catch (error) {
+    console.error("Database Error: Failed to get project.", error);
+
+    return null;
   }
-  
-  
+}

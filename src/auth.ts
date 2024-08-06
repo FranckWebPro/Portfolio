@@ -48,4 +48,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   basePath: process.env.BASE_PATH,
   secret: process.env.AUTH_SECRET,
+  cookies: {
+    sessionToken: {
+      name: `__Secure-authjs.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: process.env.NODE_ENV === 'production',
+      },
+    },
+  },
 });

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { User } from "../../lib/definitions";
 import logoLinkedin from "./images/linkedin.png";
 import logoGithub from "./images/logo-github.png";
+import logoMalt from "./images/malt.webp";
 
 export default function Footer({ user }: { user: User }) {
   return (
@@ -12,7 +13,7 @@ export default function Footer({ user }: { user: User }) {
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
             className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition duration-300
-              hover:bg-secondaryLight hover:text-lightColor sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300
+              hover:bg-secondaryLight hover:text-primaryLight sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300
               dark:hover:bg-gray-600"
             href="#hero"
           >
@@ -64,6 +65,15 @@ export default function Footer({ user }: { user: User }) {
                   className="rounded-lg bg-lightColor p-2 duration-300 hover:opacity-60"
                 />{" "}
               </a>
+              <a href={user.linkedin_link} target="_blank" rel="noreferrer">
+                <Image
+                  src={logoMalt}
+                  width={45}
+                  height={45}
+                  alt="logo Malt"
+                  className="duration-300 hover:opacity-60"
+                />{" "}
+              </a>
               <p className="mx-auto mr-6 w-full text-center leading-relaxed lg:text-left dark:text-gray-400">
                 Le développement web au service de votre business
               </p>
@@ -73,16 +83,24 @@ export default function Footer({ user }: { user: User }) {
           <ul className="mt-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:hover:text-lightColor/75"
+                className="p-2 transition duration-300 text-lightColor hover:text-primaryLight"
+                href="#services"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                className="p-2 transition duration-300 text-lightColor hover:text-primaryLight"
                 href="#experience"
               >
-                Expérience
+                Expériences
               </a>
             </li>
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-white/75"
+                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#technos"
               >
                 Technos
@@ -91,7 +109,7 @@ export default function Footer({ user }: { user: User }) {
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
+                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#projects"
               >
                 Projets
@@ -100,7 +118,7 @@ export default function Footer({ user }: { user: User }) {
 
             <li>
               <a
-                className="transition duration-300 hover:text-secondaryColor dark:text-lightColor dark:hover:text-lightColor/75"
+                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
                 href="/blog"
               >
                 Blog

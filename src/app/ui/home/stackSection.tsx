@@ -13,14 +13,14 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
         className="max-w-screen-2xl flex flex-col lg:flex-row p-4 md:p-8 lg:p-12 lg:py-16 lg:grid-cols-2
           lg:items-center lg:gap-x-16"
       >
-        <div className="w-full text-center mb-14">
-          <h2 className="text-3xl font-semibold md:text-4xl lg:text-5xl">
+        <div className="w-full text-center lg:text-left mb-14">
+          <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
             Les technos du futur que je maîtrise
           </h2>
-
           <p className="my-4 text-lightColor">
-            L'ensemble des librairies et framework que je connais et que je souhaite proposer dans
-            mes services.
+            L'ensemble des langages, librairies et frameworks, code ou no code, que je connais et
+            que je souhaite proposer dans mes services... et il n'y en a pas 50 : Je tiens à
+            utiliser moins de technologie, mais à les maitriser vraiment !
           </p>
 
           <a
@@ -29,7 +29,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
               transition duration-300 hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring
               focus:ring-yellow-400"
           >
-            Démarrez votre projet maintenant
+            Discutons de votre projet
           </a>
         </div>
 
@@ -51,7 +51,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
                 alt={`${stack.name} logo`}
                 className={`inline-block rounded-lg bg-lightColor p-3 ${stack.name === "Express" && "min-h-14"}`}
               />
-              <h2 className="mt-2 font-bold">{stack.name}</h2>
+              <h3 className="mt-2 font-bold">{stack.name}</h3>
             </a>
           ))}
         </div>

@@ -7,30 +7,43 @@ import { readProjectWithStacks } from "@/lib/data";
 import Link from "next/link";
 
 export function TogglePublicationButton({ id, published }: { id: number; published: boolean }) {
-  const togglePublicationWithId = togglePublication.bind(null, id, published);
+  const handleUpdatePublished = async () => {
+    try {
+      await togglePublication(id, published);
+    } catch (error) {
+      console.error("Error updating project publication:", error);
+    }
+  };
   return (
-    <form action={togglePublicationWithId}>
-      <button
-        className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
-          hover:text-darkColor"
-      >
-        {published ? "Dépublier" : "Publier"}
-      </button>
-    </form>
+    <button
+      type="button"
+      onClick={handleUpdatePublished}
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+        hover:text-darkColor"
+    >
+      {published ? "Dépublier" : "Publier"}
+    </button>
   );
 }
 
 export function DeleteProjectButton({ id }: { id: number }) {
-  const deleteProjectWithId = deleteProject.bind(null, id);
+  const handleDelete = async () => {
+    try {
+      await deleteProject(id);
+    } catch (error) {
+      console.error("Error deleting project:", error);
+    }
+  };
+
   return (
-    <form action={deleteProjectWithId}>
-      <button
-        className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
-          hover:text-darkColor"
-      >
-        Supprimer
-      </button>
-    </form>
+    <button
+      type="button"
+      onClick={handleDelete}
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+        hover:text-darkColor"
+    >
+      Supprimer
+    </button>
   );
 }
 
@@ -52,7 +65,7 @@ export function UpdateProjectButton({ id }: { id: number }) {
 
   return (
     <Link
-      className="rounded-md border p-2 duration-300 hover:border-s‡econdaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
       onClick={handleUpdate}
       href="#form"
@@ -70,6 +83,7 @@ export function ResetProjectButton() {
   };
   return (
     <button
+      type="button"
       className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
       onClick={handleResetProject}

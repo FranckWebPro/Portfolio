@@ -8,7 +8,8 @@ export default function NotFound() {
       <h2 className="text-xl font-semibold">404 Not Found</h2>
       <Link
         href="/"
-        className="mt-4 rounded-md bg-secondaryColor px-4 py-2 text-sm text-darkColor transition-colors hover:bg-secondaryLight hover:text-lightColor"
+        className="mt-4 rounded-md bg-secondaryColor px-4 py-2 text-sm text-darkColor transition-colors
+          hover:bg-secondaryLight hover:text-lightColor"
       >
         Retour à l'accueil
       </Link>

@@ -7,9 +7,11 @@ export const formatFileName = (fileName: string): string => {
   let newFileName: string;
 
   if (fileName.startsWith("assets")) {
-    return (newFileName = `${date}-${sanitzedFileName.slice(7, -1)}`);
+    newFileName = `${date}-${sanitzedFileName.slice(7, -1)}`;
+    return newFileName
   } else {
-    return (newFileName = `${date}-${sanitzedFileName}`);
+    newFileName = `${date}-${sanitzedFileName}`;
+    return newFileName
   }
 };
 

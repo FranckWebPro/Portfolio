@@ -5,6 +5,7 @@ import { Stack } from "@/lib/definitions";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
 import { uploadFile } from "@/lib/utils";
+import Image from "next/image";
 
 export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
   const { projectToModify, setProjectToModify } = useContext(ProjectContext);
@@ -17,7 +18,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
 
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File;
-    
+
     if (file.name !== "" && file.size !== 0) {
       const uploadData = new FormData();
       uploadData.append("file", file);
@@ -27,13 +28,11 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
       }
       const imgPath = await res.json();
       formData.set("preview_picture_url", imgPath.path);
-    } else if(currentPreviewImg.startsWith("/assets/")) {
+    } else if (currentPreviewImg.startsWith("/assets/")) {
       formData.set("preview_picture_url", currentPreviewImg);
     } else {
-        throw new Error("image path issue");
+      throw new Error("image path issue");
     }
-
-    // console.log(Object.fromEntries(formData));
 
     await editProject(projectToModify!.id, formData);
     form.reset();
@@ -102,7 +101,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             name="preview_picture_url"
             onChange={handleFileChange}
           />
-          <img src={currentPreviewImg} alt="" className="max-w-96 mx-auto" />
+          <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-96 mx-auto" />
         </div>
         <div>
           <label className="sr-only" htmlFor="phone">

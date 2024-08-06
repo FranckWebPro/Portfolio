@@ -9,7 +9,7 @@ import {
   SecuredUserCredentials,
 } from "./definitions";
 import { revalidatePath } from "next/cache";
-const bcrypt = require("bcryptjs");
+import bcrypt from "bcryptjs";
 
 export async function getUserCredentials(
   email: string,
@@ -24,9 +24,8 @@ export async function getUserCredentials(
 
     const user: UserCredentials = data.rows[0];
 
-    if (user && (await bcrypt.compareSync(password, user.password))) {
-      const { password, ...userWithoutPassword } = user;
-      return userWithoutPassword as SecuredUserCredentials;
+    if (user && (bcrypt.compareSync(password, user.password))) {
+      return user.email as unknown as SecuredUserCredentials;
     } else if (user && !bcrypt.compareSync(password, user.password)) {
       return null;
     } else {

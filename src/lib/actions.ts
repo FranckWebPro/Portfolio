@@ -3,7 +3,7 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { CreateProject } from "./validate";
-import { ProjectWithStacks } from "./definitions";
+import { promises } from "fs";
 
 export async function addProject(formData: FormData) {
   const projectData = Object.fromEntries(formData.entries());
@@ -40,26 +40,29 @@ export async function addProject(formData: FormData) {
           INSERT INTO projects_stacks (project_id, stack_id)
           VALUES(${projectId}, ${stackId})
         `;
-
-      console.log("project successfully added");
     }
-  } catch (err) {
-    console.error("Database Error:", err);
-    throw new Error("Failed to send new project.");
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error(`Failed to ad project. Error details: ${error}`);
   }
-
   revalidatePath("/dashboard");
 }
 
 export async function deleteProject(id: number) {
   try {
+    const imgPath = await sql`SELECT preview_picture_url FROM projects WHERE id = ${id}`;
+
+    if (imgPath.rows.length > 0) {
+      await promises.unlink(`public/${imgPath.rows[0].preview_picture_url}`);
+    }
     await sql`DELETE FROM projects_stacks WHERE project_id = ${id}`;
     await sql`DELETE FROM projects WHERE id = ${id}`;
     revalidatePath("/dashboard");
     revalidatePath("/");
     return { message: "Deleted project." };
   } catch (error) {
-    return { message: "Database Error: Failed to Delete project." };
+    console.error("Database Error:", error);
+    throw new Error(`Failed to delete project with ID ${id}. Error details: ${error}`);
   }
 }
 
@@ -70,7 +73,7 @@ export async function togglePublication(id: number, published: boolean) {
     revalidatePath("/");
     return console.log("Project updated");
   } catch (error) {
-    return { message: "Database Error: Failed to Delete project." };
+    throw new Error(`Failed to update project with ID ${id}. Error details: ${error}`);
   }
 }
 
@@ -96,7 +99,7 @@ export async function editProject(id: number, formData: FormData) {
   } = data;
 
   try {
-    const insertId = await sql`
+    await sql`
           UPDATE projects 
           SET title = ${title}, 
           description = ${description}, 
@@ -119,12 +122,9 @@ export async function editProject(id: number, formData: FormData) {
             INSERT INTO projects_stacks (project_id, stack_id)
             VALUES(${id}, ${stackId})
           `;
-
-      console.log("project successfully updated");
     }
-  } catch (err) {
-    console.error("Database Error:", err);
-    throw new Error("Failed to update project.");
+  } catch (error) {
+    throw new Error(`Failed to delete project with ID ${id}. Error details: ${error}`);
   }
 
   revalidatePath("/dashboard");

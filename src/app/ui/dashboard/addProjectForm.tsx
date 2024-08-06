@@ -2,10 +2,11 @@
 
 import { addProject } from "@/lib/actions";
 import { Stack } from "@/lib/definitions";
-import { uploadFile } from "@/lib/utils";
+import { uploadFileFromForm } from "@/lib/utils";
 import React from "react";
 
 export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
+    
   const handleAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -14,9 +15,7 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
     const file = formData.get("preview_picture_url") as File | null;
 
     if (file) {
-      const uploadData = new FormData();
-      uploadData.append("file", file);
-      const res = await uploadFile(uploadData);
+      const res = await uploadFileFromForm(file);
       if (!res.ok) {
         throw new Error(await res.text());
       }

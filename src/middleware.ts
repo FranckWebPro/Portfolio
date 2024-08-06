@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getToken } from "next-auth/jwt";
+import { GetTokenParams, getToken } from "next-auth/jwt";
 
 export default async function middleware(req: NextRequest) {
   const secret = process.env.AUTH_SECRET as string;
 
-  // Directly call getToken without custom type
-  const token = await getToken({ req, secret });
+  //"salt" 3rd argument bypassed as it block from accessing dashboard while logged in
+  const token = await getToken({ req, secret }  as unknown as GetTokenParams<false>);
 
   if (!token && req.nextUrl.pathname === "/dashboard") {
     return NextResponse.redirect(new URL("/api/auth/signin", req.nextUrl.origin));

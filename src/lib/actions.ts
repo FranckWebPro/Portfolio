@@ -51,7 +51,6 @@ export async function addProject(formData: FormData) {
 export async function deleteProject(id: number) {
   try {
     const imgPath = await sql`SELECT preview_picture_url FROM projects WHERE id = ${id}`;
-
     if (imgPath.rows.length > 0) {
       await promises.unlink(`public/${imgPath.rows[0].preview_picture_url}`);
     }
@@ -78,13 +77,11 @@ export async function togglePublication(id: number, published: boolean) {
 
 export async function editProject(id: number, formData: FormData) {
   const projectData = Object.fromEntries(formData.entries());
-
   const data = CreateProject.parse({
     ...projectData,
     published: projectData.published === "on" ? true : false,
     stacks_id: formData.getAll("stacks_id"),
   });
-
   const {
     title,
     description,
@@ -111,11 +108,9 @@ export async function editProject(id: number, formData: FormData) {
           WHERE id = ${id}
           RETURNING id
         `;
-
     await sql`
             DELETE FROM projects_stacks WHERE project_id = ${id}
           `;
-
     for (const stackId of stacks_id) {
       await sql`
             INSERT INTO projects_stacks (project_id, stack_id)
@@ -125,6 +120,5 @@ export async function editProject(id: number, formData: FormData) {
   } catch (error) {
     throw new Error(`Failed to delete project with ID ${id}. Error details: ${error}`);
   }
-
   revalidatePath("/dashboard");
 }

@@ -15,8 +15,8 @@ export default function ContactForm() {
             Un projet de fou ? Discutons-en :
           </h2>
           <p className="mb-4 max-w-xl text-lg">
-            Entreprise, start-up, indépendent... Je travaille pour tous types de clients. Vous
-            pouvez me contacter par mail ou bien par le formulaire, je vous répondrais au plus vite
+            Entreprise, start-up, indépendant... Je travaille pour tous types de clients. Vous
+            pouvez me contacter par mail ou bien par le formulaire, je vous répondrai au plus vite
             !
           </p>
 

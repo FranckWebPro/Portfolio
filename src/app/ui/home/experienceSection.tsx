@@ -226,7 +226,7 @@ export default function ExperienceSection() {
               <p className="mt-1 text-sm leading-6 text-gray-300">
                 Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de
                 l'Air en 2017... Souhaitant plus d'action et de travail physique je change de
-                spécialité pour rentré chez les fusiliers parachutistes et effectué de nombreux
+                spécialité pour rentrer chez les fusiliers parachutistes et effectué de nombreux
                 stages de formations au cours de plus de 6 ans de services.
               </p>
             </div>

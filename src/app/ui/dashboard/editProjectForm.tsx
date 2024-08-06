@@ -4,7 +4,7 @@ import { editProject } from "@/lib/actions";
 import { Stack } from "@/lib/definitions";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
-import { uploadFile } from "@/lib/utils";
+import { uploadFile, uploadFileFromForm } from "@/lib/utils";
 import Image from "next/image";
 
 export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
@@ -20,9 +20,7 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
     const file = formData.get("preview_picture_url") as File;
 
     if (file.name !== "" && file.size !== 0) {
-      const uploadData = new FormData();
-      uploadData.append("file", file);
-      const res = await uploadFile(uploadData);
+      const res = await uploadFileFromForm(file);
       if (!res.ok) {
         throw new Error(await res.text());
       }

@@ -11,9 +11,7 @@ export async function getUserCredentials(email: string): Promise<UserCredentials
         FROM users
         WHERE email = ${email}
       `;
-
     const user: UserCredentials = data.rows[0];
-
     return user;
   } catch (error) {
     console.error("Database Error:", error);
@@ -35,7 +33,6 @@ export async function fetchUser() {
     github_link,
     linkedin_link
     FROM users`;
-
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
@@ -45,18 +42,15 @@ export async function fetchUser() {
 
 export async function fetchStacks(): Promise<Stack[]> {
   try {
-    const data = await sql<Stack[]>`SELECT * FROM stacks`;
-    return data.rows as unknown as Stack[];
+    const data = await sql`SELECT * FROM stacks`;
+    return data.rows as Stack[];
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch the latest stacks.");
   }
 }
 
-// const ITEMS_PER_PAGE = 6;
 export async function fetchProjectsWithStacks() {
-  //   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-
   try {
     const projectWithStacks = await sql<ProjectWithStacks>`
       SELECT
@@ -82,7 +76,6 @@ export async function fetchProjectsWithStacks() {
      GROUP BY projects.id
      ORDER BY projects.id ASC
     `;
-
     return projectWithStacks.rows;
   } catch (error) {
     console.error("Database Error:", error);
@@ -92,7 +85,7 @@ export async function fetchProjectsWithStacks() {
 
 export async function readProjectWithStacks(id: number): Promise<ProjectWithStacks | null> {
   try {
-    const data = await sql<ProjectWithStacks[]>` 
+    const data = await sql` 
       SELECT 
       projects.*,
       jsonb_agg(
@@ -104,19 +97,14 @@ export async function readProjectWithStacks(id: number): Promise<ProjectWithStac
       WHERE projects.id = ${id}
       GROUP BY projects.id
       ORDER BY projects.id ASC`;
-
     revalidatePath("/dashboard");
-
     if (data.rows.length === 0) {
       return null;
     }
-
-    const project = data.rows[0] as unknown as ProjectWithStacks;
-
+    const project = data.rows[0] as ProjectWithStacks;
     return project;
   } catch (error) {
     console.error("Database Error: Failed to get project.", error);
-
     return null;
   }
 }

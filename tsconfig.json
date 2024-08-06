@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "eslint", "next", "next-auth"],
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

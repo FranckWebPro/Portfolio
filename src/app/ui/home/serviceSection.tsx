@@ -2,212 +2,84 @@ import React from "react";
 
 export default function ServiceSection() {
   return (
-    <section className="bg-gray-900 text-white">
-    <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="max-w-xl">
-        <h2 className="text-3xl font-bold sm:text-4xl">Les services que je proposes</h2>
-  
-        <p className="mt-4 text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam
-          iste obcaecati. Consequatur ipsa quod ipsum sequi culpa delectus, cumque id tenetur
-          quibusdam, quos fuga minima.
-        </p>
-      </div>
-  
-      <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
-          </div>
+    <section
+      id="services"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] items-center justify-center bg-glassmorphism bg-no-repeat
+        py-32 md:min-h-[calc(100vh-5rem)]"
+    >
+      <div
+        className="max-w-screen-2xl flex flex-col gap-4 lg:gap-0 lg:flex-row p-4 md:p-8 lg:p-12 lg:py-16
+          lg:grid-cols-2 lg:items-center lg:gap-x-16"
+      >
+        <div className="w-full text-center lg:order-2 lg:text-left mb-14">
+          <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
+            Développement d'applications et sites web sur-mesure
+          </h2>
+
+          <p className="my-4 text-lightColor">
+            Les services que je propose comme prestations, du développement traditionnel pour plus de
+            flexibilité au no code avec Webflow pour plus de simplicité/rapidité en passant par le
+            référencement naturel (SEO).
+          </p>
+
+          <a
+            href="#contact"
+            className="mt-8 inline-block rounded-lg bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor
+              transition duration-300 hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring
+              focus:ring-yellow-400"
+          >
+            Démarrez votre projet maintenant
+          </a>
         </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <article
+            className="flex flex-col min-h-24 items-center justify-start gap-4 rounded-lg border border-lightColor
+              bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-40"
+          >
+            <h3 className="text-lg font-bold">Intégration Web</h3>
+            <p className="text-sm leading-6 text-gray-300 text-center lg:text-left lg:text-base">
+              Développement à partir d'une maquette graphique pour la convertir en un projet web, je
+              porte une attention particulière à l'<strong>UX</strong>, à l'optimisation,
+              l'accéssibilité et au référencement (
+              <abbr title="Search Engine Optimization">SEO</abbr>).
             </p>
-          </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
+          </article>
+
+          <article
+            className="flex flex-col min-h-24 items-center justify-start gap-4 rounded-lg border border-lightColor
+              bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-40"
+          >
+            <h3 className="text-lg font-bold">Référencement Google</h3>
+            <p className="text-sm leading-6 text-gray-300 text-center lg:text-left lg:text-base">
+              Optimisation de votre site/application web pour le référencement naturel (organique)
+              sur Google et les autres moteurs de recherches, le <strong>SEO</strong>.
             </p>
-          </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
+          </article>
+
+          <article
+            className="flex flex-col min-h-24 items-center justify-start gap-4 rounded-lg border border-lightColor
+              bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-40"
+          >
+            <h3 className="text-lg font-bold">Web Design</h3>
+            <p className="text-sm leading-6 text-gray-300 text-center lg:text-left lg:text-base">
+              Création de votre design et branding sur Figma, avec phase de wireframe, maquettage ou
+              bien directement sur Webflow.
             </p>
-          </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
+          </article>
+
+          <article
+            className="flex flex-col min-h-24 items-center justify-start gap-4 rounded-lg border border-lightColor
+              bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-40"
+          >
+            <h3 className="text-lg font-bold">Accessibilité</h3>
+            <p className="text-sm leading-6 text-gray-300 text-center lg:text-left lg:text-base">
+              Audit et amélioration de l'<strong>accessibilité</strong> de votre site web, en
+              suivant les normes
+              <abbr title="Web Content Accessibility Guidelines"> WCAG</abbr>
             </p>
-          </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
-          </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 }

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type User = {
   id: number;
   firstname: string;
@@ -12,9 +14,9 @@ export type User = {
 };
 
 export type UserCredentials = {
-    email: string;
-    password: string;
-}
+  email: string;
+  password: string;
+};
 
 export type SecuredUserCredentials = Omit<UserCredentials, "password">;
 
@@ -39,6 +41,10 @@ export type Stack = {
 
 export type StackForProject = Omit<Stack, "stack_link">;
 
+export interface ProjectToUpdate extends Project {
+  project_stacks: Array<number>;
+}
+
 export interface ProjectWithStacks extends Project {
   project_stacks: Array<Stack>;
 }
@@ -46,4 +52,9 @@ export interface ProjectWithStacks extends Project {
 export type Project_Stack = {
   stack_id: number;
   project_id: number;
+};
+
+export type ProjectContextType = {
+  projectToModify: ProjectWithStacks | null;
+  setProjectToModify: Dispatch<SetStateAction<ProjectWithStacks | null>>;
 };

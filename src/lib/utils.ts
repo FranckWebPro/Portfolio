@@ -8,10 +8,10 @@ export const formatFileName = (fileName: string): string => {
 
   if (fileName.startsWith("assets")) {
     newFileName = `${date}-${sanitzedFileName.slice(7, -1)}`;
-    return newFileName
+    return newFileName;
   } else {
     newFileName = `${date}-${sanitzedFileName}`;
-    return newFileName
+    return newFileName;
   }
 };
 

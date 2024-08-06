@@ -43,6 +43,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [fluid({ checkSC144: false })],
+  plugins: [fluid],
 };
 export default config;

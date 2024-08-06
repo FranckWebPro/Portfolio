@@ -71,7 +71,6 @@ export async function togglePublication(id: number, published: boolean) {
     await sql`UPDATE projects SET published = ${!published} WHERE id = ${id}`;
     revalidatePath("/dashboard");
     revalidatePath("/");
-    return console.log("Project updated");
   } catch (error) {
     throw new Error(`Failed to update project with ID ${id}. Error details: ${error}`);
   }

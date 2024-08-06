@@ -101,7 +101,13 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             name="preview_picture_url"
             onChange={handleFileChange}
           />
-          <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-96 mx-auto" />
+          <Image
+            width={384}
+            height={384}
+            src={currentPreviewImg}
+            alt=""
+            className="max-w-96 mx-auto"
+          />
         </div>
         <div>
           <label className="sr-only" htmlFor="phone">

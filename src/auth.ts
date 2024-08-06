@@ -1,8 +1,10 @@
 import NextAuth, { User } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import bcrypt from "bcrypt";
 import { getUserCredentials } from "./lib/data";
 import { signInSchema } from "./lib/validate";
 import { ZodError } from "zod";
+import { UserCredentials } from "./lib/definitions";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -15,10 +17,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         try {
           const { email, password } = await signInSchema.parseAsync(credentials);
 
-          const user = await getUserCredentials(email, password);
+          const user: UserCredentials | null = await getUserCredentials(email);
 
           if (!user) {
             throw new Error("Mauvais IDs de connexion");
+          }
+
+          if (user && (await bcrypt.compare(password, user.password))) {
+            return user;
+          } else {
+            return null;
           }
 
           return user;
@@ -33,6 +41,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      // Redirect to the dashboard after sign-in
+      return url.startsWith(baseUrl) ? `${baseUrl}/dashboard` : baseUrl;
+    },
+  },
   basePath: process.env.BASE_PATH,
   secret: process.env.AUTH_SECRET,
 });

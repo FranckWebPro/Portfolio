@@ -1,20 +1,10 @@
 "use server";
 
 import { sql } from "@vercel/postgres";
-import {
-  User,
-  Stack,
-  ProjectWithStacks,
-  UserCredentials,
-  SecuredUserCredentials,
-} from "./definitions";
+import { User, Stack, ProjectWithStacks, UserCredentials } from "./definitions";
 import { revalidatePath } from "next/cache";
-import bcrypt from "bcryptjs";
 
-export async function getUserCredentials(
-  email: string,
-  password: string
-): Promise<SecuredUserCredentials | null> {
+export async function getUserCredentials(email: string): Promise<UserCredentials | null> {
   try {
     const data = await sql<UserCredentials>`
         SELECT email, password
@@ -24,13 +14,7 @@ export async function getUserCredentials(
 
     const user: UserCredentials = data.rows[0];
 
-    if (user && (bcrypt.compareSync(password, user.password))) {
-      return user.email as unknown as SecuredUserCredentials;
-    } else if (user && !bcrypt.compareSync(password, user.password)) {
-      return null;
-    } else {
-      return null;
-    }
+    return user;
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch user credentials.");

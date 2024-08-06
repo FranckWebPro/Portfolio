@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import logo from "./images/logoLight.png";
 
@@ -20,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed z-50 mx-auto flex h-16 w-full animate-blur items-center justify-center md:h-20 lg:h-24">
       <nav className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between">
-        <Link className="z-20 text-teal-600 dark:text-teal-600" href="/">
+        <a className="z-20 text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
             src={logo}
@@ -30,7 +29,7 @@ export default function Header() {
             height={80}
             sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
           />
-        </Link>
+        </a>
         <ul
           className={`absolute inset-0 z-10 flex h-screen w-full list-none flex-col items-center justify-evenly
             bg-darkColor/90 transition-transform duration-300 ease-in-out before:backdrop-blur-lg lg:static
@@ -39,56 +38,56 @@ export default function Header() {
             ${navIsOpen ? "translate-x-0 py-16" : "translate-x-full"}`}
         >
           <li>
-            <Link
+            <a
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
-              href="#services"
-              onClick={handleMobileMenu}
+              href="/#services"
+              onClick={() => navIsOpen && handleMobileMenu()}
             >
               Services
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
-              href="#experiences"
-              onClick={handleMobileMenu}
+              href="/#experiences"
+              onClick={() => navIsOpen && handleMobileMenu()}
             >
               Expériences
-            </Link>
+            </a>
           </li>
 
           <li>
-            <Link
+            <a
               className="p-2 text-lightColor transition hover:text-primaryLight active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
-              href="#technos"
-              onClick={handleMobileMenu}
+              href="/#technos"
+              onClick={() => navIsOpen && handleMobileMenu()}
             >
               Technos
-            </Link>
+            </a>
           </li>
 
           <li>
-            <Link
+            <a
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
-              href="#projects"
-              onClick={handleMobileMenu}
+              href="/#projects"
+              onClick={() => navIsOpen && handleMobileMenu()}
             >
               Projets
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/blog"
-              onClick={handleMobileMenu}
+              onClick={() => navIsOpen && handleMobileMenu()}
             >
               Blog
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -96,7 +95,7 @@ export default function Header() {
           className="z-20 h-auto min-w-[13ch] rounded-lg bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6
             py-3 text-center text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight
             hover:bg-gradient-to-r hover:text-lightColor 2xl:text-base"
-          href="#contact"
+          href="/#contact"
           onClick={() => navIsOpen && handleMobileMenu()}
         >
           Me contacter

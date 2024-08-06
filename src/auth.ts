@@ -50,7 +50,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   secret: process.env.AUTH_SECRET,
   cookies: {
     sessionToken: {
-      name: `__Secure-authjs.session-token`,
+      name: '__Secure-authjs.session-token',
       options: {
         httpOnly: true,
         sameSite: 'lax',

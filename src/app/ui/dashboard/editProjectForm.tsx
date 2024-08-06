@@ -4,7 +4,7 @@ import { editProject } from "@/lib/actions";
 import { Stack } from "@/lib/definitions";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
-import { uploadFile, uploadFileFromForm } from "@/lib/utils";
+import { uploadFileFromForm } from "@/lib/utils";
 import Image from "next/image";
 
 export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {

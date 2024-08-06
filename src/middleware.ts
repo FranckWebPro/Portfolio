@@ -7,6 +7,8 @@ export default async function middleware(req: NextRequest) {
   //"salt" 3rd argument bypassed as it block from accessing dashboard while logged in
   const token = await getToken({ req, secret }  as unknown as GetTokenParams<false>);
 
+  console.log(token);
+  
   if (!token && req.nextUrl.pathname === "/dashboard") {
     return NextResponse.redirect(new URL("/api/auth/signin", req.nextUrl.origin));
   }

@@ -1,6 +1,8 @@
 # Portfolio
 
-Welcome to my portfolio repository. This project aims to showcase my skills and projects as a web developer.
+Welcome to my portfolio repository. This project aims to showcase my skills, projects and experience as a web developer.
+
+You can check it live here : https://www.franckwebpro.com
 
 ## Table of Contents
 
@@ -76,6 +78,7 @@ This project uses the following technologies:
 -   [Tailwind](https://tailwindcss.com/docs/overflow)
 -   [Next-Auth](https://authjs.dev/)
 -   [Edgestore](https://edgestore.dev/)
+-   [Vercel](https://vercel.com/home)
 
 Contribution
 ------------

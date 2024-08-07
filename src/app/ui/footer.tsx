@@ -124,6 +124,14 @@ export default function Footer({ user }: { user: User }) {
                 Blog
               </a>
             </li>
+            <li>
+              <a
+                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                href="/dashboard"
+              >
+                Dashboard
+              </a>
+            </li>
           </ul>
         </div>
 

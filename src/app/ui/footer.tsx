@@ -56,7 +56,7 @@ export default function Footer({ user }: { user: User }) {
                   className="duration-300 hover:opacity-60"
                 />{" "}
               </a>
-              <a href="{user.github_link}" target="_blank" rel="noreferrer">
+              <a href={user.github_link} target="_blank" rel="noreferrer">
                 <Image
                   src={logoGithub}
                   width={45}
@@ -65,7 +65,7 @@ export default function Footer({ user }: { user: User }) {
                   className="rounded-lg bg-lightColor p-2 duration-300 hover:opacity-60"
                 />{" "}
               </a>
-              <a href={user.linkedin_link} target="_blank" rel="noreferrer">
+              <a href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
                 <Image
                   src={logoMalt}
                   width={45}

@@ -1,13 +1,18 @@
 "use client";
 
 import { editProject } from "@/lib/actions";
-import { Stack } from "@/lib/definitions";
+import { MyEdgeStoreRouter, Stack } from "@/lib/definitions";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
-import { uploadFileFromForm } from "@/lib/utils";
 import Image from "next/image";
 
-export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
+export default function EditProjectForm({
+  stacks,
+  edgestore,
+}: {
+  stacks: Array<Stack>;
+  edgestore: MyEdgeStoreRouter;
+}) {
   const { projectToModify, setProjectToModify } = useContext(ProjectContext);
   const [status, setStatus] = useState(projectToModify!.status);
   const [currentPreviewImg, setCurrentPreviewImg] = useState(projectToModify!.preview_picture_url);
@@ -15,33 +20,25 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
   const handleEditProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File;
-
-    if (file.name !== "" && file.size !== 0) {
-      const res = await uploadFileFromForm(file);
-      if (!res.ok) {
-        throw new Error(await res.text());
-      }
-      const imgPath = await res.json();
-      formData.set("preview_picture_url", imgPath.path);
-    } else if (currentPreviewImg.startsWith("/assets/")) {
+    if (file.size !== 0 && currentPreviewImg.startsWith("https://files.edgestore.dev")) {
+      const res = await edgestore.myPublicImages.upload({
+        file,
+        options: {
+          replaceTargetUrl: currentPreviewImg,
+        },
+      });
+      formData.set("preview_picture_url", res.url);
+    } else if (currentPreviewImg.startsWith("https://files.edgestore.dev")) {
       formData.set("preview_picture_url", currentPreviewImg);
     } else {
-      throw new Error("image path issue");
+      const res = await edgestore.myPublicImages.upload({ file });
+      formData.set("preview_picture_url", res.url);
     }
-
     await editProject(projectToModify!.id, formData);
     form.reset();
     setProjectToModify(null);
-  };
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setCurrentPreviewImg(URL.createObjectURL(file));
-    }
   };
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,7 +94,6 @@ export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
             accept="image/*"
             id="preview_picture_url"
             name="preview_picture_url"
-            onChange={handleFileChange}
           />
           <Image
             width={384}

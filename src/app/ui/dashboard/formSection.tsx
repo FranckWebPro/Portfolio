@@ -6,9 +6,12 @@ import EditProjectForm from "./editProjectForm";
 import AddProjectForm from "./addProjectForm";
 import { Stack } from "@/lib/definitions";
 import { ResetProjectButton } from "./buttons";
+import { useEdgeStore } from "@/lib/edgestore";
 
 export default function FormSection({ stacks }: { stacks: Array<Stack> }) {
   const { projectToModify } = useContext(ProjectContext);
+  const { edgestore } = useEdgeStore();
+
   return (
     <section
       id="form"
@@ -19,7 +22,11 @@ export default function FormSection({ stacks }: { stacks: Array<Stack> }) {
         {projectToModify ? "Modifier le projet" : "Ajouter un projet"}
       </h2>
       {projectToModify && <ResetProjectButton />}
-      {projectToModify ? <EditProjectForm stacks={stacks} /> : <AddProjectForm stacks={stacks} />}
+      {projectToModify ? (
+        <EditProjectForm stacks={stacks} edgestore={edgestore} />
+      ) : (
+        <AddProjectForm stacks={stacks} edgestore={edgestore} />
+      )}
     </section>
   );
 }

@@ -78,8 +78,7 @@ const projects = [
   },
   {
     title: "ToDo-List JS",
-    description:
-      "Entrainement lors de ma formation JS natif avec un to-do list classique",
+    description: "Entrainement lors de ma formation JS natif avec un to-do list classique",
     client_name: null,
     preview_picture_url: "url",
     link: "",
@@ -105,8 +104,7 @@ const projects = [
     client_name: null,
     preview_picture_url: "url",
     link: "https://js-bdx-0224-p2-cocktail-club-client-7ljk.vercel.app/",
-    github_repo:
-      "https://github.com/WildCodeSchool-2024-02/JS-bdx-0224-P2-cocktail_club",
+    github_repo: "https://github.com/WildCodeSchool-2024-02/JS-bdx-0224-P2-cocktail_club",
     published: true,
     status: "Terminé",
   },

@@ -3,17 +3,14 @@
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { CreateProject } from "./validate";
-import { promises } from "fs";
 
 export async function addProject(formData: FormData) {
   const projectData = Object.fromEntries(formData.entries());
-
   const data = CreateProject.parse({
     ...projectData,
     published: projectData.published === "on" ? true : false,
     stacks_id: formData.getAll("stacks_id"),
   });
-
   const {
     title,
     description,
@@ -25,16 +22,13 @@ export async function addProject(formData: FormData) {
     published,
     stacks_id,
   } = data;
-
   try {
     const insertId = await sql`
         INSERT INTO projects (title, description, client_name, preview_picture_url, link, github_repo, published, status) 
         VALUES (${title}, ${description}, ${client_name}, ${preview_picture_url}, ${link}, ${github_repo}, ${published}, ${status})
         RETURNING id
       `;
-
     const projectId = insertId.rows[0].id;
-
     for (const stackId of stacks_id) {
       await sql`
           INSERT INTO projects_stacks (project_id, stack_id)
@@ -50,10 +44,6 @@ export async function addProject(formData: FormData) {
 
 export async function deleteProject(id: number) {
   try {
-    const imgPath = await sql`SELECT preview_picture_url FROM projects WHERE id = ${id}`;
-    if (imgPath.rows.length > 0) {
-      await promises.unlink(`public/${imgPath.rows[0].preview_picture_url}`);
-    }
     await sql`DELETE FROM projects_stacks WHERE project_id = ${id}`;
     await sql`DELETE FROM projects WHERE id = ${id}`;
     revalidatePath("/dashboard");
@@ -93,7 +83,6 @@ export async function editProject(id: number, formData: FormData) {
     published,
     stacks_id,
   } = data;
-
   try {
     await sql`
           UPDATE projects 

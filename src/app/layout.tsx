@@ -5,6 +5,7 @@ import { Person, WithContext } from "schema-dts";
 import "./globals.css";
 import ogImage from "../../public/opengraph-image.png";
 import twitterImage from "../../public/twitter-image.png";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const personStructuredData: WithContext<Person> = {
   "@context": "https://schema.org",
@@ -71,7 +72,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${bG.className} bg-darkColor text-lightColor`}>{children}</body>
+      <body className={`${bG.className} bg-darkColor text-lightColor`}>
+        <EdgeStoreProvider>{children}</EdgeStoreProvider>
+      </body>
     </html>
   );
 }

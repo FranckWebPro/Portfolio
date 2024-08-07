@@ -1,10 +1,11 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext} from "react";
 import { deleteProject, togglePublication } from "../../../lib/actions";
 import { ProjectContext } from "./projectContext";
 import { readProjectWithStacks } from "@/lib/data";
 import Link from "next/link";
+import { useEdgeStore } from "@/lib/edgestore";
 
 export function TogglePublicationButton({ id, published }: { id: number; published: boolean }) {
   const handleUpdatePublished = async () => {
@@ -26,15 +27,26 @@ export function TogglePublicationButton({ id, published }: { id: number; publish
   );
 }
 
-export function DeleteProjectButton({ id }: { id: number }) {
+export function DeleteProjectButton({
+  id,
+  preview_picture_url,
+}: {
+  id: number;
+  preview_picture_url: string;
+}) {
+  const { edgestore } = useEdgeStore();
   const handleDelete = async () => {
     try {
-      await deleteProject(id);
+      if (confirm("Supprimer ce projet ?")) {
+        await edgestore.myPublicImages.delete({
+          url: preview_picture_url,
+        });
+        await deleteProject(id);
+      }
     } catch (error) {
       console.error("Error deleting project:", error);
     }
   };
-
   return (
     <button
       type="button"
@@ -49,7 +61,6 @@ export function DeleteProjectButton({ id }: { id: number }) {
 
 export function UpdateProjectButton({ id }: { id: number }) {
   const { setProjectToModify } = useContext(ProjectContext);
-
   const handleUpdate = async () => {
     try {
       const project = await readProjectWithStacks(id);
@@ -62,7 +73,6 @@ export function UpdateProjectButton({ id }: { id: number }) {
       console.error("Failed to read project:", error);
     }
   };
-
   return (
     <Link
       className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
@@ -77,7 +87,6 @@ export function UpdateProjectButton({ id }: { id: number }) {
 
 export function ResetProjectButton() {
   const { setProjectToModify } = useContext(ProjectContext);
-
   const handleResetProject = () => {
     setProjectToModify(null);
   };

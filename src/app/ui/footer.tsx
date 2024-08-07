@@ -56,7 +56,7 @@ export default function Footer({ user }: { user: User }) {
                   className="duration-300 hover:opacity-60"
                 />{" "}
               </a>
-              <a href={user.github_link} target="_blank" rel="noreferrer">
+              <a href="{user.github_link}" target="_blank" rel="noreferrer">
                 <Image
                   src={logoGithub}
                   width={45}

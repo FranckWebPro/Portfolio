@@ -4,6 +4,18 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "adware-technologies.s3.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "files.edgestore.dev",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "www.drupal.org",
         port: "",
         pathname: "/**",

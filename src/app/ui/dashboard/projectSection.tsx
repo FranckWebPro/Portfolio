@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "./projectCard";
 import { ProjectWithStacks } from "@/lib/definitions";
 
-export default function ProjectSectionPublished({
+export default function ProjectSection({
   projects,
   published,
 }: {

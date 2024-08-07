@@ -1,31 +1,32 @@
 "use client";
 
 import { addProject } from "@/lib/actions";
-import { Stack } from "@/lib/definitions";
-import { uploadFileFromForm } from "@/lib/utils";
-import React from "react";
+import { MyEdgeStoreRouter, Stack } from "@/lib/definitions";
+import React, { useState } from "react";
 
-export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
-    
+export default function AddProjectForm({
+  stacks,
+  edgestore,
+}: {
+  stacks: Array<Stack>;
+  edgestore: MyEdgeStoreRouter;
+}) {
+  const [isChecked, setIsChecked] = useState("finished");
   const handleAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File | null;
-
     if (file) {
-      const res = await uploadFileFromForm(file);
-      if (!res.ok) {
-        throw new Error(await res.text());
-      }
-      const imgPath = await res.json();
-      formData.set("preview_picture_url", imgPath.path);
+      const res = await edgestore.myPublicImages.upload({ file });
+      formData.set("preview_picture_url", res.url);
     }
-
     await addProject(formData);
-
     form.reset();
+  };
+
+  const handleChange = () => {
+    isChecked === "finished" ? setIsChecked("development") : setIsChecked("finished");
   };
 
   return (
@@ -115,6 +116,8 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
             tabIndex={-1}
             name="status"
             value="Terminé"
+            checked={isChecked === "finished"}
+            onChange={handleChange}
           />
 
           <span className="text-sm"> Terminé </span>
@@ -133,6 +136,8 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
             tabIndex={-1}
             name="status"
             value="En cours de développement"
+            checked={isChecked === "development"}
+            onChange={handleChange}
           />
 
           <span className="text-sm"> En cours de développement </span>

@@ -8,8 +8,8 @@ export default function ServiceSection() {
         py-32 md:min-h-[calc(100vh-5rem)]"
     >
       <div
-        className="max-w-screen-2xl flex flex-col gap-4 lg:gap-0 lg:flex-row p-4 md:p-8 lg:p-12 lg:py-16
-          lg:grid-cols-2 lg:items-center lg:gap-x-16"
+        className="max-w-screen-2xl flex flex-col gap-4 lg:gap-0 lg:flex-row p-4 md:p-8 lg:p-12 lg:py-16 lg:grid-cols-2
+          lg:items-center lg:gap-x-16"
       >
         <div className="w-full text-center lg:order-2 lg:text-left mb-14">
           <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
@@ -17,9 +17,9 @@ export default function ServiceSection() {
           </h2>
 
           <p className="my-4 text-lightColor">
-            Les services que je propose comme prestations, du développement traditionnel pour plus de
-            flexibilité au no code avec Webflow pour plus de simplicité/rapidité en passant par le
-            référencement naturel (SEO).
+            Les services que je propose comme prestations, du développement traditionnel pour plus
+            de flexibilité au no code avec Webflow pour plus de simplicité/rapidité en passant par
+            le référencement naturel (SEO).
           </p>
 
           <a

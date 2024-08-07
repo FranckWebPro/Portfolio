@@ -15,18 +15,18 @@ export const formatFileName = (fileName: string): string => {
   }
 };
 
-export async function uploadFileFromForm(file: File) {
-    const uploadData = new FormData();
-    uploadData.append("file", file);
-    const response = await uploadFile(uploadData);
-    return response;
-}
+// export async function uploadFileFromForm(file: File) {
+//   const uploadData = new FormData();
+//   uploadData.append("file", file);
+//   const response = await uploadFile(uploadData);
+//   return response;
+// }
 
-export async function uploadFile(data: FormData) {
-    const response = await fetch("/api/upload", {
-      method: "POST",
-      body: data,
-    });
-  
-    return response;
-  }
+// export async function uploadFile(data: FormData) {
+//   const response = await fetch("/api/upload", {
+//     method: "POST",
+//     body: data,
+//   });
+
+//   return response;
+// }

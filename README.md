@@ -2,8 +2,6 @@
 
 Welcome to my portfolio repository. This project aims to showcase my skills, projects and experience as a web developer.
 
-You can check it live here : https://www.franckwebpro.com
-
 ## Table of Contents
 
 - [Installation](#installation)

@@ -14,13 +14,11 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
           lg:items-center lg:gap-x-16"
       >
         <div className="w-full text-center lg:text-left mb-14">
-          <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
-            Les technos du futur que je maîtrise
-          </h2>
+          <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">Les technos du futur que je maîtrise</h2>
           <p className="my-4 text-lightColor">
-            L'ensemble des langages, librairies et frameworks, code ou no code, que je connais et
-            que je souhaite proposer dans mes services... et il n'y en a pas 50 : Je tiens à
-            utiliser moins de technologie, mais à les maitriser vraiment !
+            L'ensemble des langages, librairies et frameworks, code ou no code, que je connais et que je souhaite
+            proposer dans mes services... je suis bien sûr ouvert à de nouvelles découvertes et à l'apprentissage
+            d'autres technos si besoins pour votre projet !
           </p>
 
           <a
@@ -37,7 +35,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
           {stacks.map((stack) => (
             <a
               className="border-ligtColor flex flex-col items-center justify-center rounded-xl border bg-glassmorphism
-                bg-center min-h-40 p-4 shadow-sm duration-300 hover:border-gray-200 hover:ring-1
+                bg-center py-8 px-4 shadow-sm duration-300 hover:border-gray-200 hover:ring-1
                 hover:ring-primaryColor focus:outline-none focus:ring"
               href={stack.stack_link !== "url" ? stack.stack_link : ""}
               target="_blank"

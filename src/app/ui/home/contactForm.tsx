@@ -2,21 +2,16 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <section
-      id="contact"
-      className="mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl py-12"
-    >
+    <section id="contact" className="mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl py-12">
       <div
         className="grid max-w-screen-2xl grid-cols-1 items-center gap-x-12 gap-y-8 p-4 py-16 md:p-8 lg:grid-cols-5
           lg:p-12"
       >
         <div className="flex flex-col gap-3 lg:col-span-2 lg:py-12">
-          <h2 className="mb-6 max-w-80 text-3xl font-bold md:text-4xl">
-            Un projet de fou ? Discutons-en :
-          </h2>
+          <h2 className="mb-6 max-w-80 text-3xl font-bold md:text-4xl">Un projet de fou ? Discutons-en :</h2>
           <p className="mb-4 max-w-xl text-lg">
-            Entreprise, start-up, indépendant... Je travaille pour tous types de clients. Vous
-            pouvez me contacter par mail ou bien par le formulaire, je vous répondrai au plus vite !
+            Entreprise, start-up, indépendant... Je travaille pour tous types de clients. Vous pouvez me contacter par
+            mail ou bien par le formulaire, je vous répondrai au plus vite !
           </p>
 
           <a
@@ -34,12 +29,7 @@ export default function ContactForm() {
           method="POST"
           className="space-y-4 rounded-lg border-2 bg-glassmorphism p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
         >
-          <input
-            type="hidden"
-            aria-hidden
-            name="access_key"
-            value="280330b4-d8a3-4a40-b1bb-05c086f6cf92"
-          ></input>
+          <input type="hidden" aria-hidden name="access_key" value="280330b4-d8a3-4a40-b1bb-05c086f6cf92"></input>
           <div>
             <label className="sr-only" htmlFor="name">
               Nom
@@ -86,7 +76,7 @@ export default function ContactForm() {
           </div>
 
           <fieldset className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-            <legend className="mb-3">Quel service vous intéresse ?</legend>
+            <legend className="mb-3">Quel sont vos besoins ?</legend>
             <label
               htmlFor="conseil"
               className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300
@@ -126,7 +116,6 @@ export default function ContactForm() {
             <label className="sr-only" htmlFor="message">
               Message
             </label>
-
             <textarea
               className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm duration-300
                 hover:border-primaryLight focus:outline-primaryColor"
@@ -138,13 +127,7 @@ export default function ContactForm() {
             ></textarea>
           </div>
           <label aria-hidden className="hidden" htmlFor="botckeck">
-            <input
-              aria-hidden
-              title="botcheck"
-              type="checkbox"
-              name="botcheck"
-              className="hidden"
-            />
+            <input aria-hidden title="botcheck" type="checkbox" name="botcheck" className="hidden" />
           </label>
           <div className="mt-4">
             <button

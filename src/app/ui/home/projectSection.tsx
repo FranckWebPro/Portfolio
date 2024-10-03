@@ -5,7 +5,7 @@ import { ProjectWithStacks } from "@/lib/definitions";
 export default function ProjectSection({ projects }: { projects: Array<ProjectWithStacks> }) {
   return (
     <section id="projects" className="pt-32">
-      <h2 className="my-4 text-center text-3xl font-bold md:text-4xl">Des projets de diiinnngue</h2>
+      <h2 className="my-4 text-center text-3xl font-bold md:text-4xl">Les super projets que j'ai réalisés</h2>
       <p className="mb-8 text-center">
         Les projet que j'ai réalisés en formation, pour moi même et en tant que freelance
       </p>

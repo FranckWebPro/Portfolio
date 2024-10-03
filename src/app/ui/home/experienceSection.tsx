@@ -12,9 +12,8 @@ export default function ExperienceSection() {
           <h2 className="text-center text-3xl font-bold md:text-4xl">Mon expérience</h2>
 
           <p className="mt-4 text-center leading-8 text-gray-300">
-            Ancien fusilier parachutiste passionné par le monde du web et l'entrepreneuriat, je me
-            suis reconverti comme développeur web freelance. Je développe aussi mes propres
-            logiciels notamment LinkerFlow, mon projet actuel.
+            Ancien fusilier parachutiste passionné par le monde du web et l'entrepreneuriat, je me suis reconverti comme
+            développeur web freelance. Je développe aussi mes propres logiciels notamment LinkerFlow, mon projet actuel.
           </p>
         </hgroup>
 
@@ -44,9 +43,17 @@ export default function ExperienceSection() {
               <h3 className="mb-4 text-lg font-bold">LinkerFlow, SaaS outil Webflow</h3>
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
-                Je travaille actuellement au développement d'un outil Webflow afin d'automatiser le
-                maillage interne, afin d'améliorer le <strong>référencement</strong> des sites
-                Webflow.
+                J'ai développé{" "}
+                <a
+                  href="https://www.linkerflow.io"
+                  target="_blank"
+                  className="text-primaryColor duration-300 hover:text-primaryLight"
+                  rel="noreferrer"
+                >
+                  Linkerflow
+                </a>
+                , un outil Webflow afin d'automatiser le maillage interne, méthode chronophage pourtant primordial pour
+                le <strong>référencement</strong> des sites web.
               </p>
             </div>
           </div>
@@ -78,11 +85,11 @@ export default function ExperienceSection() {
               <h3 className="mb-4 text-lg font-bold">Formation développeur JS, Wild Code School</h3>
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
-                J'ai suivi durant 5 mois (Février à Juillet 2024) une formation intensive de
-                développeur web où j'ai pu apprendre en plus des technologies React / Express /
-                Node.js / MySQL / Git et Github, des compétences dans l'
-                <strong>accéssibilité web</strong>, les méthodes Agile tel que Scrum et surtout le
-                travail en équipe sur plusieurs projets.
+                J'ai suivi durant 5 mois (Février à Juillet 2024) une formation intensive de développeur web où j'ai pu
+                apprendre en plus des technologies React / Express / Node.js / MySQL / Git et Github, des compétences
+                dans l'
+                <strong>accéssibilité web</strong>, les méthodes Agile tel que Scrum et surtout le travail en équipe sur
+                plusieurs projets.
               </p>
             </div>
           </div>
@@ -112,9 +119,8 @@ export default function ExperienceSection() {
               <h3 className="mb-4 text-lg font-bold">Agence No Code, mon agence Webflow</h3>
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
-                De fin 2023 à 2024, j'ai travaillé dur afin de trouver des clients en tant que
-                freelance développeur Webflow, j'ai souhaité mettre en pratique mes compétences en{" "}
-                <strong>référencement</strong>{" "}
+                De fin 2023 à 2024, j'ai travaillé dur afin de trouver des clients en tant que freelance développeur
+                Webflow, j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong>{" "}
                 <abbr title="Search Engine Optimization"> (SEO) </abbr>
                 afin de faire monter mon propre site d'Agence Webflow ({" "}
                 <a
@@ -165,8 +171,7 @@ export default function ExperienceSection() {
                   {" "}
                   Spylead{" "}
                 </a>
-                , un site de listing de produit tech, tel que les scraper google maps, les
-                fournisseurs d'adresses IP...
+                , un site de listing de produit tech, tel que les scraper google maps, les fournisseurs d'adresses IP...
               </p>
             </div>
           </div>
@@ -196,9 +201,9 @@ export default function ExperienceSection() {
               <h3 className="mb-4 text-lg font-bold">Développeur Webflow freelance</h3>
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
-                Lors de la fin de mon contrat j'ai souhaité me reconvertir dans le web, pour cela je
-                me suis formé en autodidacte sur Webflow et j'ai pu proposer mes services en tant
-                que développeur <strong>Webflow</strong> freelance.
+                Lors de la fin de mon contrat j'ai souhaité me reconvertir dans le web, pour cela je me suis formé en
+                autodidacte sur Webflow et j'ai pu proposer mes services en tant que développeur{" "}
+                <strong>Webflow</strong> freelance.
               </p>
             </div>
           </div>
@@ -224,10 +229,9 @@ export default function ExperienceSection() {
             <div>
               <h3 className="mb-4 text-lg font-bold">Fusilier parachutiste, Armée de l'Air</h3>
               <p className="mt-1 text-sm leading-6 text-gray-300">
-                Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de
-                l'Air en 2017... Souhaitant plus d'action et de travail physique je change de
-                spécialité pour rentrer chez les fusiliers parachutistes et effectué de nombreux
-                stages de formations au cours de plus de 6 ans de services.
+                Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de l'Air en 2017...
+                Souhaitant plus d'action et de travail physique je change de spécialité pour rentrer chez les fusiliers
+                parachutistes et effectué de nombreux stages de formations au cours de plus de 6 ans de services.
               </p>
             </div>
           </div>

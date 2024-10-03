@@ -17,8 +17,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed z-50 mx-auto flex h-16 w-full animate-blur items-center justify-center md:h-20 lg:h-24">
-      <nav className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between">
+    <header className="fixed z-50 flex h-16 w-full top-6 items-center justify-center md:h-20 ">
+      <nav
+        className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between shadow-white/5 shadow-lg lg:top-6 
+      lg:h-20 lg:max-w-screen-lg lg:mx-auto lg:bg-white/5 lg:backdrop-blur-lg lg:rounded-full"
+      >
         <a className="z-20 text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
@@ -49,7 +52,7 @@ export default function Header() {
           </li>
           <li>
             <a
-              className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
+              className="p-2 text-lightColor transition hover:text-secondaryColor target:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/#experiences"
               onClick={() => navIsOpen && handleMobileMenu()}
@@ -93,7 +96,7 @@ export default function Header() {
 
         <a
           className="z-20 h-auto min-w-[13ch] rounded-lg bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6
-            py-3 text-center text-sm font-semibold text-darkColor shadow duration-300 hover:bg-secondaryLight
+            py-3 text-center text-sm font-semibold text-darkColor shadow transition duration-300 hover:bg-secondaryLight
             hover:bg-gradient-to-r hover:text-lightColor 2xl:text-base"
           href="/#contact"
           onClick={() => navIsOpen && handleMobileMenu()}

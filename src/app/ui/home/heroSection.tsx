@@ -19,13 +19,12 @@ export default async function HeroSection() {
           Bienvenue sur mon Portfolio
           <span className="block">
             Moi c'est Franck, <br />
-            Développeur Web Fullstack
+            Développeur Web Next.js
           </span>
         </h1>
         <p className="mx-auto max-w-xl sm:text-xl/relaxed">
-          Le développement web au service de votre business
+          Entrepreneur et développeur fullstack freelance au service de votre entreprise
         </p>
-
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="/CVFG.pdf"

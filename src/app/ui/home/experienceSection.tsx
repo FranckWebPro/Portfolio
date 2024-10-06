@@ -22,7 +22,7 @@ export default function ExperienceSection() {
             className="flex min-h-40 items-center justify-center gap-4 rounded-lg border border-lightColor
               bg-gray-50/[0.04] bg-center px-4 py-6 backdrop-blur-md md:min-h-56"
           >
-            <span className="shrink-0 rounded-lg bg-gray-800 p-4">
+            <span className="shrink-0 rounded-lg bg-gray-800 p-4 place-self-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

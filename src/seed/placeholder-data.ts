@@ -67,8 +67,7 @@ const stacks = [
 const projects = [
   {
     title: "Wildcards",
-    description:
-      "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    description: "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
     client_name: null,
     preview_picture_url: "url",
     link: "https://franckwebpro.github.io/wildcards.github.io/",
@@ -132,8 +131,7 @@ const projects = [
   },
   {
     title: "Ce Portfolio",
-    description:
-      "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
+    description: "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
     client_name: null,
     preview_picture_url: "url",
     link: "https://portfolio-rho-flax-60.vercel.app/",
@@ -154,8 +152,7 @@ const projects = [
   },
   {
     title: "LinkerFlow",
-    description:
-      "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
+    description: "Mon portfolio professionnel, développé avec Next et Typescript afin de me former dessus",
     client_name: null,
     preview_picture_url: "url",
     link: "",

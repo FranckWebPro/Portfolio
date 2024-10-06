@@ -61,10 +61,7 @@ export type ProjectContextType = {
 
 export interface MyEdgeStoreRouter {
   myPublicImages: {
-    upload: (options: {
-      file: File;
-      options?: { replaceTargetUrl?: string };
-    }) => Promise<{ url: string }>;
+    upload: (options: { file: File; options?: { replaceTargetUrl?: string } }) => Promise<{ url: string }>;
     delete: (options: { url: string }) => Promise<void>;
   };
 }

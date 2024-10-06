@@ -26,22 +26,26 @@ Make sure you have the following software installed on your machine:
    ```bash
    git clone https://github.com/FranckWebPro/Portfolio.git `
 
-1.  Navigate to the project directory:
+   ```
 
-    ```bash
+1. Navigate to the project directory:
 
-    cd Portfolio
+   ```bash
 
-2.  Install the dependencies:
+   cd Portfolio
 
-    ```bash
+   ```
 
-    npm install
-    # or
-    yarn install
+1. Install the dependencies:
 
-Usage
------
+   ```bash
+
+   npm install
+   # or
+   yarn install
+   ```
+
+## Usage
 
 To start the project in development mode, run:
 
@@ -67,19 +71,17 @@ yarn build
 
 Adjust line 8 according to the desired environment (production/development).
 
-Technologies
-------------
+## Technologies
 
 This project uses the following technologies:
 
--   [Next.js](https://nextjs.org/docs)
--   [Tailwind](https://tailwindcss.com/docs/overflow)
--   [Next-Auth](https://authjs.dev/)
--   [Edgestore](https://edgestore.dev/)
--   [Vercel](https://vercel.com/home)
+- [Next.js](https://nextjs.org/docs)
+- [Tailwind](https://tailwindcss.com/docs/overflow)
+- [Next-Auth](https://authjs.dev/)
+- [Edgestore](https://edgestore.dev/)
+- [Vercel](https://vercel.com/home)
 
-Contribution
-------------
+## Contribution
 
 Contributions are welcome! If you would like to make improvements or fix bugs, please follow these steps:
 
@@ -89,10 +91,9 @@ Contributions are welcome! If you would like to make improvements or fix bugs, p
 4.  Push to the branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
 
-Contact
--------
+## Contact
 
 Franck
 
--   Email: contact@franckwebpro.com
--   LinkedIn: [Franck](https://www.linkedin.com/in/franck-galliod/)
+- Email: contact@franckwebpro.com
+- LinkedIn: [Franck](https://www.linkedin.com/in/franck-galliod/)

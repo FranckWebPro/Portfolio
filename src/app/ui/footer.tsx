@@ -19,12 +19,7 @@ export default function Footer({ user }: { user: User }) {
           >
             <span className="sr-only">Back to top</span>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path
                 fillRule="evenodd"
                 d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
@@ -82,18 +77,12 @@ export default function Footer({ user }: { user: User }) {
 
           <ul className="mt-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
-              <a
-                className="p-2 transition duration-300 text-lightColor hover:text-primaryLight"
-                href="#services"
-              >
+              <a className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#services">
                 Services
               </a>
             </li>
             <li>
-              <a
-                className="p-2 transition duration-300 text-lightColor hover:text-primaryLight"
-                href="#experience"
-              >
+              <a className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#experience">
                 Expériences
               </a>
             </li>
@@ -117,10 +106,7 @@ export default function Footer({ user }: { user: User }) {
             </li>
 
             <li>
-              <a
-                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
-                href="/blog"
-              >
+              <a className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight" href="/blog">
                 Blog
               </a>
             </li>

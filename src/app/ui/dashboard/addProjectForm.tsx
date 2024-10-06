@@ -4,13 +4,7 @@ import { addProject } from "@/lib/actions";
 import { MyEdgeStoreRouter, Stack } from "@/lib/definitions";
 import React, { useState } from "react";
 
-export default function AddProjectForm({
-  stacks,
-  edgestore,
-}: {
-  stacks: Array<Stack>;
-  edgestore: MyEdgeStoreRouter;
-}) {
+export default function AddProjectForm({ stacks, edgestore }: { stacks: Array<Stack>; edgestore: MyEdgeStoreRouter }) {
   const [isChecked, setIsChecked] = useState("finished");
   const handleAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

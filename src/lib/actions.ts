@@ -11,17 +11,8 @@ export async function addProject(formData: FormData) {
     published: projectData.published === "on" ? true : false,
     stacks_id: formData.getAll("stacks_id"),
   });
-  const {
-    title,
-    description,
-    client_name,
-    preview_picture_url,
-    link,
-    github_repo,
-    status,
-    published,
-    stacks_id,
-  } = data;
+  const { title, description, client_name, preview_picture_url, link, github_repo, status, published, stacks_id } =
+    data;
   try {
     const insertId = await sql`
         INSERT INTO projects (title, description, client_name, preview_picture_url, link, github_repo, published, status) 
@@ -72,17 +63,8 @@ export async function editProject(id: number, formData: FormData) {
     published: projectData.published === "on" ? true : false,
     stacks_id: formData.getAll("stacks_id"),
   });
-  const {
-    title,
-    description,
-    client_name,
-    preview_picture_url,
-    link,
-    github_repo,
-    status,
-    published,
-    stacks_id,
-  } = data;
+  const { title, description, client_name, preview_picture_url, link, github_repo, status, published, stacks_id } =
+    data;
   try {
     await sql`
           UPDATE projects 

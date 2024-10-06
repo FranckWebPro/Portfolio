@@ -12,8 +12,7 @@ const personStructuredData: WithContext<Person> = {
   "@type": "Person",
   name: "Franck GALLIOD",
   url: "https://www.franckwebpro.com/",
-  image:
-    "https://www.franckwebpro.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprprofil.1419460a.png&w=640&q=75",
+  image: "https://www.franckwebpro.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprprofil.1419460a.png&w=640&q=75",
   sameAs: [
     "https://www.linkedin.com/in/franck-galliod/",
     "https://github.com/FranckWebPro",
@@ -29,8 +28,8 @@ const personStructuredData: WithContext<Person> = {
 const bG = Bricolage_Grotesque({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio FranckWebPro",
-  description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et développeur Saas indépendant",
+  title: "Portfolio Développeur Next.js - FranckWebPro",
+  description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et entrepreneur indépendant",
   metadataBase: new URL("https://www.franckwebpro.com"),
   openGraph: {
     type: "website",
@@ -65,7 +64,6 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="canonical" href="https://franckwebpro.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

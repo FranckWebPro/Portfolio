@@ -6,13 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
 import Image from "next/image";
 
-export default function EditProjectForm({
-  stacks,
-  edgestore,
-}: {
-  stacks: Array<Stack>;
-  edgestore: MyEdgeStoreRouter;
-}) {
+export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<Stack>; edgestore: MyEdgeStoreRouter }) {
   const { projectToModify, setProjectToModify } = useContext(ProjectContext);
   const [status, setStatus] = useState(projectToModify!.status);
   const [currentPreviewImg, setCurrentPreviewImg] = useState(projectToModify!.preview_picture_url);
@@ -95,13 +89,7 @@ export default function EditProjectForm({
             id="preview_picture_url"
             name="preview_picture_url"
           />
-          <Image
-            width={384}
-            height={384}
-            src={currentPreviewImg}
-            alt=""
-            className="max-w-96 mx-auto"
-          />
+          <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-96 mx-auto" />
         </div>
         <div>
           <label className="sr-only" htmlFor="phone">
@@ -210,12 +198,7 @@ export default function EditProjectForm({
           text-center text-base font-medium"
       >
         Publier le projet ?
-        <input
-          type="checkbox"
-          id="published"
-          name="published"
-          defaultChecked={projectToModify?.published}
-        />
+        <input type="checkbox" id="published" name="published" defaultChecked={projectToModify?.published} />
       </label>
 
       <div className="mt-4 flex w-full items-center justify-center">

@@ -12,9 +12,5 @@ export const ProjectContext = createContext<ProjectContextType>(defaultContextVa
 export function ProjectProvider({ children }: { children: ReactNode }) {
   const [projectToModify, setProjectToModify] = useState<ProjectWithStacks | null>(null);
 
-  return (
-    <ProjectContext.Provider value={{ projectToModify, setProjectToModify }}>
-      {children}
-    </ProjectContext.Provider>
-  );
+  return <ProjectContext.Provider value={{ projectToModify, setProjectToModify }}>{children}</ProjectContext.Provider>;
 }

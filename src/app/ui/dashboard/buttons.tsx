@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext} from "react";
+import { useContext } from "react";
 import { deleteProject, togglePublication } from "../../../lib/actions";
 import { ProjectContext } from "./projectContext";
 import { readProjectWithStacks } from "@/lib/data";
@@ -27,13 +27,7 @@ export function TogglePublicationButton({ id, published }: { id: number; publish
   );
 }
 
-export function DeleteProjectButton({
-  id,
-  preview_picture_url,
-}: {
-  id: number;
-  preview_picture_url: string;
-}) {
+export function DeleteProjectButton({ id, preview_picture_url }: { id: number; preview_picture_url: string }) {
   const { edgestore } = useEdgeStore();
   const handleDelete = async () => {
     try {

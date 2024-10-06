@@ -8,7 +8,7 @@ import { Stack } from "@/lib/definitions";
 import { ResetProjectButton } from "./buttons";
 import { useEdgeStore } from "@/lib/edgestore";
 
-export default function FormSection({ stacks }: { stacks: Array<Stack> }) {
+export default function ProjectFormSection({ stacks }: { stacks: Array<Stack> }) {
   const { projectToModify } = useContext(ProjectContext);
   const { edgestore } = useEdgeStore();
 

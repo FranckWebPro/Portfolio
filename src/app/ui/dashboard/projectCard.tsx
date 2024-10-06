@@ -36,21 +36,13 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
           <ul className="flex items-center justify-evenly gap-2">
             {project.project_stacks.map((stack: Stack) => (
               <li key={stack.id}>
-                <Image
-                  src={stack.logo !== "url" ? stack.logo : ""}
-                  width={60}
-                  height={60}
-                  alt={stack.name}
-                />
+                <Image src={stack.logo !== "url" ? stack.logo : ""} width={60} height={60} alt={stack.name} />
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-2 justify-evenly">
             <TogglePublicationButton id={project.id} published={project.published} />
-            <DeleteProjectButton
-              id={project.id}
-              preview_picture_url={project.preview_picture_url}
-            />
+            <DeleteProjectButton id={project.id} preview_picture_url={project.preview_picture_url} />
             <UpdateProjectButton id={project.id} />
           </div>
         </div>

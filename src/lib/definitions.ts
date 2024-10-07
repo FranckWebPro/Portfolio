@@ -59,6 +59,11 @@ export type ProjectContextType = {
   setProjectToModify: Dispatch<SetStateAction<ProjectWithStacks | null>>;
 };
 
+export type StackContextType = {
+  stackToModify: Stack | null;
+  setStackToModify: Dispatch<SetStateAction<Stack | null>>;
+};
+
 export interface MyEdgeStoreRouter {
   myPublicImages: {
     upload: (options: { file: File; options?: { replaceTargetUrl?: string } }) => Promise<{ url: string }>;

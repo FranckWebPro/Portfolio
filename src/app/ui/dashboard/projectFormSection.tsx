@@ -14,9 +14,8 @@ export default function ProjectFormSection({ stacks }: { stacks: Array<Stack> })
 
   return (
     <section
-      id="form"
-      className="flex mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl flex-col items-center justify-center
-        gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto md:gap-6"
+      className="flex mx-auto w-full max-w-screen-2xl flex-col items-center justify-start
+        gap-4 bg-[center_top_4rem] bg-no-repeat py-4 pt-8 *:mx-auto md:gap-6"
     >
       <h2 className="text-xl md:text-2xl lg:text-3xl">
         {projectToModify ? "Modifier le projet" : "Ajouter un projet"}

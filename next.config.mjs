@@ -4,6 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "cdn.prod.website-files.com",
+        port: "",
+        pathname: "/**", // autorise toutes les ressources depuis ce domaine
+      },
+      {
+        protocol: "https",
         hostname: "adware-technologies.s3.amazonaws.com",
         port: "",
         pathname: "/**",

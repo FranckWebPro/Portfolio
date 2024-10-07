@@ -1,6 +1,6 @@
 import { enum as zEnum, object, string, number, array, boolean } from "zod";
 
-export const FormSchema = object({
+export const ProjectSchema = object({
   id: number(),
   title: string(),
   description: string(),
@@ -14,9 +14,20 @@ export const FormSchema = object({
   date: string(),
 });
 
-export const CreateProject = FormSchema.omit({
+export const StackSchema = object({
+  id: number(),
+  name: string(),
+  logo: string(),
+  stack_link: string(),
+});
+
+export const CreateProject = ProjectSchema.omit({
   id: true,
   date: true,
+});
+
+export const CreateStack = StackSchema.omit({
+  id: true,
 });
 
 export const signInSchema = object({

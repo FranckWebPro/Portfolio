@@ -1,11 +1,13 @@
 "use client";
 
 import { useContext } from "react";
-import { deleteProject, togglePublication } from "../../../lib/actions";
+import { deleteProject, deleteStack, togglePublication } from "../../../lib/actions";
 import { ProjectContext } from "./projectContext";
-import { readProjectWithStacks } from "@/lib/data";
+import { readProjectWithStacks, readStack } from "@/lib/data";
 import Link from "next/link";
 import { useEdgeStore } from "@/lib/edgestore";
+import { StackContext } from "./stackContext";
+import { useRouter } from "next/navigation";
 
 export function TogglePublicationButton({ id, published }: { id: number; published: boolean }) {
   const handleUpdatePublished = async () => {
@@ -58,7 +60,7 @@ export function UpdateProjectButton({ id }: { id: number }) {
   const handleUpdate = async () => {
     try {
       const project = await readProjectWithStacks(id);
-      const formElement = document.getElementById("editForm") as HTMLFormElement;
+      const formElement = document.getElementById("editProjectForm") as HTMLFormElement;
       if (formElement) {
         formElement.reset();
       }
@@ -93,5 +95,79 @@ export function ResetProjectButton() {
     >
       Ajouter un projet
     </button>
+  );
+}
+
+export function ResetStackButton() {
+  const { setStackToModify } = useContext(StackContext);
+  const handleResetStack = () => {
+    setStackToModify(null);
+  };
+  return (
+    <button
+      type="button"
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+          hover:text-darkColor"
+      onClick={handleResetStack}
+    >
+      Ajouter une techno
+    </button>
+  );
+}
+
+export function DeleteStackButton({ id, logo }: { id: number; logo: string }) {
+  const { edgestore } = useEdgeStore();
+  const router = useRouter();
+
+  const handleDelete = async () => {
+    try {
+      if (confirm("Supprimer cette stack ?")) {
+        await edgestore.myPublicImages.delete({
+          url: logo,
+        });
+        await deleteStack(id);
+        router.refresh();
+      }
+    } catch (error) {
+      console.error("Error deleting stack:", error);
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={handleDelete}
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+          hover:text-darkColor"
+    >
+      Supprimer
+    </button>
+  );
+}
+
+export function UpdateStackButton({ id }: { id: number }) {
+  const { stackToModify, setStackToModify } = useContext(StackContext);
+  const handleUpdate = async () => {
+    try {
+      const stack = await readStack(id);
+      const formElement = document.getElementById("editStackForm") as HTMLFormElement;
+      if (formElement) {
+        formElement.reset();
+      }
+
+      setStackToModify(stack);
+      console.log(stackToModify);
+    } catch (error) {
+      console.error("Failed to read stack:", error);
+    }
+  };
+  return (
+    <Link
+      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+          hover:text-darkColor"
+      onClick={handleUpdate}
+      href="#form"
+    >
+      Mettre à jour
+    </Link>
   );
 }

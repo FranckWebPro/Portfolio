@@ -1,32 +1,26 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ProjectContext } from "./projectContext";
-import EditProjectForm from "./editProjectForm";
-import AddProjectForm from "./addProjectForm";
-import { Stack } from "@/lib/definitions";
-import { ResetProjectButton } from "./buttons";
+import { ResetStackButton } from "./buttons";
 import { useEdgeStore } from "@/lib/edgestore";
+import { StackContext } from "./stackContext";
+import EditStackForm from "./editStackForm";
+import AddStackForm from "./addStackForm";
 
-export default function ProjectFormSection({ stacks }: { stacks: Array<Stack> }) {
-  const { projectToModify } = useContext(ProjectContext);
+export default function StackFormSection() {
+  const { stackToModify } = useContext(StackContext);
   const { edgestore } = useEdgeStore();
+
+  console.log(stackToModify);
 
   return (
     <section
-      id="form"
-      className="flex mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl flex-col items-center justify-center
-        gap-4 bg-[center_top_4rem] bg-no-repeat py-6 pt-20 *:mx-auto md:gap-6"
+      className="flex mx-auto w-full max-w-screen-2xl flex-col items-center justify-start
+        gap-4 bg-[center_top_4rem] bg-no-repeat py-4 pt-8 *:mx-auto md:gap-6"
     >
-      <h2 className="text-xl md:text-2xl lg:text-3xl">
-        {projectToModify ? "Modifier le projet" : "Ajouter un projet"}
-      </h2>
-      {projectToModify && <ResetProjectButton />}
-      {projectToModify ? (
-        <EditProjectForm stacks={stacks} edgestore={edgestore} />
-      ) : (
-        <AddProjectForm stacks={stacks} edgestore={edgestore} />
-      )}
+      <h2 className="text-xl md:text-2xl lg:text-3xl">{stackToModify ? "Modifier la techno" : "Ajouter une techno"}</h2>
+      {stackToModify && <ResetStackButton />}
+      {stackToModify ? <EditStackForm edgestore={edgestore} /> : <AddStackForm edgestore={edgestore} />}
     </section>
   );
 }

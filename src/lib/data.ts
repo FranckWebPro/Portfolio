@@ -108,3 +108,18 @@ export async function readProjectWithStacks(id: number): Promise<ProjectWithStac
     return null;
   }
 }
+
+export async function readStack(id: number): Promise<Stack | null> {
+  try {
+    const data = await sql`SELECT * FROM stacks WHERE id = ${id}`;
+    revalidatePath("/dashboard");
+    if (data.rows.length === 0) {
+      return null;
+    }
+    const stack = data.rows[0] as Stack;
+    return stack;
+  } catch (error) {
+    console.error("Database Error: Failed to get stack.", error);
+    return null;
+  }
+}

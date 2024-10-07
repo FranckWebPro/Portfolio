@@ -46,9 +46,9 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
 
   return (
     <form
-      id="editForm"
+      id="editProjectForm"
       onSubmit={handleEditProject}
-      className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3 lg:p-12"
+      className="w-full space-y-4 rounded-lg border-2 p-8 shadow-lg backdrop-blur-md lg:col-span-3"
     >
       <label className="sr-only" htmlFor="name">
         Titre *
@@ -64,7 +64,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="sr-only" htmlFor="phone">
+          <label className="sr-only" htmlFor="client_name">
             Nom du client
           </label>
           <input
@@ -77,7 +77,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="phone">
+          <label className="sr-only" htmlFor="preview_picture_url">
             Image projet *
           </label>
           <input
@@ -89,10 +89,10 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
             id="preview_picture_url"
             name="preview_picture_url"
           />
-          <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-96 mx-auto" />
+          <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-56 mx-auto xl:max-w-96" />
         </div>
         <div>
-          <label className="sr-only" htmlFor="phone">
+          <label className="sr-only" htmlFor="link">
             Lien du projet *
           </label>
           <input
@@ -105,7 +105,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
           />
         </div>
         <div>
-          <label className="sr-only" htmlFor="phone">
+          <label className="sr-only" htmlFor="github_repo">
             Repo Github
           </label>
           <input
@@ -167,7 +167,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
         </label>
 
         <textarea
-          className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
+          className="w-full max-h-28 rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
           placeholder="Description *"
           rows={8}
           id="description"
@@ -204,7 +204,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
       <div className="mt-4 flex w-full items-center justify-center">
         <button
           type="submit"
-          className="rounded-lg bg-secondaryColor px-10 py-4 font-medium text-darkColor duration-300
+          className="rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-300
             hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
         >
           Mettre à jour ce projet

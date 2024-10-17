@@ -30,12 +30,24 @@ const bG = Bricolage_Grotesque({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Portfolio Développeur Next.js - FranckWebPro",
   description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et entrepreneur indépendant",
-  metadataBase: new URL("https://www.franckwebpro.com"),
+  metadataBase: new URL("https://www.franckwebpro.com/"),
+  keywords: ["Développeur Web", "Next.js", "React", "Node.js", "Webflow", "Freelance", "Entrepreneur"],
+  alternates: {
+    canonical: `/`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     type: "website",
     url: "https://www.franckwebpro.com/",
     title: "Portfolio FranckWebPro",
-    description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et développeur Saas indépendant",
+    description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et développeur indépendant",
     images: [
       {
         url: `https://www.franckwebpro.com${ogImage.src}`,

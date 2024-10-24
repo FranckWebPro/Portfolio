@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
       >
         <div
           className="w-full p-4 pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6
-            lg:p-8"
+            lg:p-8 bg-gradient-to-b from-transparent to-black/80"
         >
           <h3 className="mt-4 text-center text-xl font-medium drop-shadow-[1px_2px_2px_rgba(114,15,234,1)] sm:text-2xl">
             {project.title}

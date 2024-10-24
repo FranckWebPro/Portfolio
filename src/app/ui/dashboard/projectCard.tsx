@@ -19,10 +19,10 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
           group-hover:-translate-y-2"
       >
         <div
-          className="w-full p-4 pt-0 transition-opacity duration-300 group-hover:absolute group-hover:opacity-0 sm:p-6
+          className="w-full p-4 pt-0 transition-opacity text-3xl duration-300 bg-black/50 group-hover:absolute group-hover:opacity-0 sm:p-6
             lg:p-8"
         >
-          <h3 className="mt-4 text-center text-xl font-medium drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] sm:text-2xl">
+          <h3 className="mt-4 text-center text-xl font-medium drop-shadow-[1px_2px_2px_rgba(0,0,0,0.90)] sm:text-2xl">
             {project.title}
           </h3>
         </div>

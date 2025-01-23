@@ -1,7 +1,7 @@
 "use server";
 
 import { sql } from "@vercel/postgres";
-import { User, Stack, ProjectWithStacks, UserCredentials } from "./definitions";
+import { User, Stack, ProjectWithStacks, UserCredentials, Articles } from "./definitions";
 import { revalidatePath } from "next/cache";
 
 export async function getUserCredentials(email: string): Promise<UserCredentials | null> {
@@ -50,7 +50,7 @@ export async function fetchStacks(): Promise<Stack[]> {
   }
 }
 
-export async function fetchProjectsWithStacks() {
+export async function browseProjectsWithStacks() {
   try {
     const projectWithStacks = await sql<ProjectWithStacks>`
       SELECT
@@ -121,5 +121,26 @@ export async function readStack(id: number): Promise<Stack | null> {
   } catch (error) {
     console.error("Database Error: Failed to get stack.", error);
     return null;
+  }
+}
+
+export async function browseArticles(): Promise<Articles[]> {
+  try {
+    const articles = await sql<Articles>`
+        SELECT
+          id,
+          created_at,
+          title,
+          slug,
+          content,
+          metadescription,
+          author,
+          thumbnail
+        FROM articles
+      `;
+    return articles.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Articles.");
   }
 }

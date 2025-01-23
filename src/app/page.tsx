@@ -7,11 +7,11 @@ import ProjectSection from "./ui/home/projectSection";
 import { ProjectWithStacks, Stack, User } from "../lib/definitions";
 import ContactForm from "./ui/home/contactForm";
 import Footer from "./ui/footer";
-import { fetchProjectsWithStacks, fetchStacks, fetchUser } from "../lib/data";
+import { browseProjectsWithStacks, fetchStacks, fetchUser } from "../lib/data";
 import ServiceSection from "./ui/home/serviceSection";
 
 export default async function Home() {
-  const projects: Array<ProjectWithStacks> = await fetchProjectsWithStacks();
+  const projects: Array<ProjectWithStacks> = await browseProjectsWithStacks();
   const user: User[] = await fetchUser();
   const stacks: Array<Stack> = await fetchStacks();
 

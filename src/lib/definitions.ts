@@ -54,6 +54,18 @@ export type Project_Stack = {
   project_id: number;
 };
 
+export type Articles = {
+  id: number;
+  created_at: string;
+  title: string;
+  slug: string;
+  metadescription: string;
+  content: string;
+  author: string;
+  thumbnail: string;
+};
+  
+
 export type ProjectContextType = {
   projectToModify: ProjectWithStacks | null;
   setProjectToModify: Dispatch<SetStateAction<ProjectWithStacks | null>>;

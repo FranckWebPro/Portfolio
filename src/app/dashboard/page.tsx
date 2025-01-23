@@ -2,13 +2,13 @@ import React from "react";
 import HeaderDashboard from "../ui/dashboard/headerDashboard";
 import { ProjectWithStacks, Stack } from "../../lib/definitions";
 import ProjectSection from "../ui/dashboard/projectSection";
-import { fetchProjectsWithStacks, fetchStacks } from "../../lib/data";
+import { browseProjectsWithStacks, fetchStacks } from "../../lib/data";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
 import StackFormSection from "../ui/dashboard/stackFormSection";
 import StackSection from "../ui/dashboard/stackSection";
 
 export default async function page() {
-  const projects: Array<ProjectWithStacks> = await fetchProjectsWithStacks();
+  const projects: Array<ProjectWithStacks> = await browseProjectsWithStacks();
   const stacksArray: Array<Stack> = await fetchStacks();
 
   return (

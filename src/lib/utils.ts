@@ -28,19 +28,3 @@ export function formatDate(dateString: string, addDays = 0) {
   const year = date.getUTCFullYear().toString().slice(-2);
   return `${day}/${month}/${year}`;
 }
-
-// export async function uploadFileFromForm(file: File) {
-//   const uploadData = new FormData();
-//   uploadData.append("file", file);
-//   const response = await uploadFile(uploadData);
-//   return response;
-// }
-
-// export async function uploadFile(data: FormData) {
-//   const response = await fetch("/api/upload", {
-//     method: "POST",
-//     body: data,
-//   });
-
-//   return response;
-// }

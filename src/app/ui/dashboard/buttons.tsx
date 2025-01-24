@@ -145,7 +145,7 @@ export function DeleteStackButton({ id, logo }: { id: number; logo: string }) {
 }
 
 export function UpdateStackButton({ id }: { id: number }) {
-  const { stackToModify, setStackToModify } = useContext(StackContext);
+  const { setStackToModify } = useContext(StackContext);
   const handleUpdate = async () => {
     try {
       const stack = await readStack(id);
@@ -155,7 +155,6 @@ export function UpdateStackButton({ id }: { id: number }) {
       }
 
       setStackToModify(stack);
-      console.log(stackToModify);
     } catch (error) {
       console.error("Failed to read stack:", error);
     }

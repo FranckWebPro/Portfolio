@@ -12,7 +12,5 @@ export const StackContext = createContext<StackContextType>(defaultContextValue)
 export function StackProvider({ children }: { children: ReactNode }) {
   const [stackToModify, setStackToModify] = useState<Stack | null>(null);
 
-  console.log(stackToModify);
-
   return <StackContext.Provider value={{ stackToModify, setStackToModify }}>{children}</StackContext.Provider>;
 }

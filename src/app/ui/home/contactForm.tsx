@@ -22,7 +22,7 @@ export default function ContactForm() {
             contact@franckwebpro.com
           </a>
 
-          <address className="mt-2">Adresse: Le monde entier</address>
+          <address className="mt-2">Localisation: distanciel uniquement</address>
         </div>
 
         <form

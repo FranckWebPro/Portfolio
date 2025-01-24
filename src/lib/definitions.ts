@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Dispatch, SetStateAction } from "react";
 
 export type User = {
@@ -54,7 +55,7 @@ export type Project_Stack = {
   project_id: number;
 };
 
-export type Articles = {
+export type Article = {
   id: number;
   created_at: string;
   title: string;
@@ -62,9 +63,17 @@ export type Articles = {
   metadescription: string;
   content: string;
   author: string;
-  thumbnail: string;
+  thumbnail: string | null;
 };
-  
+
+export type ReducedArticle = {
+  id: string;
+  title: string;
+  created_at: string;
+  slug: string;
+  author: string;
+  thumbnail: string | null;
+};
 
 export type ProjectContextType = {
   projectToModify: ProjectWithStacks | null;

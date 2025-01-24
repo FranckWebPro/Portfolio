@@ -11,8 +11,6 @@ export default function StackFormSection() {
   const { stackToModify } = useContext(StackContext);
   const { edgestore } = useEdgeStore();
 
-  console.log(stackToModify);
-
   return (
     <section
       className="flex mx-auto w-full max-w-screen-2xl flex-col items-center justify-start

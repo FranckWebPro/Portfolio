@@ -10,8 +10,6 @@ export default function EditStackForm({ edgestore }: { edgestore: MyEdgeStoreRou
   const { stackToModify, setStackToModify } = useContext(StackContext);
   const [currentPreviewImg, setCurrentPreviewImg] = useState(stackToModify!.logo);
 
-  console.log(stackToModify);
-
   const handleEditProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;

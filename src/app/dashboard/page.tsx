@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderDashboard from "../ui/dashboard/headerDashboard";
 import { ProjectWithStacks, Stack } from "../../lib/definitions";
 import ProjectSection from "../ui/dashboard/projectSection";
 import { browseProjectsWithStacks, fetchStacks } from "../../lib/data";
@@ -13,7 +12,6 @@ export default async function page() {
 
   return (
     <>
-      <HeaderDashboard login />
       <main className="w-full bg-glassmorphism2 bg-cover py-24 bg-fixed bg-center">
         <h1 className="w-full text-center text-3xl md:text-4xl">Gestion des projets et technos</h1>
         <div id="form" className="flex flex-col gap-6 p-4 lg:p-8 lg:gap-8 lg:flex-row">

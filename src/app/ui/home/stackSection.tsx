@@ -18,7 +18,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
           <p className="my-4 text-lightColor">
             L'ensemble des langages, librairies et frameworks, code ou no code, que je connais et que je souhaite
             proposer dans mes services... je suis bien sûr ouvert à de nouvelles découvertes et à l'apprentissage
-            d'autres technos si besoins pour votre projet !
+            d'autres technos si besoin pour votre projet !
           </p>
 
           <a

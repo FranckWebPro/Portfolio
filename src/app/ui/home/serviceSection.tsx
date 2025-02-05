@@ -37,7 +37,7 @@ export default function ServiceSection() {
           >
             <h3 className="text-xl font-bold  text-center">Développement de site ou d'applications Web</h3>
             <p className="text-sm leading-6 text-gray-300 text-center lg:text-left lg:text-base">
-              Développement à partir d'une maquette graphique donnée ou que je peux réalisé avec vous pour la convertir
+              Développement à partir d'une maquette graphique donnée ou que je peux réaliser avec vous pour la convertir
               en un projet web, je porte une attention particulière à l'
               <strong>
                 <abbr title="Expérience Utilisateur">UX</abbr>

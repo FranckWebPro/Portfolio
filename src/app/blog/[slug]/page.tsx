@@ -41,16 +41,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <hgroup
-        className="relative h-[45vh] pt-12 flex flex-col gap-2 text-center text-base-100 bg-hero bg-[center_top_4rem] bg-no-repeat items-center
-       justify-center md:h-[50vh]"
+        className="relative h-[45vh] pt-12 flex flex-col gap-2 text-center text-base-100 items-center justify-center md:h-[55vh]"
+        id="hero"
       >
         {article.thumbnail && (
           <Image
             src={article.thumbnail}
             height={1200}
             width={1500}
-            alt="a woman washing it's blue car in a self service car wash"
-            title="Car wash picture"
+            alt=""
             className=" absolute top-0 left-0 w-full h-full object-top opacity-40"
           />
         )}

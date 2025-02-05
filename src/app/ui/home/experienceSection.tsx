@@ -88,8 +88,8 @@ export default function ExperienceSection() {
                 J'ai suivi durant 5 mois (Février à Juillet 2024) une formation intensive de développeur web où j'ai pu
                 apprendre en plus des technologies React / Express / Node.js / MySQL / Git et Github, des compétences
                 dans l'
-                <strong>accéssibilité web</strong>, les méthodes Agile tel que Scrum et surtout le travail en équipe sur
-                plusieurs projets.
+                <strong>accéssibilité web</strong>, les méthodes Agile telles que Scrum et surtout le travail en équipe
+                sur plusieurs projets.
               </p>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function ExperienceSection() {
               <p className="mt-1 text-sm leading-6 text-gray-300">
                 Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de l'Air en 2017...
                 Souhaitant plus d'action et de travail physique je change de spécialité pour rentrer chez les fusiliers
-                parachutistes et effectué de nombreux stages de formations au cours de plus de 6 ans de services.
+                parachutistes et j'ai effectué de nombreux stages de formations au cours de plus de 6 ans de services.
               </p>
             </div>
           </div>

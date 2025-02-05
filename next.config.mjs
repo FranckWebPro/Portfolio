@@ -50,6 +50,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.junia.ai",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   webpack: (config) => {

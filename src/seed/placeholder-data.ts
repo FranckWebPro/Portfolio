@@ -67,7 +67,7 @@ const stacks = [
 const projects = [
   {
     title: "Wildcards",
-    description: "Mon premier projet de formation à la Wild Code School, développer en HTML, CSS et JS natif",
+    description: "Mon premier projet de formation à la Wild Code School, développé en HTML, CSS et JS natif",
     client_name: null,
     preview_picture_url: "url",
     link: "https://franckwebpro.github.io/wildcards.github.io/",
@@ -88,7 +88,7 @@ const projects = [
   {
     title: "Todo-List React",
     description:
-      "Entrainement lors de ma formation a React avec un to-do list, reprise du style de la première to-do list",
+      "Entrainement lors de ma formation à React avec un to-do list, reprise du style de la première to-do list",
     client_name: null,
     preview_picture_url: "url",
     link: "",
@@ -99,7 +99,7 @@ const projects = [
   {
     title: "Cocktail Club",
     description:
-      "Second projet de formation à la Wild Code School, développer avec React, HTML, CSS et appel d'API externe",
+      "Second projet de formation à la Wild Code School, développé avec React, HTML, CSS et appel d'API externe",
     client_name: null,
     preview_picture_url: "url",
     link: "https://js-bdx-0224-p2-cocktail-club-client-7ljk.vercel.app/",
@@ -110,7 +110,7 @@ const projects = [
   {
     title: "Senior Sanctuary",
     description:
-      "Projet 'Hackaton' interne à la Wild Code School de deux jours, une application de dévouverte des pays adapté pour la retraite, réalisé avec des élèves Data Analyst",
+      "Projet 'Hackaton' interne à la Wild Code School de deux jours, une application de dévouverte des pays adaptée pour la retraite, réalisé avec des élèves Data Analyst",
     client_name: null,
     preview_picture_url: "url",
     link: "https://senior-sanctuary.webflow.io/",

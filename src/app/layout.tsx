@@ -28,10 +28,19 @@ const personStructuredData: WithContext<Person> = {
 const bG = Bricolage_Grotesque({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio Développeur Next.js - FranckWebPro",
-  description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et entrepreneur indépendant",
+  title: "Portfolio Développeur Web Next.js - FranckWebPro",
+  description: "Développeur Web Next.js / et d'applications Webflow, freelance et entrepreneur indépendant",
   metadataBase: new URL("https://www.franckwebpro.com/"),
-  keywords: ["Développeur Web", "Next.js", "React", "Node.js", "Webflow", "Freelance", "Entrepreneur"],
+  keywords: [
+    "Développeur Web",
+    "Next.js",
+    "React",
+    "applications web",
+    "Node.js",
+    "Webflow",
+    "Freelance",
+    "Entrepreneur",
+  ],
   alternates: {
     canonical: `/`,
   },
@@ -46,8 +55,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.franckwebpro.com/",
-    title: "Portfolio FranckWebPro",
-    description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et développeur indépendant",
+    title: "Portfolio développeur web - FranckWebPro",
+    description:
+      "Développeur Web Next.js et d'application Webflow, freelance et développeur indépendant, je créé avec passions Saas et autres applications pour la marketplace Webflow",
     images: [
       {
         url: `https://www.franckwebpro.com${ogImage.src}`,
@@ -62,7 +72,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@FranckWebPro",
     title: "Portfolio Développeur Next.js - FranckWebPro",
-    description: "Développeur Web Next.js / React / Node.js et Webflow, freelance et développeur Saas indépendant",
+    description:
+      "Développeur Web Next.js et d'application Webflow, freelance et développeur indépendant, je créé avec passions Saas et autres applications pour la marketplace Webflow",
     images: `https://www.franckwebpro.com${twitterImage.src}`,
   },
 };

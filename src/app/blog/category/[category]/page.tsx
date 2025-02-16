@@ -2,14 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
-import ContactForm from "../ui/home/contactForm";
 import Image from "next/image";
 import { sanityService } from "@/sanity/client";
-import { formatDate } from "@/lib/utils";
+import ContactForm from "@/app/ui/home/contactForm";
 
-export default async function page() {
-  //   const categories = await sanityService.getPostCategories();
-  const lastArticles = await sanityService.getLastPosts();
+export default async function page({ params }: { params: { category: string } }) {
+  const category = await sanityService.getCategory(params.category);
+  const articles = await sanityService.getLastPosts();
 
   return (
     <main className="flex w-full flex-col items-center justify-center gap-6">
@@ -19,18 +18,11 @@ export default async function page() {
        lg:pt-32 lg:px-6"
       >
         <hgroup className="mx-auto max-w-screen-sm text-center my-16 mb-8 lg:mb-16">
-          <h1 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold">
-            Bienvenue sur mon blog de développeur web / entrepreneur
-          </h1>
-          <p className="font-light text-gray-500 sm:text-xl">
-            Le développement web au service de l'entrepreneuriat, c'est ce que je vous propose de découvrir à travers
-            mon blog.
-            <br />
-            Technos web, Saas, réalité augmenté, actus, tutoriels, retours d'expérience...
-          </p>
+          <h1 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold">{category.title} </h1>
+          <p className="font-light text-gray-500 sm:text-xl">{category.description}</p>
         </hgroup>
         <div className="grid gap-6 mb-8 md:mb-12 lg:mb-16 md:grid-cols-2 xl:grid-cols-3">
-          {lastArticles.map((article) => (
+          {articles.map((article) => (
             <article
               key={article._id}
               className="p-4 rounded-lg border shadow-md bg-white/5 backdrop-blur-[1px] text-base-100 duration-300
@@ -47,7 +39,7 @@ export default async function page() {
                       className="mb-2 w-full rounded"
                     />
                   )}
-                  <p className="text-sm">{formatDate(article.publishedAt)}</p>
+                  <p className="text-sm">{article.publishedAt}</p>
                   <h2 className="mb-2 text-xl font-semibold tracking-tight md:text-2xl">{article.title}</h2>
                   <div className="flex justify-between items-center">
                     <p className="flex items-center font-medium space-x-4 text-base-300">

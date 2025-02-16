@@ -6,6 +6,7 @@ import "./globals.css";
 import ogImage from "../../public/opengraph-image.png";
 import twitterImage from "../../public/twitter-image.png";
 import { EdgeStoreProvider } from "@/lib/edgestore";
+import { SanityLive } from "@/sanity/client";
 
 const personStructuredData: WithContext<Person> = {
   "@context": "https://schema.org",
@@ -95,7 +96,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${bG.className} bg-darkColor text-lightColor`}>
-        <EdgeStoreProvider>{children}</EdgeStoreProvider>
+        <EdgeStoreProvider>
+          {children}
+          <SanityLive />
+        </EdgeStoreProvider>
       </body>
     </html>
   );

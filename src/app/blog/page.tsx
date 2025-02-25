@@ -44,6 +44,7 @@ export default async function page() {
                       alt={`${article.title} illustration`}
                       width={900}
                       height={600}
+                      unoptimized
                       className="mb-2 w-full rounded"
                     />
                   )}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function ServiceSection() {
@@ -21,14 +22,14 @@ export default function ServiceSection() {
             code avec Webflow pour plus de simplicité/rapidité en passant par le référencement naturel (SEO).
           </p>
 
-          <a
+          <Link
             href="#contact"
-            className="mt-8 inline-block rounded-lg bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor
+            className="mt-8 inline-block rounded-full bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor
               transition duration-300 hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring
-              focus:ring-yellow-400"
+              focus:ring-yellow-400 xl:text-base"
           >
             Démarrez votre projet maintenant
-          </a>
+          </Link>
         </div>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
           <article

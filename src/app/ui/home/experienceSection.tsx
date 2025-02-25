@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function ExperienceSection() {
@@ -44,14 +45,14 @@ export default function ExperienceSection() {
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
                 J'ai développé{" "}
-                <a
+                <Link
                   href="https://www.linkerflow.io"
                   target="_blank"
                   className="text-primaryColor duration-300 hover:text-primaryLight"
                   rel="noreferrer"
                 >
                   Linkerflow
-                </a>
+                </Link>
                 , un outil Webflow afin d'automatiser le maillage interne, méthode chronophage pourtant primordial pour
                 le <strong>référencement</strong> des sites web.
               </p>
@@ -123,14 +124,14 @@ export default function ExperienceSection() {
                 Webflow, j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong>{" "}
                 <abbr title="Search Engine Optimization"> (SEO) </abbr>
                 afin de faire monter mon propre site d'Agence Webflow ({" "}
-                <a
+                <Link
                   href="https://www.agencenocode.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-primaryColor duration-300 hover:text-primaryLight"
                 >
                   Agence No Code
-                </a>{" "}
+                </Link>{" "}
                 ) , sur lequel je travaille aujourd'hui avec des partenaires en tant que freelance.
               </p>
             </div>
@@ -162,7 +163,7 @@ export default function ExperienceSection() {
 
               <p className="mt-1 text-sm leading-6 text-gray-300">
                 Nous avons développé sur Webflow avec un associé,
-                <a
+                <Link
                   href="https://www.spylead.com/"
                   target="_blank"
                   rel="noreferrer"
@@ -170,7 +171,7 @@ export default function ExperienceSection() {
                 >
                   {" "}
                   Spylead{" "}
-                </a>
+                </Link>
                 , un site de listing de produit tech, tel que les scraper google maps, les fournisseurs d'adresses IP...
               </p>
             </div>

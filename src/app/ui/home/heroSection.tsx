@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import profilPicture from "../images/prprofil.png";
+import Link from "next/link";
 
 export default async function HeroSection() {
   return (
@@ -30,21 +31,21 @@ export default async function HeroSection() {
             href="/CVFG.pdf"
             target="_blank"
             rel="noreferrer"
-            className="block w-10/12 md:w-auto rounded-lg border-2 border-transparent bg-secondaryColor px-12 py-3 text-sm
+            className="block w-10/12 md:w-auto rounded-full border-2 border-transparent bg-secondaryColor px-12 py-3 text-sm
               font-medium text-darkColor duration-300 hover:border-2 hover:border-secondaryColor
-              hover:bg-transparent hover:text-lightColor focus:outline-none focus:ring active:text-opacity-75"
+              hover:bg-transparent hover:text-lightColor focus:outline-none focus:ring active:text-opacity-75 xl:text-base"
             download
           >
             Télécharger mon CV
           </a>
-          <a
-            className="block w-10/12 rounded-lg md:w-auto border border-secondaryColor px-12 py-3 text-sm font-medium
+          <Link
+            className="block w-10/12 rounded-full md:w-auto border border-secondaryColor px-12 py-3 text-sm font-medium
               text-lightColor duration-300 hover:bg-secondaryColor hover:text-darkColor focus:outline-none
-              focus:ring active:bg-blue-500"
+              focus:ring active:bg-blue-500 xl:text-base"
             href="#projects"
           >
             Voir mes projets
-          </a>
+          </Link>
         </div>
       </div>
       <Image

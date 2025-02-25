@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ContactForm() {
   return (
     <section id="contact" className="mx-auto min-h-[calc(100vh-4rem)] w-full max-w-screen-2xl py-12">
@@ -21,8 +19,6 @@ export default function ContactForm() {
           >
             contact@franckwebpro.com
           </a>
-
-          <address className="mt-2">Localisation: distanciel uniquement</address>
         </div>
 
         <form
@@ -133,7 +129,7 @@ export default function ContactForm() {
           <div className="mt-4">
             <button
               type="submit"
-              className="inline-block w-full rounded-lg border border-secondaryColor bg-secondaryColor px-5 py-3 font-medium
+              className="inline-block w-full rounded-full border border-secondaryColor bg-secondaryColor px-5 py-3 font-medium
                 text-darkColor duration-300 hover:border-primaryLight hover:bg-transparent hover:text-lightColor
                 sm:w-auto"
             >

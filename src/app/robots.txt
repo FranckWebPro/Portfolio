@@ -1,9 +1,13 @@
-# Block all crawlers for /dashboard, /login, and /blog
+# Block all crawlers for /dashboard, /login
 User-agent: *
 Disallow: /dashboard
 Disallow: /login
-Disallow: /blog
 
 # Allow all crawlers to access everything else
+
+User-agent: Googlebot
+Allow: /_next/image
+
 User-agent: *
 Allow: /
+Disallow: /_next/image

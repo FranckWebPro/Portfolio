@@ -68,7 +68,14 @@ export default function EditStackForm({ edgestore }: { edgestore: MyEdgeStoreRou
           id="logo"
           name="logo"
         />
-        <Image width={384} height={384} src={currentPreviewImg} alt="" className="max-w-56 mx-auto xl:max-w-96" />
+        <Image
+          width={384}
+          height={384}
+          src={currentPreviewImg}
+          alt=""
+          unoptimized
+          className="max-w-56 mx-auto xl:max-w-96"
+        />
       </div>
       <div>
         <label className="sr-only" htmlFor="stack_link">

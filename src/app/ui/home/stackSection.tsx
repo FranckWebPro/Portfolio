@@ -1,5 +1,6 @@
 import { Stack } from "@/lib/definitions";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
@@ -21,19 +22,19 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
             d'autres technos si besoin pour votre projet !
           </p>
 
-          <a
+          <Link
             href="#contact"
-            className="mt-8 inline-block rounded-lg bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor
+            className="mt-8 inline-block rounded-full bg-secondaryColor px-12 py-3 text-sm font-medium text-darkColor
               transition duration-300 hover:bg-secondaryLight hover:text-lightColor focus:outline-none focus:ring
-              focus:ring-yellow-400"
+              focus:ring-yellow-400 xl:text-base"
           >
             Discutons de votre projet
-          </a>
+          </Link>
         </div>
 
         <div className="w-full grid grid-cols-2 gap-4 sm:grid-cols-3">
           {stacks.map((stack) => (
-            <a
+            <Link
               className="border-ligtColor flex flex-col items-center justify-center rounded-xl border bg-glassmorphism
                 bg-center py-8 px-4 shadow-sm duration-300 hover:border-gray-200 hover:ring-1
                 hover:ring-primaryColor focus:outline-none focus:ring"
@@ -46,11 +47,12 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
                 src={stack.logo !== "url" ? stack.logo : ""}
                 width={60}
                 height={60}
+                unoptimized
                 alt={`${stack.name} logo`}
                 className={`inline-block rounded-lg bg-lightColor p-3 ${stack.name === "Express" && "min-h-14"}`}
               />
               <h3 className="mt-2 font-bold">{stack.name}</h3>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

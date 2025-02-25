@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import logo from "./images/logoLight.png";
+import Link from "next/link";
 
 export default function Header() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function Header() {
         className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between shadow-white/5 shadow-lg lg:top-6 
       lg:h-20 lg:max-w-screen-lg lg:mx-auto lg:bg-white/5 lg:backdrop-blur-lg lg:rounded-full"
       >
-        <a className="z-20 text-teal-600 dark:text-teal-600" href="/">
+        <Link className="z-20 text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
             src={logo}
@@ -32,7 +33,7 @@ export default function Header() {
             height={80}
             sizes="(max-width: 768px) 4rem, (max-width: 1200px) 5rem, 6rem"
           />
-        </a>
+        </Link>
         <ul
           className={`absolute inset-0 z-10 flex h-screen w-full list-none flex-col items-center justify-evenly
             bg-darkColor/90 transition-transform duration-300 ease-in-out before:backdrop-blur-lg lg:static
@@ -41,68 +42,68 @@ export default function Header() {
             ${navIsOpen ? "translate-x-0 py-16" : "translate-x-full"}`}
         >
           <li>
-            <a
+            <Link
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/#services"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
               Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="p-2 text-lightColor transition hover:text-secondaryColor target:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/#experiences"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
               Expériences
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
+            <Link
               className="p-2 text-lightColor transition hover:text-primaryLight active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/#technos"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
               Technos
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
+            <Link
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/#projects"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
               Projets
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="p-2 text-lightColor transition hover:text-secondaryColor active:text-secondaryLight
                 dark:text-lightColor dark:hover:text-primaryLight"
               href="/blog"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
               Blog
-            </a>
+            </Link>
           </li>
         </ul>
 
-        <a
-          className="z-20 h-auto min-w-[13ch] rounded-lg bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6
-            py-3 text-center text-sm font-semibold text-darkColor shadow transition duration-300 hover:bg-secondaryLight
-            hover:bg-gradient-to-r hover:text-lightColor 2xl:text-base"
+        <Link
+          className="z-20 h-auto min-w-[13ch] rounded-full bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6
+            py-3 text-center text-sm font-semibold text-darkColor shadow transition duration-200 hover:bg-secondaryLight
+            hover:bg-gradient-to-r hover:text-lightColor xl:text-base"
           href="/#contact"
           onClick={() => navIsOpen && handleMobileMenu()}
         >
           Me contacter
-        </a>
+        </Link>
 
         <button
           onClick={handleMobileMenu}

@@ -97,7 +97,7 @@ export default function Header() {
 
         <Link
           className="z-20 h-auto min-w-[13ch] rounded-full bg-secondaryColor from-green-300 via-blue-500 to-purple-600 px-6
-            py-3 text-center text-sm font-semibold text-darkColor shadow transition duration-200 hover:bg-secondaryLight
+            py-3 text-center text-sm font-semibold text-darkColor shadow-[0px_0px_15px_4px] shadow-blue-300/50 transition duration-200 hover:bg-secondaryLight
             hover:bg-gradient-to-r hover:text-lightColor xl:text-base"
           href="/#contact"
           onClick={() => navIsOpen && handleMobileMenu()}

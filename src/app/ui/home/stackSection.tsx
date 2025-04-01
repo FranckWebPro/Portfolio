@@ -40,7 +40,7 @@ export default function StackSection({ stacks }: { stacks: Array<Stack> }) {
                 hover:ring-primaryColor focus:outline-none focus:ring"
               href={stack.stack_link !== "url" ? stack.stack_link : ""}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener nofollow"
               key={stack.id}
             >
               <Image

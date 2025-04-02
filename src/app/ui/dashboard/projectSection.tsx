@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./projectCard";
-import { ProjectWithStacks } from "@/lib/definitions";
+import { ProjectWithStacks } from "@/lib/supabase.type";
 
 export default function ProjectSection({
   projects,

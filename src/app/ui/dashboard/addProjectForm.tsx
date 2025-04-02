@@ -1,10 +1,11 @@
 "use client";
 
 import { addProject } from "@/lib/actions";
-import { MyEdgeStoreRouter, Stack } from "@/lib/definitions";
+import { Stack } from "@/lib/supabase.type";
+import { uploadFile } from "@/lib/supabase/data";
 import React, { useState } from "react";
 
-export default function AddProjectForm({ stacks, edgestore }: { stacks: Array<Stack>; edgestore: MyEdgeStoreRouter }) {
+export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
   const [isChecked, setIsChecked] = useState("finished");
   const handleAddProject = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -12,8 +13,8 @@ export default function AddProjectForm({ stacks, edgestore }: { stacks: Array<St
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File | null;
     if (file) {
-      const res = await edgestore.myPublicImages.upload({ file });
-      formData.set("preview_picture_url", res.url);
+      const res = await uploadFile(file, file.name);
+      formData.set("preview_picture_url", res);
     }
     await addProject(formData);
     form.reset();

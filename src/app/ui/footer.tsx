@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "./images/logoLight.png";
 import Image from "next/image";
-import { User } from "../../lib/definitions";
+import { User } from "../../lib/supabase.type";
 import logoLinkedin from "./images/linkedin.png";
 import logoGithub from "./images/logo-github.png";
 import logoMalt from "./images/malt.webp";
+import Link from "next/link";
 
 export default function Footer({ user }: { user: User }) {
   return (
@@ -42,7 +43,7 @@ export default function Footer({ user }: { user: User }) {
               />
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <a href={user.linkedin_link} target="_blank" rel="noreferrer">
+              <Link href={user.linkedin_link ?? ""} target="_blank" rel="noreferrer">
                 <Image
                   src={logoLinkedin}
                   width={45}
@@ -50,8 +51,8 @@ export default function Footer({ user }: { user: User }) {
                   alt="logo Linkedin"
                   className="duration-300 hover:opacity-60"
                 />{" "}
-              </a>
-              <a href={user.github_link} target="_blank" rel="noreferrer">
+              </Link>
+              <Link href={user.github_link ?? ""} target="_blank" rel="noreferrer">
                 <Image
                   src={logoGithub}
                   width={45}
@@ -59,8 +60,8 @@ export default function Footer({ user }: { user: User }) {
                   alt="logo github"
                   className="rounded-lg bg-lightColor p-2 duration-300 hover:opacity-60"
                 />{" "}
-              </a>
-              <a href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
+              </Link>
+              <Link href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
                 <Image
                   src={logoMalt}
                   width={45}
@@ -68,7 +69,7 @@ export default function Footer({ user }: { user: User }) {
                   alt="logo Malt"
                   className="duration-300 hover:opacity-60"
                 />{" "}
-              </a>
+              </Link>
               <p className="mx-auto mr-6 w-full text-center leading-relaxed lg:text-left dark:text-gray-400">
                 Le développement web au service de votre business
               </p>
@@ -77,46 +78,49 @@ export default function Footer({ user }: { user: User }) {
 
           <ul className="mt-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
-              <a className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#services">
+              <Link className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#services">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#experience">
+              <Link className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#experience">
                 Expériences
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#technos"
               >
                 Technos
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#projects"
               >
                 Projets
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight" href="/blog">
+              <Link
+                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                href="/blog"
+              >
                 Blog
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
-                href="/dashboard"
+                href="/signin"
               >
                 Dashboard
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

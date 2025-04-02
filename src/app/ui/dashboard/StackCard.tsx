@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@/lib/definitions";
+import { Stack } from "@/lib/supabase.type";
 import Image from "next/image";
 import { DeleteStackButton, UpdateStackButton } from "./buttons";
 

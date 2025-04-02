@@ -1,12 +1,13 @@
 "use client";
 
 import { editProject } from "@/lib/actions";
-import { MyEdgeStoreRouter, Stack } from "@/lib/definitions";
+import { Stack } from "@/lib/supabase.type";
 import React, { useContext, useEffect, useState } from "react";
 import { ProjectContext } from "./projectContext";
 import Image from "next/image";
+import { uploadFile } from "@/lib/supabase/data";
 
-export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<Stack>; edgestore: MyEdgeStoreRouter }) {
+export default function EditProjectForm({ stacks }: { stacks: Array<Stack> }) {
   const { projectToModify, setProjectToModify } = useContext(ProjectContext);
   const [status, setStatus] = useState(projectToModify!.status);
   const [currentPreviewImg, setCurrentPreviewImg] = useState(projectToModify!.preview_picture_url);
@@ -16,19 +17,15 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
     const form = event.currentTarget;
     const formData = new FormData(event.currentTarget);
     const file = formData.get("preview_picture_url") as File;
-    if (file.size !== 0 && currentPreviewImg.startsWith("https://files.edgestore.dev")) {
-      const res = await edgestore.myPublicImages.upload({
-        file,
-        options: {
-          replaceTargetUrl: currentPreviewImg,
-        },
-      });
-      formData.set("preview_picture_url", res.url);
-    } else if (currentPreviewImg.startsWith("https://files.edgestore.dev")) {
+    if (file.size !== 0 && currentPreviewImg.startsWith(process.env.NEXT_PUBLIC_SUPABASE_URL!)) {
+      const res = await uploadFile(file, file.name);
+
+      formData.set("preview_picture_url", res);
+    } else if (currentPreviewImg.startsWith(process.env.NEXT_PUBLIC_SUPABASE_URL!)) {
       formData.set("preview_picture_url", currentPreviewImg);
     } else {
-      const res = await edgestore.myPublicImages.upload({ file });
-      formData.set("preview_picture_url", res.url);
+      const res = await uploadFile(file, file.name);
+      formData.set("preview_picture_url", res);
     }
     await editProject(projectToModify!.id, formData);
     form.reset();
@@ -183,7 +180,7 @@ export default function EditProjectForm({ stacks, edgestore }: { stacks: Array<S
           id="stacks_id"
           multiple
           className="w-full rounded-lg border border-gray-200 bg-transparent p-3 text-sm"
-          defaultValue={projectToModify?.project_stacks?.map(String) || []}
+          defaultValue={projectToModify?.stacks?.map(String) || []}
         >
           {stacks.map((stack) => (
             <option key={stack.id} value={stack.id}>

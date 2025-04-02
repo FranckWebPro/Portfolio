@@ -1,18 +1,18 @@
 "use client";
 
 import { addStack } from "@/lib/actions";
-import { MyEdgeStoreRouter } from "@/lib/definitions";
+import { uploadFile } from "@/lib/supabase/data";
 import React from "react";
 
-export default function AddStackForm({ edgestore }: { edgestore: MyEdgeStoreRouter }) {
+export default function AddStackForm() {
   const handleAddStack = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(event.currentTarget);
     const file = formData.get("logo") as File | null;
     if (file) {
-      const res = await edgestore.myPublicImages.upload({ file });
-      formData.set("logo", res.url);
+      const res = await uploadFile(file, file.name);
+      formData.set("logo", res);
     }
     await addStack(formData);
     form.reset();

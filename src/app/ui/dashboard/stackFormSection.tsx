@@ -2,14 +2,12 @@
 
 import React, { useContext } from "react";
 import { ResetStackButton } from "./buttons";
-import { useEdgeStore } from "@/lib/edgestore";
 import { StackContext } from "./stackContext";
 import EditStackForm from "./editStackForm";
 import AddStackForm from "./addStackForm";
 
 export default function StackFormSection() {
   const { stackToModify } = useContext(StackContext);
-  const { edgestore } = useEdgeStore();
 
   return (
     <section
@@ -18,7 +16,7 @@ export default function StackFormSection() {
     >
       <h2 className="text-xl md:text-2xl lg:text-3xl">{stackToModify ? "Modifier la techno" : "Ajouter une techno"}</h2>
       {stackToModify && <ResetStackButton />}
-      {stackToModify ? <EditStackForm edgestore={edgestore} /> : <AddStackForm edgestore={edgestore} />}
+      {stackToModify ? <EditStackForm /> : <AddStackForm />}
     </section>
   );
 }

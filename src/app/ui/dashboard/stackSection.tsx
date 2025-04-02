@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@/lib/definitions";
+import { Stack } from "@/lib/supabase.type";
 import StackCard from "./StackCard";
 
 export default function StackSection({ stacks }: { stacks: Array<Stack> }) {

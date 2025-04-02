@@ -3,11 +3,10 @@
 import { useContext } from "react";
 import { deleteProject, deleteStack, togglePublication } from "../../../lib/actions";
 import { ProjectContext } from "./projectContext";
-import { readProjectWithStacks, readStack } from "@/lib/data";
 import Link from "next/link";
-import { useEdgeStore } from "@/lib/edgestore";
 import { StackContext } from "./stackContext";
 import { useRouter } from "next/navigation";
+import { deleteFile, readProjectWithStacks, readStack } from "@/lib/supabase/data";
 
 export function TogglePublicationButton({ id, published }: { id: number; published: boolean }) {
   const handleUpdatePublished = async () => {
@@ -30,19 +29,17 @@ export function TogglePublicationButton({ id, published }: { id: number; publish
 }
 
 export function DeleteProjectButton({ id, preview_picture_url }: { id: number; preview_picture_url: string }) {
-  const { edgestore } = useEdgeStore();
   const handleDelete = async () => {
     try {
       if (confirm("Supprimer ce projet ?")) {
-        await edgestore.myPublicImages.delete({
-          url: preview_picture_url,
-        });
+        await deleteFile(preview_picture_url);
         await deleteProject(id);
       }
     } catch (error) {
       console.error("Error deleting project:", error);
     }
   };
+
   return (
     <button
       type="button"
@@ -116,15 +113,12 @@ export function ResetStackButton() {
 }
 
 export function DeleteStackButton({ id, logo }: { id: number; logo: string }) {
-  const { edgestore } = useEdgeStore();
   const router = useRouter();
 
   const handleDelete = async () => {
     try {
       if (confirm("Supprimer cette stack ?")) {
-        await edgestore.myPublicImages.delete({
-          url: logo,
-        });
+        await deleteFile(logo);
         await deleteStack(id);
         router.refresh();
       }

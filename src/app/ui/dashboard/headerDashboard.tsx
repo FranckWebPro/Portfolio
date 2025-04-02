@@ -1,10 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "../images/logoLight.png";
-import { SignOutButton } from "../login/signOutButton";
+import { createClient } from "@/lib/supabase/client";
 
-export default function HeaderDashboard({ login }: { login?: boolean }) {
+export default function HeaderDashboard() {
+  const supabase = createClient();
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    const origin = process.env.NODE_ENV === "development" ? "https://localhost:3000" : "https://www.franckwebpro.com";
+    window.location.href = `${origin}/signin`;
+  };
+
   return (
     <header className="fixed top-0 z-50 mx-auto h-16 w-full animate-blur md:h-20">
       <nav className="mx-auto grid h-16 w-full max-w-screen-2xl grid-cols-[0.25fr,2fr,0.25fr] items-center justify-between">
@@ -30,7 +40,12 @@ export default function HeaderDashboard({ login }: { login?: boolean }) {
         >
           Retour à l'accueil
         </Link>
-        {login && <SignOutButton />}
+        <button
+          className="flex w-full items-center gap-2 rounded px-4 py-1.5 duration-300 hover:bg-error/20 hover:text-error"
+          onClick={handleSignOut}
+        >
+          Se déconnecter
+        </button>
       </nav>
     </header>
   );

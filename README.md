@@ -77,9 +77,8 @@ This project uses the following technologies:
 
 - [Next.js](https://nextjs.org/docs)
 - [Tailwind](https://tailwindcss.com/docs/overflow)
-- [Next-Auth](https://authjs.dev/)
-- [Edgestore](https://edgestore.dev/)
 - [Vercel](https://vercel.com/home)
+- [Supabase](https://www.supabase.com)
 
 ## Contribution
 

@@ -1,12 +1,12 @@
 "use client";
 
 import { editStack } from "@/lib/actions";
-import { MyEdgeStoreRouter } from "@/lib/definitions";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { StackContext } from "./stackContext";
+import { uploadFile } from "@/lib/supabase/data";
 
-export default function EditStackForm({ edgestore }: { edgestore: MyEdgeStoreRouter }) {
+export default function EditStackForm() {
   const { stackToModify, setStackToModify } = useContext(StackContext);
   const [currentPreviewImg, setCurrentPreviewImg] = useState(stackToModify!.logo);
 
@@ -15,19 +15,14 @@ export default function EditStackForm({ edgestore }: { edgestore: MyEdgeStoreRou
     const form = event.currentTarget;
     const formData = new FormData(event.currentTarget);
     const file = formData.get("logo") as File;
-    if (file.size !== 0 && currentPreviewImg.startsWith("https://files.edgestore.dev")) {
-      const res = await edgestore.myPublicImages.upload({
-        file,
-        options: {
-          replaceTargetUrl: currentPreviewImg,
-        },
-      });
-      formData.set("logo", res.url);
-    } else if (currentPreviewImg.startsWith("https://files.edgestore.dev")) {
+    if (file.size !== 0 && currentPreviewImg.startsWith(process.env.NEXT_PUBLIC_SUPABASE_URL!)) {
+      const res = await uploadFile(file, file.name);
+      formData.set("logo", res);
+    } else if (currentPreviewImg.startsWith(process.env.NEXT_PUBLIC_SUPABASE_URL!)) {
       formData.set("logo", currentPreviewImg);
     } else {
-      const res = await edgestore.myPublicImages.upload({ file });
-      formData.set("logo", res.url);
+      const res = await uploadFile(file, file.name);
+      formData.set("logo", res);
     }
     await editStack(stackToModify!.id, formData);
     form.reset();

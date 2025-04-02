@@ -1,10 +1,11 @@
 import React from "react";
-import { ProjectWithStacks, Stack } from "../../lib/definitions";
+import { ProjectWithStacks, Stack } from "../../lib/supabase.type";
 import ProjectSection from "../ui/dashboard/projectSection";
-import { browseProjectsWithStacks, fetchStacks } from "../../lib/data";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
 import StackFormSection from "../ui/dashboard/stackFormSection";
 import StackSection from "../ui/dashboard/stackSection";
+import { browseProjectsWithStacks } from "@/lib/supabase/data";
+import { fetchStacks } from "@/lib/supabase/data";
 
 export default async function page() {
   const projects: Array<ProjectWithStacks> = await browseProjectsWithStacks();

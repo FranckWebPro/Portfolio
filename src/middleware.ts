@@ -1,23 +1,38 @@
-import { NextRequest, NextResponse } from "next/server";
-import { GetTokenParams, getToken } from "next-auth/jwt";
+import { NextResponse, type NextRequest } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
 
-export default async function middleware(req: NextRequest) {
-  const secret = process.env.AUTH_SECRET as string;
+export async function middleware(request: NextRequest) {
+  const { supabase, supabaseResponse } = await updateSession(request);
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  //"salt" 3rd argument bypassed as it block from accessing dashboard while logged in / remove secureCookie for development
-  const token = await getToken({
-    req,
-    secret,
-    secureCookie: process.env.NODE_ENV === "production",
-  } as unknown as GetTokenParams<false>);
-
-  if (!token && req.nextUrl.pathname === "/dashboard") {
-    return NextResponse.redirect(new URL("/api/auth/signin", req.nextUrl.origin));
+  if (!user && !request.url.includes("/api/auth/callback") && request.url.includes("/dashboard")) {
+    return NextResponse.redirect(new URL("/signin", request.url));
+  } else if (user && request.url.includes("/signin")) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
-  return NextResponse.next();
+  if (process.env.NODE_ENV === "production") {
+    supabaseResponse.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+  }
+
+  supabaseResponse.headers.set("x-current-path", request.nextUrl.pathname);
+  supabaseResponse.headers.set("X-Frame-Options", "DENY");
+  supabaseResponse.headers.set("X-Content-Type-Options", "nosniff");
+
+  return supabaseResponse;
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * Feel free to modify this pattern to include more paths.
+     */
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
 };

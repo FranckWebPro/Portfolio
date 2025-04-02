@@ -1,5 +1,5 @@
 "use client";
-import { Stack, StackContextType } from "@/lib/definitions";
+import { Stack, StackContextType } from "@/lib/supabase.type";
 import { ReactNode, createContext, useState } from "react";
 
 const defaultContextValue: StackContextType = {

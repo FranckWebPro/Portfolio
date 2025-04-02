@@ -47,7 +47,7 @@ export interface ProjectToUpdate extends Project {
 }
 
 export interface ProjectWithStacks extends Project {
-  project_stacks: Array<Stack>;
+  stacks: Array<Stack>;
 }
 
 export type Project_Stack = {
@@ -64,10 +64,3 @@ export type StackContextType = {
   stackToModify: Stack | null;
   setStackToModify: Dispatch<SetStateAction<Stack | null>>;
 };
-
-export interface MyEdgeStoreRouter {
-  myPublicImages: {
-    upload: (options: { file: File; options?: { replaceTargetUrl?: string } }) => Promise<{ url: string }>;
-    delete: (options: { url: string }) => Promise<void>;
-  };
-}

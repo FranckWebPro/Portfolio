@@ -1,4 +1,4 @@
-import { Stack } from "@/lib/definitions";
+import { Stack } from "@/lib/supabase.type";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

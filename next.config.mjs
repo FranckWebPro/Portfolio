@@ -16,12 +16,6 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "files.edgestore.dev",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
         hostname: "www.drupal.org",
         port: "",
         pathname: "/**",

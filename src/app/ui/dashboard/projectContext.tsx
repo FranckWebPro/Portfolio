@@ -1,5 +1,5 @@
 "use client";
-import { ProjectContextType, ProjectWithStacks } from "@/lib/definitions";
+import { ProjectContextType, ProjectWithStacks } from "@/lib/supabase.type";
 import { ReactNode, createContext, useState } from "react";
 
 const defaultContextValue: ProjectContextType = {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectWithStacks, Stack } from "@/lib/definitions";
+import { ProjectWithStacks, Stack } from "@/lib/supabase.type";
 import Image from "next/image";
 import { DeleteProjectButton, TogglePublicationButton, UpdateProjectButton } from "./buttons";
 
@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
         >
           <p className="mt-4 text-sm sm:text-base">{project.description}</p>
           <ul className="flex items-center justify-evenly gap-2">
-            {project.project_stacks.map((stack: Stack) => (
+            {project.stacks.map((stack: Stack) => (
               <li key={stack.id}>
                 <Image
                   src={stack.logo !== "url" ? stack.logo : ""}

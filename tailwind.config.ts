@@ -13,9 +13,9 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        hero: "url('/bg1.webp')",
-        glassmorphism: "url('/bg2.webp')",
-        glassmorphism2: "url('/bg3.webp')",
+        hero: "url('/assets/images/bg1.webp')",
+        glassmorphism: "url('/assets/images/bg2.webp')",
+        glassmorphism2: "url('/assets/images/bg3.webp')",
       },
       colors: {
         primaryColor: "#9037ea",

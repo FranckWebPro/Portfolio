@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "./images/logoLight.png";
 import Link from "next/link";
 
 export default function Header() {
@@ -26,7 +25,7 @@ export default function Header() {
         <Link className="z-20 text-teal-600 dark:text-teal-600" href="/">
           <span className="sr-only">Home</span>
           <Image
-            src={logo}
+            src="/assets/images/logoLight.png"
             alt="logo FranckWebPro"
             className="~h-16/20 ~w-16/20"
             width={80}

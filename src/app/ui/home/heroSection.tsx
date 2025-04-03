@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import profilPicture from "../images/prprofil.png";
 import Link from "next/link";
 
 export default async function HeroSection() {
@@ -49,7 +48,7 @@ export default async function HeroSection() {
         </div>
       </div>
       <Image
-        src={profilPicture}
+        src="/assets/images/photoprofil.png"
         width={200}
         height={200}
         alt="Photo de profil de Franck"

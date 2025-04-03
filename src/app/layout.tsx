@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import { Person, WithContext } from "schema-dts";
 import "./globals.css";
-import ogImage from "../../public/opengraph-image.png";
-import twitterImage from "../../public/twitter-image.png";
 import { SanityLive } from "@/sanity/client";
 
 const personStructuredData: WithContext<Person> = {
@@ -60,7 +58,7 @@ export const metadata: Metadata = {
       "Développeur Web Next.js et d'application Webflow, freelance et développeur indépendant, je créé avec passions Saas et autres applications pour la marketplace Webflow",
     images: [
       {
-        url: `https://www.franckwebpro.com${ogImage.src}`,
+        url: `https://www.franckwebpro.com/assets/images/opengraph-image.png`,
         width: 800,
         height: 600,
         alt: "Portfolio de Franck",
@@ -74,7 +72,7 @@ export const metadata: Metadata = {
     title: "Portfolio Développeur Next.js - FranckWebPro",
     description:
       "Développeur Web Next.js et d'application Webflow, freelance et développeur indépendant, je créé avec passions Saas et autres applications pour la marketplace Webflow",
-    images: `https://www.franckwebpro.com${twitterImage.src}`,
+    images: `https://www.franckwebpro.com/assets/images/twitter-image.png`,
   },
 };
 

@@ -12,7 +12,7 @@
     "type-check": "tsc -b"
   },
   "dependencies": {
-    "@heroicons/react": "^2.1.5",
+    "@formatjs/intl-localematcher": "^0.6.1",
     "@portabletext/react": "^3.2.1",
     "@portabletext/types": "^2.0.13",
     "@sanity/client": "^6.28.0",
@@ -20,7 +20,7 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
     "@vercel/postgres": "^0.9.0",
-    "bcrypt": "^5.1.1",
+    "negotiator": "^1.0.0",
     "next": "^14.2.24",
     "next-sanity": "^9.8.57",
     "next-sitemap": "^4.2.3",
@@ -29,12 +29,11 @@
     "react-hot-toast": "^2.5.2",
     "sanitize-filename": "^1.6.3",
     "schema-dts": "^1.1.2",
-    "sharp": "^0.33.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/eslint": "^9.6.0",
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,10 +1,6 @@
 import React from "react";
-import logo from "./images/logoLight.png";
 import Image from "next/image";
-import { User } from "../../lib/supabase.type";
-import logoLinkedin from "./images/linkedin.png";
-import logoGithub from "./images/logo-github.png";
-import logoMalt from "./images/malt.webp";
+import { User } from "@/lib/supabase.type";
 import Link from "next/link";
 
 export default function Footer({ user }: { user: User }) {
@@ -34,7 +30,7 @@ export default function Footer({ user }: { user: User }) {
           <div>
             <div className="flex justify-center lg:justify-start">
               <Image
-                src={logo}
+                src="/assets/images/logoLight.png"
                 alt="logo FranckWebPro"
                 className="~h-16/20 ~w-16/20"
                 width={80}
@@ -45,7 +41,7 @@ export default function Footer({ user }: { user: User }) {
             <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <Link href={user.linkedin_link ?? ""} target="_blank" rel="noreferrer">
                 <Image
-                  src={logoLinkedin}
+                  src="/assets/images/linkedin.png"
                   width={45}
                   height={45}
                   alt="logo Linkedin"
@@ -54,7 +50,7 @@ export default function Footer({ user }: { user: User }) {
               </Link>
               <Link href={user.github_link ?? ""} target="_blank" rel="noreferrer">
                 <Image
-                  src={logoGithub}
+                  src="/assets/images/logo-github.png"
                   width={45}
                   height={45}
                   alt="logo github"
@@ -63,7 +59,7 @@ export default function Footer({ user }: { user: User }) {
               </Link>
               <Link href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
                 <Image
-                  src={logoMalt}
+                  src="/assets/images/malt.webp"
                   width={45}
                   height={45}
                   alt="logo Malt"

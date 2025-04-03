@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import toast from "react-hot-toast";
 import { useRouter, useSearchParams } from "next/navigation";
-import PasswordSignInForm from "../ui/dashboard/PasswordSignInForm";
 
 export default function Login() {
   const supabase = createClient();
@@ -24,7 +23,6 @@ export default function Login() {
     }
   ) => {
     e?.preventDefault();
-
     setIsLoading(true);
 
     try {
@@ -73,16 +71,47 @@ export default function Login() {
         </Link>
         <h1 className="mb-12 text-center text-3xl font-semibold tracking-tight md:text-4xl 2xl:text-5xl">Sign-in</h1>
 
-        <div className="mx-auto max-w-3xl">
-          <PasswordSignInForm
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            isLoading={isLoading}
-            isDisabled={isDisabled}
-            handleSignin={handleSignin}
-          />
+        <div className="mx-auto w-full max-w-lg">
+          <form
+            className="form-control mb-4 w-full space-y-4 flex text-black flex-col gap-2 items-center justify-center"
+            onSubmit={(e) => handleSignin(e, { type: "password" })}
+          >
+            <label htmlFor="email" className="size-0 text-[0px]">
+              Email
+            </label>
+            <input
+              name="email"
+              required
+              type="email"
+              value={email}
+              autoComplete="email"
+              placeholder="Email"
+              className="input input-bordered w-full p-2 rounded placeholder:opacity-60 xl:h-14 xl:text-lg"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label
+              htmlFor="password"
+              className="input input-bordered relative w-full rounded p-0 placeholder:opacity-60 xl:h-14 xl:text-lg"
+            >
+              <span className="size-0 text-[0px]">password</span>
+              <input
+                name="password"
+                type="password"
+                value={password}
+                placeholder="Password"
+                className="input input-bordered w-full p-2 rounded placeholder:opacity-60 xl:h-14 xl:text-lg"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <button
+              className="btn w-full btn-primary btn-block rounded text-base font-normal text-black bg-secondaryColor hover:bg-secondaryLight duration-200 px-3 xl:h-14 xl:text-xl"
+              disabled={isLoading || isDisabled}
+              type="submit"
+            >
+              {isLoading && <span className="loading loading-spinner loading-xs"></span>}
+              Sign-in
+            </button>
+          </form>
         </div>
       </div>
     </main>

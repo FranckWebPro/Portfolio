@@ -11,7 +11,7 @@ export default function HeaderDashboard() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    const origin = process.env.NODE_ENV === "development" ? "https://localhost:3000" : "https://www.franckwebpro.com";
+    const origin = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://www.franckwebpro.com";
     window.location.href = `${origin}/signin`;
   };
 

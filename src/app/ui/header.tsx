@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed z-50 flex h-16 w-full top-6 items-center justify-center md:h-20 ">
       <nav
-        className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between shadow-white/5 shadow-lg lg:top-6 
+        className="m-auto flex h-16 w-full max-w-screen-2xl items-center justify-between shadow-white/10 shadow-lg lg:top-6 
       lg:h-20 lg:max-w-screen-lg lg:mx-auto lg:bg-white/5 lg:backdrop-blur-lg lg:rounded-full"
       >
         <Link className="z-20 text-teal-600 dark:text-teal-600" href="/">

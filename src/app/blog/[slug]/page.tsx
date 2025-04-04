@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import ContactForm from "@/app/ui/home/contactForm";
 
 // type Props = {
 //   params: { slug: string };
@@ -75,7 +74,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <PortableText value={article.body} />
         </div>
       </section>
-      <ContactForm />
     </>
   );
 }

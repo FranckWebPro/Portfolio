@@ -6,10 +6,12 @@ import ContactForm from "../ui/home/contactForm";
 import Image from "next/image";
 import { sanityService } from "@/sanity/client";
 import { formatDate } from "@/lib/utils";
+import { getDictionary } from "@/dictionaries/dictionary";
 
 export default async function page() {
   //   const categories = await sanityService.getPostCategories();
   const lastArticles = await sanityService.getLastPosts();
+  const dictionnary = await getDictionary("fr");
 
   return (
     <main className="flex w-full flex-col items-center justify-center gap-6">
@@ -76,7 +78,7 @@ export default async function page() {
           ))}
         </div>
       </section>
-      <ContactForm />
+      <ContactForm dictionnary={dictionnary.home.contact} />
     </main>
   );
 }

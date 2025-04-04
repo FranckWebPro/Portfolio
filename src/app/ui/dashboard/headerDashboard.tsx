@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logo from "@/assets/images/logoLight.png";
 import { createClient } from "@/lib/supabase/client";
 
 export default function HeaderDashboard() {
@@ -22,7 +21,7 @@ export default function HeaderDashboard() {
           <Link className="block text-teal-600 dark:text-teal-600" href="/">
             <span className="sr-only">Home</span>
             <Image
-              src={logo}
+              src="/assets/images/logoLight.png"
               alt="logo FranckWebPro"
               className="~h-16/20 ~w-16/20"
               width={80}
@@ -33,15 +32,11 @@ export default function HeaderDashboard() {
           </Link>
         </div>
 
-        <Link
-          className="text-center text-lightColor transition duration-200 hover:text-secondaryColor dark:text-white
-            dark:hover:text-white/75"
-          href="/"
-        >
+        <Link className="text-center text-lightColor transition duration-200 hover:text-secondaryColor" href="/">
           Retour à l'accueil
         </Link>
         <button
-          className="flex w-full items-center gap-2 rounded px-4 py-1.5 duration-200 hover:bg-error/20 hover:text-error"
+          className="flex w-full items-center gap-2 rounded px-4 py-1.5 duration-200 hover:text-secondaryColor"
           onClick={handleSignOut}
         >
           Se déconnecter

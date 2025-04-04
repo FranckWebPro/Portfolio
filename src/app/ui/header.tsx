@@ -40,7 +40,7 @@ export default function Header({ dictionnary, lang }: { dictionnary: Record<stri
             lg:bg-[var(--secondaryColor)] lg:opacity-100 2xl:text-base
             ${navIsOpen ? "translate-x-0 py-16" : "translate-x-full"}`}
         >
-          <li>
+          <li className="lg:hidden">
             <button
               onClick={() => {
                 const newLangPath = lang === "fr" ? "/en" : "/";

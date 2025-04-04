@@ -1,7 +1,15 @@
-import Link from "next/link";
 import React from "react";
 
-export default function ExperienceSection() {
+interface ExperienceSectionDictionary {
+  title: string;
+  description: string;
+  experiences: {
+    title: string;
+    description: string;
+  }[];
+}
+
+export default function ExperienceSection({ dictionnary }: { dictionnary: ExperienceSectionDictionary }) {
   return (
     <section
       id="experiences"
@@ -10,12 +18,12 @@ export default function ExperienceSection() {
     >
       <div className="w-full max-w-screen-2xl p-4 py-8 sm:py-12 md:p-8 lg:p-12 lg:py-16">
         <hgroup className="mx-auto mb-8 max-w-xl">
-          <h2 className="text-center text-3xl font-bold md:text-4xl">Mon expérience</h2>
+          <h2 className="text-center text-3xl font-bold md:text-4xl">{dictionnary.title}</h2>
 
-          <p className="mt-4 text-center leading-8 text-gray-300">
-            Ancien fusilier parachutiste passionné par le monde du web et l'entrepreneuriat, je me suis reconverti comme
-            développeur web freelance. Je développe aussi mes propres logiciels notamment LinkerFlow, mon projet actuel.
-          </p>
+          <p
+            className="mt-4 text-center leading-8 text-gray-300"
+            dangerouslySetInnerHTML={{ __html: dictionnary.description }}
+          ></p>
         </hgroup>
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:gap-10">
@@ -41,21 +49,12 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">LinkerFlow, SaaS outil Webflow</h3>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[0].title}</h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                J'ai développé{" "}
-                <Link
-                  href="https://www.linkerflow.io"
-                  target="_blank"
-                  className="text-primaryColor duration-300 hover:text-primaryLight"
-                  rel="noreferrer"
-                >
-                  Linkerflow
-                </Link>
-                , un outil Webflow afin d'automatiser le maillage interne, méthode chronophage pourtant primordial pour
-                le <strong>référencement</strong> des sites web.
-              </p>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[0].description }}
+              ></p>
             </div>
           </div>
 
@@ -83,15 +82,12 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">Formation développeur JS, Wild Code School</h3>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[1].title}</h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                J'ai suivi durant 5 mois (Février à Juillet 2024) une formation intensive de développeur web où j'ai pu
-                apprendre en plus des technologies React / Express / Node.js / MySQL / Git et Github, des compétences
-                dans l'
-                <strong>accéssibilité web</strong>, les méthodes Agile telles que Scrum et surtout le travail en équipe
-                sur plusieurs projets.
-              </p>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[1].description }}
+              ></p>
             </div>
           </div>
 
@@ -117,23 +113,12 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">Agence No Code, mon agence Webflow</h3>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[2].title}</h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                De fin 2023 à 2024, j'ai travaillé dur afin de trouver des clients en tant que freelance développeur
-                Webflow, j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong>{" "}
-                <abbr title="Search Engine Optimization"> (SEO) </abbr>
-                afin de faire monter mon propre site d'Agence Webflow ({" "}
-                <Link
-                  href="https://www.agencenocode.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primaryColor duration-300 hover:text-primaryLight"
-                >
-                  Agence No Code
-                </Link>{" "}
-                ) , sur lequel je travaille aujourd'hui avec des partenaires en tant que freelance.
-              </p>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[2].description }}
+              ></p>
             </div>
           </div>
 
@@ -159,21 +144,12 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">Spylead, Site de listing produit tech</h3>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[3].title}</h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                Nous avons développé sur Webflow avec un associé,
-                <Link
-                  href="https://www.spylead.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primaryColor duration-300 hover:text-primaryLight"
-                >
-                  {" "}
-                  Spylead{" "}
-                </Link>
-                , un site de listing de produit tech, tel que les scraper google maps, les fournisseurs d'adresses IP...
-              </p>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[3].description }}
+              ></p>
             </div>
           </div>
 
@@ -199,13 +175,12 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">Développeur Webflow freelance</h3>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[4].title}</h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                Lors de la fin de mon contrat j'ai souhaité me reconvertir dans le web, pour cela je me suis formé en
-                autodidacte sur Webflow et j'ai pu proposer mes services en tant que développeur{" "}
-                <strong>Webflow</strong> freelance.
-              </p>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[4].description }}
+              ></p>
             </div>
           </div>
 
@@ -228,12 +203,11 @@ export default function ExperienceSection() {
             </span>
 
             <div>
-              <h3 className="mb-4 text-lg font-bold">Fusilier parachutiste, Armée de l'Air</h3>
-              <p className="mt-1 text-sm leading-6 text-gray-300">
-                Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de l'Air en 2017...
-                Souhaitant plus d'action et de travail physique je change de spécialité pour rentrer chez les fusiliers
-                parachutistes et j'ai effectué de nombreux stages de formations au cours de plus de 6 ans de services.
-              </p>
+              <h3 className="mb-4 text-lg font-bold">{dictionnary.experiences[5].title}</h3>
+              <p
+                className="mt-1 text-sm leading-6 text-gray-300"
+                dangerouslySetInnerHTML={{ __html: dictionnary.experiences[5].description }}
+              ></p>
             </div>
           </div>
         </div>

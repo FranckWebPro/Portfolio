@@ -25,7 +25,7 @@ export default async function page({ params }: { params: { category: string } })
           {articles.map((article) => (
             <article
               key={article._id}
-              className="p-4 rounded-lg border shadow-md bg-white/5 backdrop-blur-[1px] text-base-100 duration-300
+              className="p-4 rounded-lg border shadow-md bg-white/5 backdrop-blur-[1px] text-base-100 duration-200
                hover:opacity-95 hover:bg-white/10 hover:border-primaryLight hover:shadow-2xl"
             >
               <Link href={`/blog/${article.slug.current}`} className="size-full">

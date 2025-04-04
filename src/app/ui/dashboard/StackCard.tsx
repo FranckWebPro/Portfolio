@@ -6,7 +6,7 @@ import { DeleteStackButton, UpdateStackButton } from "./buttons";
 export default function StackCard({ stack }: { stack: Stack }) {
   return (
     <div
-      className="w-full h-full flex items-center flex-col justify-center p-4 pt-0 transition-opacity duration-300 border
+      className="w-full h-full flex items-center flex-col justify-center p-4 pt-0 transition-opacity duration-200 border
        border-primaryColor group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
     >
       <Image src={stack.logo ? stack.logo : ""} width={60} height={60} unoptimized draggable="false" alt={stack.name} />

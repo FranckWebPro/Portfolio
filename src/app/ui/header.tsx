@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header({ dictionnary }: { dictionnary: Record<string, string> }) {
   const [navIsOpen, setNavIsOpen] = useState(false);
 
   const handleMobileMenu = () => {
@@ -47,7 +47,7 @@ export default function Header() {
               href="/#services"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
-              Services
+              {dictionnary.services}
             </Link>
           </li>
           <li>
@@ -57,7 +57,7 @@ export default function Header() {
               href="/#experiences"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
-              Expériences
+              {dictionnary.experiences}
             </Link>
           </li>
 
@@ -68,7 +68,7 @@ export default function Header() {
               href="/#technos"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
-              Technos
+              {dictionnary.technologies}
             </Link>
           </li>
 
@@ -79,7 +79,7 @@ export default function Header() {
               href="/#projects"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
-              Projets
+              {dictionnary.projects}
             </Link>
           </li>
           <li>
@@ -89,7 +89,7 @@ export default function Header() {
               href="/blog"
               onClick={() => navIsOpen && handleMobileMenu()}
             >
-              Blog
+              {dictionnary.blog}
             </Link>
           </li>
         </ul>
@@ -101,7 +101,7 @@ export default function Header() {
           href="/#contact"
           onClick={() => navIsOpen && handleMobileMenu()}
         >
-          Me contacter
+          {dictionnary.contact}
         </Link>
 
         <button

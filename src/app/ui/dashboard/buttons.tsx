@@ -20,7 +20,7 @@ export function TogglePublicationButton({ id, published }: { id: number; publish
     <button
       type="button"
       onClick={handleUpdatePublished}
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
     >
       {published ? "Dépublier" : "Publier"}
@@ -44,7 +44,7 @@ export function DeleteProjectButton({ id, preview_picture_url }: { id: number; p
     <button
       type="button"
       onClick={handleDelete}
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
     >
       Supprimer
@@ -68,7 +68,7 @@ export function UpdateProjectButton({ id }: { id: number }) {
   };
   return (
     <Link
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
       onClick={handleUpdate}
       href="#form"
@@ -86,7 +86,7 @@ export function ResetProjectButton() {
   return (
     <button
       type="button"
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
         hover:text-darkColor"
       onClick={handleResetProject}
     >
@@ -103,7 +103,7 @@ export function ResetStackButton() {
   return (
     <button
       type="button"
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
           hover:text-darkColor"
       onClick={handleResetStack}
     >
@@ -130,7 +130,7 @@ export function DeleteStackButton({ id, logo }: { id: number; logo: string }) {
     <button
       type="button"
       onClick={handleDelete}
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
           hover:text-darkColor"
     >
       Supprimer
@@ -155,7 +155,7 @@ export function UpdateStackButton({ id }: { id: number }) {
   };
   return (
     <Link
-      className="rounded-md border p-2 duration-300 hover:border-secondaryColor hover:bg-secondaryColor
+      className="rounded-md border p-2 duration-200 hover:border-secondaryColor hover:bg-secondaryColor
           hover:text-darkColor"
       onClick={handleUpdate}
       href="#form"

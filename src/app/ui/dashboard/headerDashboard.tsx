@@ -34,14 +34,14 @@ export default function HeaderDashboard() {
         </div>
 
         <Link
-          className="text-center text-lightColor transition duration-300 hover:text-secondaryColor dark:text-white
+          className="text-center text-lightColor transition duration-200 hover:text-secondaryColor dark:text-white
             dark:hover:text-white/75"
           href="/"
         >
           Retour à l'accueil
         </Link>
         <button
-          className="flex w-full items-center gap-2 rounded px-4 py-1.5 duration-300 hover:bg-error/20 hover:text-error"
+          className="flex w-full items-center gap-2 rounded px-4 py-1.5 duration-200 hover:bg-error/20 hover:text-error"
           onClick={handleSignOut}
         >
           Se déconnecter

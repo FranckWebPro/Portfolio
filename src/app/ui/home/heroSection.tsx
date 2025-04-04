@@ -4,7 +4,13 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 
-export default async function HeroSection() {
+export default async function HeroSection({
+  dictionnary,
+  lang,
+}: {
+  dictionnary: Record<string, string>;
+  lang: string;
+}) {
   return (
     <section
       id="hero"
@@ -16,34 +22,31 @@ export default async function HeroSection() {
           className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold
             leading-8 text-transparent sm:text-4xl md:text-5xl"
         >
-          Bienvenue sur mon Portfolio
-          <span className="block">
-            Moi c'est Franck, <br />
-            <strong>Développeur Web Next.js</strong>
-          </span>
+          {dictionnary.welcome_message}
+          <span className="block" dangerouslySetInnerHTML={{ __html: dictionnary.introduction }}></span>
         </h1>
-        <p className="mx-auto max-w-xl sm:text-xl/relaxed">
-          Entrepreneur et développeur Typescript fullstack freelance au service de votre entreprise
-        </p>
+        <p
+          className="mx-auto max-w-xl sm:text-xl/relaxed"
+          dangerouslySetInnerHTML={{ __html: dictionnary.description }}
+        ></p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="/CVFG.pdf"
+            href={lang === "fr" ? "/CVFG.pdf" : "/CVFGEN.pdf"}
             target="_blank"
             rel="noreferrer"
             className="block w-10/12 md:w-auto rounded-full border-2 border-transparent bg-secondaryColor px-12 py-3 text-sm
-              font-medium text-darkColor duration-300 hover:border-2 hover:border-secondaryColor shadow-secondaryColor/50
+              font-medium text-darkColor duration-200 hover:border-2 hover:border-secondaryColor shadow-secondaryColor/50
               hover:bg-transparent hover:text-lightColor focus:outline-none focus:ring hover:shadow-[inset_0px_0px_15px_4px] active:text-opacity-75 xl:text-base"
             download
-          >
-            Télécharger mon CV
-          </a>
+            dangerouslySetInnerHTML={{ __html: dictionnary.download_cv }}
+          ></a>
           <Link
             className="block w-10/12 rounded-full md:w-auto border border-secondaryColor px-12 py-3 text-sm font-medium
-              text-lightColor duration-300 shadow-[inset_0px_0px_15px_4px]  shadow-secondaryColor/50 hover:bg-secondaryColor hover:text-darkColor focus:outline-none
+              text-lightColor duration-200 shadow-[inset_0px_0px_15px_4px]  shadow-secondaryColor/50 hover:bg-secondaryColor hover:text-darkColor focus:outline-none
               focus:ring active:bg-blue-500 xl:text-base"
             href="#projects"
           >
-            Voir mes projets
+            <span dangerouslySetInnerHTML={{ __html: dictionnary.view_projects }}></span>
           </Link>
         </div>
       </div>

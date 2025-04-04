@@ -99,7 +99,7 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
         <legend className="mb-3">Status du projet</legend>
         <label
           htmlFor="finished"
-          className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300
+          className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-200
             hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black
             has-[:checked]:text-lightColor"
           tabIndex={0}
@@ -119,7 +119,7 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
         </label>
         <label
           htmlFor="working"
-          className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-300
+          className="block w-full cursor-pointer rounded-lg border-2 border-gray-200 p-3 duration-200
             hover:border-secondaryColor has-[:checked]:border-secondaryColor has-[:checked]:bg-black
             has-[:checked]:text-white"
           tabIndex={0}
@@ -180,7 +180,7 @@ export default function AddProjectForm({ stacks }: { stacks: Array<Stack> }) {
       <div className="mt-4 flex w-full items-center justify-center">
         <button
           type="submit"
-          className="rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-300
+          className="rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-200
             hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
         >
           Enregistrer ce projet

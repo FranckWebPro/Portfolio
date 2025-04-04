@@ -66,7 +66,7 @@ export default function AddStackForm() {
       <div className="mt-4 flex w-full items-center justify-center">
         <button
           type="submit"
-          className="rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-300
+          className="rounded-lg bg-secondaryColor px-6 py-3 font-medium text-darkColor duration-200
             hover:bg-secondaryLight hover:text-lightColor sm:w-auto"
         >
           Enregistrer cette techno

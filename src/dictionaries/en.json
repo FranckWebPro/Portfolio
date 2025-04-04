@@ -1,0 +1,114 @@
+{
+  "home": {
+    "navigation": {
+      "services": "Services",
+      "experiences": "Experiences",
+      "technologies": "Tech",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact me"
+    },
+    "hero_section": {
+      "welcome_message": "Welcome to my Portfolio",
+      "introduction": "I'm Franck, <strong>Next.js Web Developer</strong>",
+      "description": "Entrepreneur and freelance full-stack Typescript developer dedicated to your business",
+      "download_cv": "Download my Resume",
+      "view_projects": "See my projects"
+    },
+    "services_section": {
+      "title": "Custom web application and website development",
+      "description": "Services I offer, from traditional development for more flexibility to no-code with Webflow for simplicity and speed, including Search Engine Optimization (SEO).",
+      "start_project": "Start your project now",
+      "web_development": {
+        "title": "Website and Web Application Development",
+        "description": "Development from a provided graphic mockup or one that I create with you, transforming it into a web project. I pay particular attention to UX, optimization, and web accessibility. I build landing pages, blogs, portfolios, showcase sites, and web applications (SaaS, etc.)."
+      },
+      "seo": {
+        "title": "Google SEO",
+        "description": "Optimizing your website/web application for organic ranking on Google and other search engines (SEO)."
+      },
+      "web_design": {
+        "title": "Web Design",
+        "description": "Creating your design and branding with Figma, including wireframing, mockups, or directly on Webflow."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "Auditing and improving the accessibility of your website, adhering to WCAG standards."
+      }
+    },
+    "experience_section": {
+      "title": "My Experience",
+      "description": "Former paratrooper passionate about web development and entrepreneurship, I transitioned to freelance web development. I'm also developing my own software, notably LinkerFlow, my current project.",
+      "experiences": [
+        {
+          "title": "LinkerFlow, Webflow SaaS Tool",
+          "description": "I developed <a href='https://linkerflow.com' target='_blank'  rel='noreferrer noopener'  class='text-primary duration-200 hover:text-primaryLight'>LinkerFlow</a>, a Webflow tool designed to automate internal linking, a crucial yet time-consuming SEO method."
+        },
+        {
+          "title": "JS Developer Training, Wild Code School",
+          "description": "I completed a 5-month intensive web developer training (Feb–July 2024), learning React, Express, Node.js, MySQL, Git/Github, web accessibility, Agile methodologies like Scrum, and teamwork across several projects."
+        },
+        {
+          "title": "Agence No Code, My Webflow Agency",
+          "description": "From late 2023 to 2024, I worked hard to acquire clients as a freelance Webflow developer, applying my SEO skills to grow my own agency website (Agence No Code), where I now collaborate with partners as a freelancer."
+        },
+        {
+          "title": "Spylead, Tech Product Listing Site",
+          "description": "I developed Spylead, a Webflow-based tech product listing website, covering tools like Google Maps scrapers and IP address providers."
+        },
+        {
+          "title": "Freelance Webflow Developer",
+          "description": "After finishing my contract, I self-taught Webflow and offered my services as a freelance Webflow developer."
+        },
+        {
+          "title": "Paratrooper, French Air Force",
+          "description": "After more than a year in reserve, I enlisted as a trainee pilot in the French Air Force in 2017. Seeking more physical activity and action, I switched specialties to paratroopers, undertaking extensive training over more than six years of service."
+        }
+      ]
+    },
+    "technologies_section": {
+      "title": "Cutting-edge technologies I master",
+      "description": "All languages, libraries, and frameworks—code or no-code—that I know and offer as services. I'm always open to exploring and learning new technologies to match your project's needs!",
+      "contact": "Let's discuss your project"
+    },
+    "projects_section": {
+      "title": "Awesome projects I've built",
+      "description": "Projects I've created during training, for myself, and as a freelancer"
+    },
+    "contact": {
+      "title": "A crazy project? Let's discuss it:",
+      "description": "Whether you're a business, independent professional, or just curious about web development, don't hesitate to contact me. You can reach me by email or through the form, and I'll respond as soon as possible!",
+      "email": "contact@franckwebpro.com",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "legend": "What are your needs?",
+        "radio": {
+          "consulting": "Consulting",
+          "dev": "Web Development",
+          "seo": "SEO"
+        },
+        "message": "Message",
+        "send": "Send me your sweet words"
+      }
+    },
+    "footer": {
+      "description": "The web development at the service of your business",
+      "rights_reserved": "Copyright © 2024. All rights reserved.",
+      "navigation": {
+        "services": "Services",
+        "experiences": "Experiences",
+        "technologies": "Tech",
+        "projects": "Projects",
+        "blog": "Blog",
+        "dashboard": "Dashboard"
+      },
+      "contact": "Contact me"
+    }
+  },
+  "blog": {
+    "title": "My blog",
+    "description": "The articles I write to share my knowledge and experiences"
+  }
+}

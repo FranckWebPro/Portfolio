@@ -1,0 +1,114 @@
+{
+  "home": {
+    "navigation": {
+      "services": "Services",
+      "experiences": "Expériences",
+      "technologies": "Technos",
+      "projects": "Projets",
+      "blog": "Blog",
+      "contact": "Me contacter"
+    },
+    "hero_section": {
+      "welcome_message": "Bienvenue sur mon Portfolio",
+      "introduction": "Moi c'est Franck, <strong>Développeur Web Next.js</strong>",
+      "description": "Entrepreneur et développeur Typescript fullstack freelance au service de votre entreprise",
+      "download_cv": "Télécharger mon CV",
+      "view_projects": "Voir mes projets"
+    },
+    "services_section": {
+      "title": "Développement d'applications et sites web sur-mesure",
+      "description": "Les services que je propose comme prestations, du développement traditionnel pour plus de flexibilité au no code avec Webflow pour plus de simplicité/rapidité en passant par le référencement naturel (SEO).",
+      "start_project": "Démarrez votre projet maintenant",
+      "web_development": {
+        "title": "Développement de site ou d'applications Web",
+        "description": "Développement à partir d'une maquette graphique donnée ou que je peux réaliser avec vous pour la convertir en un projet web, je porte une attention particulière à l'UX, à l'optimisation et à l'accessibilité web. Je développe landing page, blog, portfolio, sites vitrines et applications web (SaaS...)."
+      },
+      "seo": {
+        "title": "Référencement Google",
+        "description": "Optimisation de votre site/application web pour le référencement naturel (organique) sur Google et les autres moteurs de recherches, le SEO."
+      },
+      "web_design": {
+        "title": "Web Design",
+        "description": "Création de votre design et branding sur Figma, avec phase de wireframe, maquettage ou bien directement sur Webflow."
+      },
+      "accessibility": {
+        "title": "Accessibilité",
+        "description": "Audit et amélioration de l'accessibilité de votre site web, en suivant les normes WCAG."
+      }
+    },
+    "experience_section": {
+      "title": "Mon expérience",
+      "description": "Ancien fusilier parachutiste passionné par le monde du web et l'entrepreneuriat, je me suis reconverti comme développeur web freelance. Je développe aussi mes propres logiciels notamment LinkerFlow, mon projet actuel.",
+      "experiences": [
+        {
+          "title": "LinkerFlow, SaaS outil Webflow",
+          "description": "J'ai développé <a href='https://www.linkerflow.io' target='_blank' rel='noreferrer noopener' className='text-primaryColor duration-200 hover:text-primaryLight'>LinkerFlow</a>, un outil Webflow afin d'automatiser le maillage interne, méthode chronophage pourtant primordiale pour le <strong>référencement</strong> des sites web."
+        },
+        {
+          "title": "Formation développeur JS, Wild Code School",
+          "description": "J'ai suivi durant 5 mois (Février à Juillet 2024) une formation intensive de développeur web où j'ai pu apprendre en plus des technologies React / Express / Node.js / MySQL / Git et Github, des compétences dans l'<strong>accessibilité web</strong>, les méthodes Agile telles que Scrum et surtout le travail en équipe sur plusieurs projets."
+        },
+        {
+          "title": "Agence No Code, mon agence Webflow",
+          "description": "De fin 2023 à 2024, j'ai travaillé dur afin de trouver des clients en tant que freelance développeur Webflow, j'ai souhaité mettre en pratique mes compétences en <strong>référencement</strong> (<abbr title='Search Engine Optimization'> (SEO) </abbr>) afin de faire monter mon propre site d'Agence Webflow (Agence No Code), sur lequel je travaille aujourd'hui avec des partenaires en tant que freelance."
+        },
+        {
+          "title": "Spylead, Site de listing produit tech",
+          "description": "Nous avons développé sur Webflow avec un associé, Spylead, un site de listing de produits tech, tels que les scrapers Google Maps, les fournisseurs d'adresses IP..."
+        },
+        {
+          "title": "Développeur Webflow freelance",
+          "description": "Lors de la fin de mon contrat j'ai souhaité me reconvertir dans le web, pour cela je me suis formé en autodidacte sur <strong>Webflow</strong> et j'ai pu proposer mes services en tant que développeur Webflow freelance."
+        },
+        {
+          "title": "Fusilier parachutiste, Armée de l'Air",
+          "description": "Après plus d'un an de réserve je m'engage en tant qu'élève pilote dans l'Armée de l'Air en 2017... Souhaitant plus d'action et de travail physique je change de spécialité pour rentrer chez les fusiliers parachutistes et j'ai effectué de nombreux stages de formations au cours de plus de 6 ans de services."
+        }
+      ]
+    },
+    "technologies_section": {
+      "title": "Les technos du futur que je maîtrise",
+      "description": "L'ensemble des langages, librairies et frameworks, code ou no code, que je connais et que je souhaite proposer dans mes services... je suis bien sûr ouvert à de nouvelles découvertes et à l'apprentissage d'autres technos si besoin pour votre projet !",
+      "contact": "Discutons de votre projet"
+    },
+    "projects_section": {
+      "title": "Les super projets que j'ai réalisés",
+      "description": "Les projets que j'ai réalisés en formation, pour moi-même et en tant que freelance"
+    },
+    "contact": {
+      "title": "Un projet de fou ? Discutons-en :",
+      "description": "Que vous soyez une entreprise, professionnel indépendant ou même juste curieux à propos du développement web, n'hésitez pas à me contacter. Vous pouvez me joindre par mail ou bien par le formulaire, je vous répondrai au plus vite !",
+      "email": "contact@franckwebpro.com",
+      "form": {
+        "name": "Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "legend": "Quel sont vos besoins ?",
+        "radio": {
+          "consulting": "Conseil",
+          "dev": "Développement web",
+          "seo": "Référencement / SEO"
+        },
+        "message": "Message",
+        "send": "Envoyer moi vos mots doux"
+      }
+    },
+    "footer": {
+      "description": "Le développement web au service de votre business",
+      "rights_reserved": "Copyright © 2024. Tous droits réservés.",
+      "navigation": {
+        "services": "Services",
+        "experiences": "Expériences",
+        "technologies": "Technos",
+        "projects": "Projets",
+        "blog": "Blog",
+        "dashboard": "Dashboard"
+      },
+      "contact": "Me contacter"
+    }
+  },
+  "blog": {
+    "title": "Mon blog",
+    "description": "Les articles que j'écris pour partager mes connaissances et mes expériences"
+  }
+}

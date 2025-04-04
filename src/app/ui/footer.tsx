@@ -3,13 +3,26 @@ import Image from "next/image";
 import { User } from "@/lib/supabase.type";
 import Link from "next/link";
 
-export default function Footer({ user }: { user: User }) {
+interface FooterDictionary {
+  rights_reserved: string;
+  description: string;
+  navigation: {
+    services: string;
+    experiences: string;
+    technologies: string;
+    projects: string;
+    blog: string;
+    dashboard: string;
+  };
+}
+
+export default function Footer({ user, dictionnary }: { user: User; dictionnary: FooterDictionary }) {
   return (
     <footer className="w-full">
       <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
-            className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition duration-300
+            className="inline-block rounded-full bg-secondaryColor p-2 text-darkColor shadow transition duration-200
               hover:bg-secondaryLight hover:text-primaryLight sm:p-3 lg:p-4 dark:bg-gray-700 dark:text-teal-300
               dark:hover:bg-gray-600"
             href="#hero"
@@ -45,7 +58,7 @@ export default function Footer({ user }: { user: User }) {
                   width={45}
                   height={45}
                   alt="logo Linkedin"
-                  className="duration-300 hover:opacity-60"
+                  className="duration-200 hover:opacity-60"
                 />{" "}
               </Link>
               <Link href={user.github_link ?? ""} target="_blank" rel="noreferrer">
@@ -54,7 +67,7 @@ export default function Footer({ user }: { user: User }) {
                   width={45}
                   height={45}
                   alt="logo github"
-                  className="rounded-lg bg-lightColor p-2 duration-300 hover:opacity-60"
+                  className="rounded-lg bg-lightColor p-2 duration-200 hover:opacity-60"
                 />{" "}
               </Link>
               <Link href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
@@ -63,66 +76,66 @@ export default function Footer({ user }: { user: User }) {
                   width={45}
                   height={45}
                   alt="logo Malt"
-                  className="duration-300 hover:opacity-60"
+                  className="duration-200 hover:opacity-60"
                 />{" "}
               </Link>
               <p className="mx-auto mr-6 w-full text-center leading-relaxed lg:text-left dark:text-gray-400">
-                Le développement web au service de votre business
+                {dictionnary.description}
               </p>
             </div>
           </div>
 
           <ul className="mt-6 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
             <li>
-              <Link className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#services">
-                Services
+              <Link className="p-2 transition duration-200 text-lightColor hover:text-primaryLight" href="#services">
+                {dictionnary.navigation.services}
               </Link>
             </li>
             <li>
-              <Link className="p-2 transition duration-300 text-lightColor hover:text-primaryLight" href="#experience">
-                Expériences
+              <Link className="p-2 transition duration-200 text-lightColor hover:text-primaryLight" href="#experience">
+                {dictionnary.navigation.experiences}
               </Link>
             </li>
 
             <li>
               <Link
-                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                className="p-2 transition duration-200 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#technos"
               >
-                Technos
+                {dictionnary.navigation.technologies}
               </Link>
             </li>
 
             <li>
               <Link
-                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                className="p-2 transition duration-200 dark:text-lightColor dark:hover:text-primaryLight"
                 href="#projects"
               >
-                Projets
+                {dictionnary.navigation.projects}
               </Link>
             </li>
 
             <li>
               <Link
-                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                className="p-2 transition duration-200 dark:text-lightColor dark:hover:text-primaryLight"
                 href="/blog"
               >
-                Blog
+                {dictionnary.navigation.blog}
               </Link>
             </li>
             <li>
               <Link
-                className="p-2 transition duration-300 dark:text-lightColor dark:hover:text-primaryLight"
+                className="p-2 transition duration-200 dark:text-lightColor dark:hover:text-primaryLight"
                 href="/signin"
               >
-                Dashboard
+                {dictionnary.navigation.dashboard}
               </Link>
             </li>
           </ul>
         </div>
 
         <p className="mt-12 text-center text-sm text-gray-500 lg:text-right dark:text-gray-400">
-          Copyright &copy; 2024. All rights reserved.
+          {dictionnary.rights_reserved}
         </p>
       </div>
     </footer>

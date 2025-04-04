@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <Suspense>
-        <Header dictionnary={dictionnary?.home?.navigation} />
+        <Header dictionnary={dictionnary?.home?.navigation} lang="fr" />
       </Suspense>
       <main className="w-full bg-darkColor text-lightColor">
         <HeroSection dictionnary={dictionnary?.home?.hero_section} lang="fr" />

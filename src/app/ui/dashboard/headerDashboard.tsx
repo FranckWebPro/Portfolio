@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logo from "../images/logoLight.png";
+import logo from "@/assets/images/logoLight.png";
 import { createClient } from "@/lib/supabase/client";
 
 export default function HeaderDashboard() {

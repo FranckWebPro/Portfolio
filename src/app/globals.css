@@ -24,6 +24,8 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #0e0e0e;
+  color: #e7e7e7;
 }
 
 * {

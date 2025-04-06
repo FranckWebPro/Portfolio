@@ -83,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${bG.className}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
@@ -93,7 +93,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${bG.className} bg-darkColor text-lightColor`}>
+      <body>
         {children}
         <SanityLive />
       </body>

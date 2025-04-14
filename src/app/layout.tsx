@@ -86,22 +86,12 @@ export default function RootLayout({
     <html lang="fr" className={`${bG.className}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Hyod+ldj+LPI1KFajKVaw" async></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(personStructuredData),
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W7V6W8WXX"></script>
-        <script async>
-          {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3W7V6W8WXX');
-    `}
-        </script>
       </head>
       <body>
         {children}

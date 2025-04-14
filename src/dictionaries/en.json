@@ -73,7 +73,9 @@
     },
     "projects_section": {
       "title": "Awesome projects I've built",
-      "description": "Projects I've created during training, for myself, and as a freelancer"
+      "description": "Projects I've created during training, for myself, and as a freelancer",
+      "view_project": "See the project",
+      "github": "See the Github repo"
     },
     "contact": {
       "title": "A crazy project? Let's discuss it:",

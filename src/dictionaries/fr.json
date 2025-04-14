@@ -73,7 +73,9 @@
     },
     "projects_section": {
       "title": "Les super projets que j'ai réalisés",
-      "description": "Les projets que j'ai réalisés en formation, pour moi-même et en tant que freelance"
+      "description": "Les projets que j'ai réalisés en formation, pour moi-même et en tant que freelance",
+      "view_project": "Voir le projet",
+      "github": "Voir le repo Github"
     },
     "contact": {
       "title": "Un projet de fou ? Discutons-en :",

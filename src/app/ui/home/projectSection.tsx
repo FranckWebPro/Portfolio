@@ -23,7 +23,7 @@ export default function ProjectSection({
       >
         {projects.map(
           (project: ProjectWithStacks) =>
-            project.published === true && <ProjectCard key={project.id} project={project} />
+            project.published === true && <ProjectCard key={project.id} project={project} dictionnary={dictionnary} />
         )}
       </div>
     </section>

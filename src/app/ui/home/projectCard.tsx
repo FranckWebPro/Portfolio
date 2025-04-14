@@ -3,7 +3,13 @@ import { ProjectWithStacks, Stack } from "@/lib/supabase.type";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ProjectCard({ project }: { project: ProjectWithStacks }) {
+export default function ProjectCard({
+  project,
+  dictionnary,
+}: {
+  project: ProjectWithStacks;
+  dictionnary: Record<string, string>;
+}) {
   const backgroundImg = {
     backgroundImage: `url(${project.preview_picture_url})`,
     backgroundSize: "cover",
@@ -51,7 +57,7 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
                   className="mt-8 font-bold text-secondaryColor drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-200
                     hover:text-secondaryLight"
                 >
-                  Voir le repo Github
+                  {dictionnary.github}
                 </Link>
               </li>
             )}
@@ -63,7 +69,7 @@ export default function ProjectCard({ project }: { project: ProjectWithStacks })
                   className="mt-8 font-bold text-secondaryColor drop-shadow-[1px_2px_2px_rgba(0,0,0,0.75)] duration-200
                     hover:text-secondaryLight"
                 >
-                  Voir le projet
+                  {dictionnary.view_project}
                 </Link>
               </li>
             )}

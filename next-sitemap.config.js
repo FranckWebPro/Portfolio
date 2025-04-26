@@ -11,7 +11,7 @@ module.exports = {
       const articles = await getArticles();
 
       const articlePaths = articles.map((article) => `/blog/${article.slug}`);
-      const allPaths = [...articlePaths];
+      const allPaths = [...articlePaths, '/en'];
 
       return allPaths.map((path) => ({
         loc: path,

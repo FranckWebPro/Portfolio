@@ -1,4 +1,5 @@
-import { getArticles } from "./src/lib/supabase/sitemapData";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { getLastPostsSitemap } = require("./src/sanity/sitemapClient.js");
 
 module.exports = {
   // REQUIRED: add your own domain name here (e.g. https://shipfa.st),
@@ -8,10 +9,12 @@ module.exports = {
   exclude: ["/twitter-image.*", "/opengraph-image.*", "/icon.*", "/apple-icon.*", "/signin", "/api/*", "/dashboard"],
   additionalPaths: async () => {
     try {
-      const articles = await getArticles();
+      const articles = await getLastPostsSitemap();
 
-      const articlePaths = articles.map((article) => `/blog/${article.slug}`);
-      const allPaths = [...articlePaths, '/en'];
+      // Ensure articles is an array and map safely
+      const articlePaths = Array.isArray(articles) ? articles.map((article) => `/blog/${article.slug}`) : [];
+
+      const allPaths = [...articlePaths, "/en"];
 
       return allPaths.map((path) => ({
         loc: path,

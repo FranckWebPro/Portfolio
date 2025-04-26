@@ -1,13 +1,9 @@
-# Block all crawlers for /dashboard, /signin
-User-agent: *
-Disallow: /dashboard
-Disallow: /signin
-
-# Allow all crawlers to access everything else
-
-User-agent: Googlebot
-Allow: /_next/image
-
+# *
 User-agent: *
 Allow: /
-Disallow: /_next/image
+
+# Host
+Host: https://www.franckwebpro.com/
+
+# Sitemaps
+Sitemap: https://www.franckwebpro.com/sitemap.xml

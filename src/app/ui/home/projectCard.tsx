@@ -12,8 +12,9 @@ export default function ProjectCard({
 }) {
   const backgroundImg = {
     backgroundImage: `url(${project.preview_picture_url})`,
-    backgroundSize: "cover",
+    backgroundSize: "100% 95%",
     backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
     width: "100%",
   };
 
@@ -21,7 +22,7 @@ export default function ProjectCard({
     <article className="group relative block h-full min-h-80 w-full">
       <div
         style={backgroundImg}
-        className="relative flex h-full transform items-end bg-darkColor transition-transform
+        className="relative flex h-full w-full transform items-end bg-darkColor transition-transform object
           group-hover:-translate-x-2 group-hover:-translate-y-2"
       >
         <div

@@ -6,9 +6,11 @@ import Image from "next/image";
 export default function ProjectCard({
   project,
   dictionnary,
+  lang,
 }: {
   project: ProjectWithStacks;
   dictionnary: Record<string, string>;
+  lang: string;
 }) {
   const backgroundImg = {
     backgroundImage: `url(${project.preview_picture_url})`,
@@ -40,7 +42,9 @@ export default function ProjectCard({
             backdrop-blur-sm transition-opacity duration-200 group-hover:relative group-hover:opacity-100 sm:p-6
             lg:p-8"
         >
-          <p className="mt-4 text-sm text-white sm:text-base">{project.description}</p>
+          <p className="mt-4 text-sm text-white sm:text-base">
+            {lang === "fr" ? project.description : project.description_en}
+          </p>
           <ul className="flex items-center justify-evenly gap-2">
             {project.stacks.map((stack: Stack) => (
               <li key={stack.id}>

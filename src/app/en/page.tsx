@@ -13,9 +13,11 @@ import { getDictionary } from "@/dictionaries/dictionary";
 
 export default async function Home() {
   const dictionnary = await getDictionary("en");
-  const projects: Array<ProjectWithStacks> = await browseProjectsWithStacks();
-  const user: User[] = await fetchUser();
-  const stacks: Array<Stack> = await fetchStacks();
+  const [projects, user, stacks]: [Array<ProjectWithStacks>, User[], Array<Stack>] = await Promise.all([
+    browseProjectsWithStacks(),
+    fetchUser(),
+    fetchStacks(),
+  ]);
 
   return (
     <>
@@ -27,7 +29,7 @@ export default async function Home() {
         <ServiceSection dictionnary={dictionnary?.home?.services_section} />
         <ExperienceSection dictionnary={dictionnary?.home?.experience_section} />
         <StackSection stacks={stacks} dictionnary={dictionnary?.home?.technologies_section} />
-        <ProjectSection projects={projects} dictionnary={dictionnary?.home?.projects_section} />
+        <ProjectSection projects={projects} dictionnary={dictionnary?.home?.projects_section} lang="en" />
         <ContactForm dictionnary={dictionnary?.home?.contact} />
       </main>
       <Footer user={user[0]} dictionnary={dictionnary?.home?.footer} />

@@ -5,9 +5,11 @@ import { ProjectWithStacks } from "@/lib/supabase.type";
 export default function ProjectSection({
   projects,
   dictionnary,
+  lang,
 }: {
   projects: Array<ProjectWithStacks>;
   dictionnary: Record<string, string>;
+  lang: string;
 }) {
   return (
     <section id="projects" className="pt-32">
@@ -23,7 +25,9 @@ export default function ProjectSection({
       >
         {projects.map(
           (project: ProjectWithStacks) =>
-            project.published === true && <ProjectCard key={project.id} project={project} dictionnary={dictionnary} />
+            project.published === true && (
+              <ProjectCard key={project.id} project={project} dictionnary={dictionnary} lang={lang} />
+            )
         )}
       </div>
     </section>

@@ -49,6 +49,7 @@ export async function browseProjectsWithStacks(): Promise<ProjectWithStacks[]> {
       id,
       title,
       description,
+      description_en,
       client_name,
       preview_picture_url,
       link,

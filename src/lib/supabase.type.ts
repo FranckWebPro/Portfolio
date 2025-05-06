@@ -25,6 +25,7 @@ export type Project = {
   id: number;
   title: string;
   description: string;
+  description_en: string;
   client_name: string | undefined;
   preview_picture_url: string;
   link: string | undefined;

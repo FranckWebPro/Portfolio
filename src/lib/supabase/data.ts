@@ -75,6 +75,7 @@ export async function readProjectWithStacks(id: number): Promise<ProjectWithStac
       id,
       title,
       description,
+      description_en,
       client_name,
       preview_picture_url,
       link,

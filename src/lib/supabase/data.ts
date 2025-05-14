@@ -45,7 +45,10 @@ export async function fetchStacks(): Promise<Stack[]> {
 }
 
 export async function browseProjectsWithStacks(): Promise<ProjectWithStacks[]> {
-  const { data, error } = await supabase.from("projects").select(`
+  const { data, error } = await supabase
+    .from("projects")
+    .select(
+      `
       id,
       title,
       description,
@@ -57,7 +60,9 @@ export async function browseProjectsWithStacks(): Promise<ProjectWithStacks[]> {
       published,
       status,
       stacks(id, name, logo, stack_link)
-    `);
+    `
+    )
+    .order("id", { ascending: false });
 
   if (error) {
     console.error("Supabase Error:", error);

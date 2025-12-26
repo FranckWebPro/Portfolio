@@ -24,7 +24,7 @@ export function formatDate(dateString: string, addDays = 0) {
   }
   date.setDate(date.getDate() + addDays);
   const day = date.getUTCDate().toString().padStart(2, "0");
-  const month = (date.getUTCMonth() + 1).toString().padStart(2, "0"); // Motnhs are 0-indexed
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
   const year = date.getUTCFullYear().toString().slice(-2);
   return `${day}/${month}/${year}`;
 }

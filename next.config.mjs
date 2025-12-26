@@ -54,10 +54,6 @@ const nextConfig = {
       { protocol: "https", hostname: "placehold.co", port: "", pathname: "/**" },
     ],
   },
-  webpack: (config) => {
-    config.externals = [...config.externals];
-    return config;
-  },
 };
 
 export default nextConfig;

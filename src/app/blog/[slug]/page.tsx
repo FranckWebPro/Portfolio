@@ -1,38 +1,40 @@
-"use server";
-
 import { sanityService } from "@/sanity/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PortableText } from "@portabletext/react";
+import type { Metadata } from "next";
 
-// type Props = {
-//   params: { slug: string };
-//   searchParams: { [key: string]: string | string[] | undefined };
-// };
+// Revalidate blog posts every hour (3600 seconds)
+export const revalidate = 3600;
 
-// // eslint-disable-next-line no-unused-vars
-// export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-//   const slug = params.slug;
-//   const article = await getArticleFromSlug(slug);
+type Props = {
+  params: { slug: string };
+};
 
-//   return {
-//     title: `${article.title} | Self-Service Car Wash Blog`,
-//     description: `${article.metadescription}`,
-//     keywords: ["Self Service car wash blog", "car wash self service blog"],
-//     alternates: {
-//       canonical: `/blog/${slug}`,
-//     },
-//     robots: {
-//       index: true,
-//       follow: true,
-//       googleBot: {
-//         index: true,
-//         follow: true,
-//       },
-//     },
-//   };
-// }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = await sanityService.getPostBySlug(params.slug);
+
+  return {
+    title: `${article?.title || "Article"} | FranckWebPro Blog`,
+    description: article?.title || "Article de blog sur le développement web",
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    openGraph: {
+      title: article?.title,
+      images: article?.mainImage ? [article.mainImage] : undefined,
+    },
+  };
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const article = await sanityService.getPostBySlug(params.slug);

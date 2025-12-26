@@ -70,15 +70,6 @@ export default function Footer({ user, dictionnary }: { user: User; dictionnary:
                   className="rounded-lg bg-lightColor p-2 duration-200 hover:opacity-60"
                 />{" "}
               </Link>
-              <Link href="https://www.malt.fr/profile/franckgalliod?overview" target="_blank" rel="noreferrer">
-                <Image
-                  src="/assets/images/malt.webp"
-                  width={45}
-                  height={45}
-                  alt="logo Malt"
-                  className="duration-200 hover:opacity-60"
-                />{" "}
-              </Link>
               <p className="mx-auto mr-6 w-full text-center leading-relaxed lg:text-left dark:text-gray-400">
                 {dictionnary.description}
               </p>

@@ -1,5 +1,3 @@
-"use server";
-
 import { createClient } from "@supabase/supabase-js";
 import { Stack, ProjectWithStacks, UserCredentials, User } from "@/lib/supabase.type";
 
@@ -122,8 +120,6 @@ export async function uploadFile(file: File, fileName: string): Promise<string> 
     console.error("Database Error:", error);
     throw new Error("Failed to upload file.");
   }
-
-  console.log(data);
 
   return data.fullPath;
 }

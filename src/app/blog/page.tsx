@@ -1,6 +1,6 @@
-"use server";
-
 import React from "react";
+
+export const revalidate = 3600;
 import Link from "next/link";
 import ContactForm from "../ui/home/contactForm";
 import Image from "next/image";

@@ -4,20 +4,17 @@ import HeroSection from "../ui/home/heroSection";
 import StackSection from "../ui/home/stackSection";
 import ExperienceSection from "../ui/home/experienceSection";
 import ProjectSection from "../ui/home/projectSection";
-import { ProjectWithStacks, Stack, User } from "@/lib/supabase.type";
 import ContactForm from "../ui/home/contactForm";
 import Footer from "../ui/footer";
 import { browseProjectsWithStacks, fetchStacks, fetchUser } from "@/lib/supabase/data";
 import ServiceSection from "../ui/home/serviceSection";
 import { getDictionary } from "@/dictionaries/dictionary";
 
+export const revalidate = 3600;
+
 export default async function Home() {
   const dictionnary = await getDictionary("en");
-  const [projects, user, stacks]: [Array<ProjectWithStacks>, User[], Array<Stack>] = await Promise.all([
-    browseProjectsWithStacks(),
-    fetchUser(),
-    fetchStacks(),
-  ]);
+  const [projects, user, stacks] = await Promise.all([browseProjectsWithStacks(), fetchUser(), fetchStacks()]);
 
   return (
     <>

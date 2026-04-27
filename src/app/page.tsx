@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import Header from "./ui/header";
 
-
 export const revalidate = 3600;
 import HeroSection from "./ui/home/heroSection";
 import StackSection from "./ui/home/stackSection";

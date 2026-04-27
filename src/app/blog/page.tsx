@@ -1,6 +1,24 @@
 import React from "react";
+import type { Metadata } from "next";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Blog Développeur Web | FranckWebPro",
+  description:
+    "Articles sur le développement web, Next.js, Webflow et l'entrepreneuriat — tutoriels, retours d'expérience et actualités tech.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    type: "website",
+    title: "Blog Développeur Web | FranckWebPro",
+    description:
+      "Articles sur le développement web, Next.js, Webflow et l'entrepreneuriat — tutoriels, retours d'expérience et actualités tech.",
+    url: "https://www.franckwebpro.com/blog",
+  },
+};
+
 import Link from "next/link";
 import ContactForm from "../ui/home/contactForm";
 import Image from "next/image";

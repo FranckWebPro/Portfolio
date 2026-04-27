@@ -1,12 +1,27 @@
-"use server";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { sanityService } from "@/sanity/client";
+import { formatDate } from "@/lib/utils";
 
-export default async function page({ params }: { params: { category: string } }) {
-  const category = await sanityService.getCategory(params.category);
+type Props = { params: Promise<{ category: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category: categorySlug } = await params;
+  const category = await sanityService.getCategory(categorySlug);
+  return {
+    title: `${category?.title ?? categorySlug} | FranckWebPro Blog`,
+    description: category?.description ?? "Articles de blog sur le développement web",
+    alternates: {
+      canonical: `/blog/category/${categorySlug}`,
+    },
+  };
+}
+
+export default async function page({ params }: Props) {
+  const { category: categorySlug } = await params;
+  const category = await sanityService.getCategory(categorySlug);
   const articles = await sanityService.getLastPosts();
 
   return (
@@ -39,7 +54,7 @@ export default async function page({ params }: { params: { category: string } })
                       className="mb-2 w-full rounded"
                     />
                   )}
-                  <p className="text-sm">{article.publishedAt}</p>
+                  <p className="text-sm">{formatDate(article.publishedAt)}</p>
                   <h2 className="mb-2 text-xl font-semibold tracking-tight md:text-2xl">{article.title}</h2>
                   <div className="flex justify-between items-center">
                     <p className="flex items-center font-medium space-x-4 text-base-300">

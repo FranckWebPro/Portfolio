@@ -1,4 +1,5 @@
-import { defineQuery, createClient, defineLive } from "next-sanity";
+import { defineQuery, createClient } from "next-sanity";
+import { defineLive } from "next-sanity/live";
 import { BlogPost, Categories } from "../types/sanity.types";
 
 export const client = createClient({
@@ -41,7 +42,7 @@ class SanityService {
       query: defineQuery(`*[_type == "categories" && title == "${category}"] {
             _id, title, slug, description}`),
     });
-    return data;
+    return data[0];
   }
 
   async getLastPosts(): Promise<BlogPost[]> {

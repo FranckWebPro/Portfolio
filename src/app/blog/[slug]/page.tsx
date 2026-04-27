@@ -9,17 +9,18 @@ import type { Metadata } from "next";
 export const revalidate = 3600;
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = await sanityService.getPostBySlug(params.slug);
+  const { slug } = await params;
+  const article = await sanityService.getPostBySlug(slug);
 
   return {
     title: `${article?.title || "Article"} | FranckWebPro Blog`,
     description: article?.title || "Article de blog sur le développement web",
     alternates: {
-      canonical: `/blog/${params.slug}`,
+      canonical: `/blog/${slug}`,
     },
     robots: {
       index: true,
@@ -30,14 +31,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
+      type: "article",
+      title: article?.title,
+      url: `https://www.franckwebpro.com/blog/${slug}`,
+      publishedTime: article?.publishedAt,
+      authors: article?.author?.name ? [article.author.name] : undefined,
+      images: article?.mainImage ? [{ url: article.mainImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
       title: article?.title,
       images: article?.mainImage ? [article.mainImage] : undefined,
     },
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const article = await sanityService.getPostBySlug(params.slug);
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+  const article = await sanityService.getPostBySlug(slug);
 
   return (
     <>

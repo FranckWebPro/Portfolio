@@ -7,7 +7,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
   const url = process.env.NEXT_PUBLIC_BASE_URL;
 
   if (code) {
-    const supabase = createClient();
+    const supabase = await createClient();
     await supabase.auth.exchangeCodeForSession(code);
 
     const {

@@ -42,6 +42,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `/en`,
+    languages: {
+      "fr": "https://www.franckwebpro.com/",
+      "en": "https://www.franckwebpro.com/en",
+      "x-default": "https://www.franckwebpro.com/",
+    },
   },
   robots: {
     index: true,
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://www.franckwebpro.com/",
+    url: "https://www.franckwebpro.com/en",
     title: "Portfolio Web Developer - FranckWebPro",
     description:
       "Web Developer Next.js and Webflow, freelance and independent developer, I create with passion Saas and other applications for the Webflow marketplace",

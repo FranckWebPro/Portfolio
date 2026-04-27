@@ -1,5 +1,10 @@
 import React from "react";
+import type { Metadata } from "next";
 import { ProjectWithStacks, Stack } from "../../lib/supabase.type";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 import ProjectSection from "../ui/dashboard/projectSection";
 import ProjectFormSection from "../ui/dashboard/projectFormSection";
 import StackFormSection from "../ui/dashboard/stackFormSection";

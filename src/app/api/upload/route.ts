@@ -1,5 +1,5 @@
 import { formatFileName } from "@/lib/utils";
-import { writeFile } from "fs";
+import { writeFile } from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
 import { join } from "path";
 
@@ -16,12 +16,10 @@ export async function POST(request: NextRequest) {
 
   const formattedFileName = formatFileName(file.name);
 
-  let path = join(process.cwd(), "public", "assets", formattedFileName);
-  writeFile(path, buffer, (error) => {
-    if (error) throw error;
-  });
+  const diskPath = join(process.cwd(), "public", "assets", formattedFileName);
+  await writeFile(diskPath, buffer);
 
-  path = join("/", "assets", formattedFileName);
+  const path = join("/", "assets", formattedFileName);
 
   return NextResponse.json({ success: true, path: path });
 }

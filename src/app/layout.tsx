@@ -42,6 +42,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `/`,
+    languages: {
+      "fr": "https://www.franckwebpro.com/",
+      "en": "https://www.franckwebpro.com/en",
+      "x-default": "https://www.franckwebpro.com/",
+    },
   },
   robots: {
     index: true,

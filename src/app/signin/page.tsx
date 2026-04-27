@@ -104,7 +104,7 @@ export default function Login() {
               />
             </label>
             <button
-              className="btn w-full btn-primary btn-block rounded text-base font-normal text-black bg-secondaryColor hover:bg-secondaryLight duration-200 px-3 xl:h-14 xl:text-xl"
+              className="btn w-full btn-primary btn-block rounded text-base font-normal text-black bg-secondaryColor hover:bg-secondaryLight duration-200 px-3 xl:h-14 xl:text-xl cursor-pointer"
               disabled={isLoading || isDisabled}
               type="submit"
             >
